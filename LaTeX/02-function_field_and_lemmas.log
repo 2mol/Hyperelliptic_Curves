@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2012.5.7)  24 MAY 2012 08:59
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2012.5.7)  24 MAY 2012 11:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -570,10 +570,10 @@ File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5] [6] [7]
 (./02-function_field_and_lemmas.aux) ) 
 Here is how much of TeX's memory you used:
- 3877 strings out of 493629
- 53064 string characters out of 3148779
- 150143 words of memory out of 3000000
- 7060 multiletter control sequences out of 15000+200000
+ 3873 strings out of 493629
+ 53018 string characters out of 3148779
+ 150145 words of memory out of 3000000
+ 7056 multiletter control sequences out of 15000+200000
  11175 words of font info for 43 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
  37i,16n,24p,947b,330s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -590,7 +590,7 @@ onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></u
 sr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb>
-Output written on 02-function_field_and_lemmas.pdf (7 pages, 170078 bytes).
+Output written on 02-function_field_and_lemmas.pdf (7 pages, 169691 bytes).
 PDF statistics:
  90 PDF objects out of 1000 (max. 8388607)
  64 compressed objects within 1 object stream
