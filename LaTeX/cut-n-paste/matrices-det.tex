@@ -1,0 +1,79 @@
+	One can see that $V'$ is invertible by substracting $x_1$ times the previous column from every column and using Laplace:
+	\begin{align*}\det (V') &=
+		\begin{vmatrix}
+			1 & 0 & 0 & 0\\
+			0 & 1 & x_1 & x_1^2\\
+			1 & (x_3-x_1) & x_3(x_3-x_1) & x_3^2(x_3-x_1)\\
+			1 & (x_4-x_1) & x_4(x_4-x_1) & x_4^2(x_4-x_1)\\
+		\end{vmatrix}
+		\\
+		&= (x_3-x_1)(x_4-x_1)
+		\begin{vmatrix}
+			1 & x_1 & x_1^2\\
+			1 & x_3 & x_3^2\\
+			1 & x_4 & x_4^2\\
+		\end{vmatrix}.
+	\end{align*}
+
+
+
+	$V''$ is invertible by a similar transformation to that of the previous case:
+		\begin{align*}\det (V'') &= 
+		\begin{vmatrix}
+			1 & 0 & 0 & 0\\
+			0 & 1 & x_1 & x_1^2\\
+			1 & (x_3-x_1) & x_3(x_3-x_1) & x_3^2(x_3-x_1)\\
+			0 & 1 & 2x_3 - x_1 & 3x_3^2-2x_1x_3\\
+		\end{vmatrix}
+		\\
+		&= (x_3-x_1)
+		\begin{vmatrix}
+			1 & x_1 & x_1^2\\
+			1 & x_3 & x_3^2\\
+			1 & (2x_3 - x_1) & (3x_3^2-2x_1x_3)\\
+		\end{vmatrix}
+		\\
+		&= (x_3-x_1)
+		\begin{vmatrix}
+			1 & x_1 & x_1^2\\
+			1 & x_3 & x_3^2\\
+			-1 & - x_1 & x_3^2-2x_1 x_3\\
+		\end{vmatrix}
+		\\		
+		&= (x_3-x_1)
+		\begin{vmatrix}
+			1 & x_1 & x_1^2\\
+			0 & x_3-x_1 & x_3^2-x_1^2\\
+			0 & 0 & -(x_3-x_1)^2\\
+		\end{vmatrix}.
+	\end{align*}
+
+
+
+
+		
+	This is invertible in the given circumstance because
+	\begin{align*}\det (V''') &=
+		\begin{vmatrix}
+			1 & 0 & 0 & 0\\
+			0 & 1 & x_1 & x_1^2\\
+			0 & 0 & 2 & 4x_1\\
+			1 & x_4-x_1 & x_4(x_4-x_1) & x_4^2(x_4-x_1)\\
+		\end{vmatrix}
+		\\
+		&= 2 (x_4-x_1)
+		\begin{vmatrix}
+			1 & x_1 & x_1^2\\
+			0 & 1 & 2x_1\\
+			1 & x_4 & x_4^2\\
+		\end{vmatrix}
+		\\
+		&= 2 (x_4-x_1)
+		\begin{vmatrix}
+			1 & 0 & 0\\
+			0 & 1 & x_1\\
+			1 & x_4-x_1 & x_4(x_4-x_1)\\
+		\end{vmatrix}
+		\\
+		&= 2 (x_4-x_1)^3 \neq 0 \text{ for } x_1\neq x_4.
+	\end{align*}

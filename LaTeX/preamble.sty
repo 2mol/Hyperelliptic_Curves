@@ -1,0 +1,142 @@
+\ProvidesPackage{preamble}
+
+\usepackage{amsmath}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{units}
+\usepackage{datetime}
+
+\usepackage[mathcal]{euscript}
+\usepackage{bbm}
+\usepackage{parskip}
+\parskip 3mm
+% \parindent 3mm
+
+\usepackage{nicefrac}
+\usepackage{wasysym}
+\usepackage{enumerate}
+
+\usepackage{graphicx}
+\graphicspath{{./Graphics/}}
+% \usepackage{float}
+% \floatstyle{boxed} 
+% \restylefloat{figure}
+
+\usepackage{amsthm}
+\newtheoremstyle{definition}
+{6pt}% hSpace above
+{3pt}% hSpace below
+{}% hBody font
+{}% hIndent amount
+{\bfseries}% hTheorem head font       \itshape
+{:}% hPunctuation after theorem head
+{.5em}% hSpace after theorem head
+{}% hTheorem head spec (can be left empty, meaning `normal')
+\theoremstyle{definition}
+\newtheorem{defin}{Definition}
+
+\newtheoremstyle{remark}
+{6pt}% hSpace above
+{3pt}% hSpace below
+{}% hBody font
+{}% hIndent amount
+{\bfseries}% hTheorem head font       \itshape
+{:}% hPunctuation after theorem head
+{.5em}% hSpace after theorem head
+{}% hTheorem head spec (can be left empty, meaning `normal')
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\newtheoremstyle{case}
+{6pt}% hSpace above
+{3pt}% hSpace below
+{}% hBody font
+{}% hIndent amount
+{\scshape}% hTheorem head font       \itshape
+{,}% hPunctuation after theorem head
+{.5em}% hSpace after theorem head
+{}% hTheorem head spec (can be left empty, meaning `normal')
+\theoremstyle{case}
+\newtheorem{case}{Case}
+
+\newtheoremstyle{lemma}
+{6pt}% hSpace above
+{3pt}% hSpace below
+{}% hBody font
+{}% hIndent amount
+{\bfseries}% hTheorem head font       \itshape
+{:}% hPunctuation after theorem head
+{.5em}% hSpace after theorem head
+{}% hTheorem head spec (can be left empty, meaning `normal')
+\theoremstyle{lemma}
+\newtheorem{lemma}{Lemma}
+
+%\usepackage{sectsty}
+%\allsectionsfont{\sffamily}
+%\subsectionfont{\mdseries}
+
+\newcommand{\bigslant}[2]{{\raisebox{.2em}{$#1$}\left/\raisebox{-.2em}{$#2$}\right.}}
+
+\renewcommand{\P}{\mathbf{P}}
+\newcommand{\Q}{\mathbf{Q}}
+\newcommand{\R}{\mathbf{R}}
+\renewcommand{\S}{\mathbf{S}}
+\newcommand{\T}{\mathbf{T}}
+\newcommand{\W}{\mathbf{W}}
+
+\newcommand{\p}{\mathcal{P}}
+\newcommand{\q}{\mathcal{Q}}
+\renewcommand{\r}{\mathcal{R}}
+\let\oldt\t
+\renewcommand{\t}{\mathcal{T}}
+\newcommand{\w}{\mathcal{W}}
+\renewcommand{\a}{\mathcal{A}}
+\renewcommand{\b}{\mathcal{B}}
+\renewcommand{\u}{\mathcal{U}}
+\renewcommand{\v}{\mathcal{V}}
+\newcommand{\m}{\mathcal{M}}
+\newcommand{\n}{\mathcal{N}}
+
+
+\newcommand{\J}{\mathbf{J}}
+% \newcommand{\J}{\mathbbm{J}}
+\renewcommand{\j}{\mathcal{J}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\sumfo}{\sum_{i=1}^4 x_i}
+\newcommand{\sumsumfo}{\sum_{\substack{i,j=1\\i<j}}^4 x_i x_j}
+
+\let\oldbar\bar
+\renewcommand{\bar}{\overline}
+\renewcommand{\tilde}{\widetilde}
+\newcommand{\ek}{H(K)}
+\newcommand{\ekb}{H(\bar K)}
+\newcommand{\enk}{H_0(K)}
+\newcommand{\enkb}{H_0(\bar K)}
+%\renewcommand{\!}{\stackrel{!}{=}}
+
+\newcommand{\lp}{\lambda_{\q}}
+\newcommand{\li}{\lambda_{\infty}}
+\newcommand{\lpx}{\lambda_{\q}(x)}
+\newcommand{\lpy}{\lambda_{\q}(y)}
+\newcommand{\lpb}{\lambda_{\bar \q}}
+\newcommand{\lpbx}{\lambda_{\bar \q}(x)}
+\newcommand{\lpby}{\lambda_{\bar \q}(y)}
+\newcommand{\ord}{\text{ord\hspace{0.4mm}}}
+\newcommand{\ordx}{\text{ord}_{x_0}}
+\newcommand{\ordn}{\text{ord}_0\hspace{0.4mm}}
+\newcommand{\ordq}{\text{ord}_{\q}}
+\newcommand{\ordbq}{\text{ord}_{\bar \q}}
+\newcommand{\ordi}{\text{ord}_{\infty}}
+\newcommand{\ii}{\underline{\infty}}
+\newcommand{\ordii}{\text{ord}_{\ii}}
+
+\newcommand{\fline}{\rule{\textwidth}{0.005in}}
+
+\newcommand{\Vdoub}{V_1}
+\newcommand{\Vddoub}{V_{13}}
+\newcommand{\Vtri}{V_{11}}
+\newcommand{\Vquad}{V_{111}}
+\newcommand{\ydoub}{\mathbf{y}_1}
+\newcommand{\yddoub}{\mathbf{y}_{13}}
+\newcommand{\ytri}{\mathbf{y}_{11}}
+\newcommand{\yquad}{\mathbf{y}_{111}}

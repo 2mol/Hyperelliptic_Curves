@@ -1,0 +1,82 @@
+\documentclass[ngerman,11pt,a4paper,titlepage]{article}
+
+\usepackage{graphicx}
+\usepackage{bbm}
+\usepackage{esvect}
+\usepackage{amsmath}
+%\usepackage{mathtools}
+\usepackage{pifont}
+\usepackage{mathabx}
+\usepackage[mathcal]{euscript}
+\usepackage{units}
+\usepackage{wrapfig}
+\usepackage[super]{cite}
+\usepackage[german,ngerman]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage{fancyhdr}
+
+\pagestyle{fancyplain}
+
+\newcommand{\C}{\mathbbm C}
+\newcommand{\R}{\mathbbm R}
+\newcommand{\Q}{\mathbbm Q}
+\newcommand{\Z}{\mathbbm Z}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\K}{\mathcal{K}}
+\newcommand{\iQ}{\mathcal{Q}}
+
+\begin{document}
+\lhead{Juri Chomé}
+\rhead{\today}
+\cfoot{}
+\subsection*{Kapitel 4 - Northcott (Fortsetzung)}
+\vspace{5mm}
+\textbf{Hilfssatz 4.3:}
+\\*
+Für jedes $x \in K \subset L$ gilt
+\begin{align*}
+  H_L(x) = H_K(x)^d && \text{ mit } d = [L:K] .
+\end{align*}
+\vspace{-3mm}
+\\*
+\textbf{Beweisverlauf:}
+\\*
+Für Einbettungen klar, da $\sigma : K \to \C$ genau $d$ Einbettungen $\sigma_i$ liefert. Bleiben die Primideale zu überprüfen:
+%\end{list}
+\renewcommand{\labelenumi}{(\roman{enumi})}
+\begin{enumerate}
+  \item Betrachte $x\in \Z_K$ mit $x\Z_K=\wp^e\A$, $\wp \notdivides \A$ und erweitere auf $L$ mit $\wp_{L} = \prod \iQ_i^{e_i}$, $\iQ_i \in \Z_L$.
+    \vspace{2mm}
+    \\*
+    Zeige, dass $\prod |x|_{\iQ_i}=|x|_{\wp}^d.$
+  \item Zeige $|x|_{\iQ_i}=|x|_{\wp}^{\theta_i}$, $\theta_i > 0$ und daher $|x|_{\iQ_i} > 1 \Leftrightarrow |x|_{\wp} > 1$.
+  \item Verallgemeinere auf alle $x \in K^*$, da $x=\nicefrac{x_1}{x_2}$, $x_1,x_2\in \Z_K$ und die Bewertung multiplikativ ist.
+  \item Bemerke, dass jedes Primideal $\iQ \subset \Z_L$ eindeutig mit einem $\wp\subset \Z_K$ zusammenhängt.
+\end{enumerate}
+Alles zusammen ergibt, dass das Produkt über alle $\wp$ genau dem über alle $\iQ$ ist und die Behauptung folgt.
+%
+\vspace{8mm}
+\\*
+\textbf{Satz (Northcott):} Für jedes $T\in \R$ gilt
+\\*
+\begin{align*}
+  \#\{x\in K | H_K(x) \leq T \} < \infty.
+\end{align*}
+\textbf{Beweisverlauf:}
+\\*
+Klar für $K= \Q$ wegen $H(\nicefrac{r}{s})=\max \{|r|,|s| \}.$ Betrachte nun ein beliebiges $x$ und dessen charakteristisches Polynom
+\begin{align*}
+  P(t)=(t-\sigma_1(x)) \cdots (t-\sigma_d(x)) \in \Q [t].
+\end{align*}
+Definiere $\K := \Q(\sigma_1(x),\ldots,\sigma_d(x))$ und betrachte einen Koeffizienten $q$ von $P$ als Polynom in $\Z [\sigma_1(x),\ldots,\sigma_d(x)]$.
+\vspace{5mm}
+\\*
+Schätze nun $H$ ab mit
+\begin{align*}
+  H_\Q^{[\K : \Q]}(q) &= H_\K(q)\\
+  &\leq (2T)^{d[\K : \Q]}.
+\end{align*}
+Da Northcott für $\Q$ gilt, haben wir also nur endlich viele Möglichkeiten $q$ zu wählen, also ebenfalls endlich viele für $P$, da die $q$ die Koeffizienten von $P$ sind. Da $x$ eine Nullstelle von $P$ ist folgt die Behauptung, da es auch für $x$ nur endlich viele Möglichkeiten geben kann.
+%$\xRightarrow{abc}$
+\end{document}

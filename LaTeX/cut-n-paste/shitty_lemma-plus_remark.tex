@@ -1,0 +1,24 @@
+Before we continue with the special cases, we want to give some consequences to the above approach.%, namely why we chose the equivalence relation the way we did for the construction of $\J$.
+
+
+\textbf{Lemma:} The the general case imposes $\bar \P + \P = 0$ for all $\P \in \J$, so we might want to use the notation $\bar \P = -\P$.
+\vspace{-3mm}
+\begin{proof}
+  (i) Observe that if $\P_1+\P_2=\P_3 \in \enkb$ as in case 1, by symmetry the polynomial $-p(x)$ passes through the opposite points, meaning that
+  \begin{align*}
+  	\{ (x_5,-y_5),(x_6,-y_6) \} + \{ (x_3,-y_3),(x_4,-y_4) \} = \{ (x_1,y_1),(x_2,y_2) \}
+  \end{align*}
+  or simply put, $\P_3+\bar \P_2=\P_1$. Since the choice of $\P_1$ and $\P_2$ was free, the statement must hold for any point $\P \in \enkb$. A similar argument can be made for the points in $\ekb$.
+\end{proof}
+
+\begin{remark}\hfill
+\begin{enumerate}[(i)]
+  \item The Lemma implies that if $\P+\P=0$ then $\bar \P$ equals $\P$, so the only candidates for points of order two are of the form $\{ \q, \bar \q \}$ and those that can be written as $\{ (x_1,0),(x_2,0) \}$ with $x_1 \neq x_2$, the latter being called `special points'. As defined per our equivalence relation, the special points are therefore the only non-trivial points of order two.
+
+  \item Not only are we forced to accept the equivalence of $\{\q_1,\q_2\}$ and $\{\q_2,\q_1\}$ but if we want to construct the special cases as valid limit-cases of step 1 and 2, we must accept interchangeability between the point-components, meaning $\{\q_1,\q_2\} + \{\q_3,\q_4\}$ has to give the same result as $\{\q_1,\q_3\}+\{\q_2,\q_4\}$ and $\{\q_1,\q_4\}+\{\q_2,\q_3\}$. Figure \ref{fig_generalcase} hints at the necessity of this property.
+
+  \item As a bonus, the previous point gives us commutativity on $\J$ for free.
+\end{enumerate}
+\end{remark}
+
+We use property (ii) to make the coming case-distinctions more concise. Since we don't care which points in $\J$ the different $\q_i$ belong to, we are allowed to impose conditions on the latter without any further specifications.

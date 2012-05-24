@@ -1,0 +1,85 @@
+\documentclass[english,11pt,a4paper]{article}
+\usepackage{preamble}
+
+\begin{document}
+
+\scriptsize \hfill Juri - Hilfssätze \& Associativity --- Sketch --- \today \normalsize
+
+Function field $\F_H = \F = \nicefrac{K(x)[y]}{(y^2-C(x))}$.
+
+Construction of the field-homomorphism $\lambda_{\q}: \F \rightarrow \bar K((t))$. Three cases as in EK1. (write this out, the only relevant difference is $\lambda_\infty(y) \mapsto t^{-5}\sqrt\tau$).
+
+The Lemmas 1 through 7 from EK1 remain valid. (write these out and prove where necessary)
+
+So given that $(f) = \frac{* *}{2\infty}$ implies $f=\alpha + \beta x$ (Lemma 7) we consider the next two higher cases. (I will use the sum notation for the divisors next time).
+
+\vspace{-3mm}
+\fline
+\vspace{-3.5mm}
+
+\textbf{Minilemma 1}: If $f$ is such that $\lambda_\infty (f)=\gamma t^e + \dots$ then $\lambda_\infty (\bar f)=-\gamma t^e + \dots$
+
+\begin{proof}
+	Let $\lambda_\infty (\bar f) = \tilde \gamma t^e + \dots$. Since $f + \bar f = 2p$ and ord$_\infty(p)$ is always even for $p \in K(x)$, we must have $(\gamma + \tilde \gamma)t^{-3} + \dots = \sigma t^{-2} + \dots$ so $\gamma = - \tilde \gamma$.
+\end{proof}
+
+\textbf{Lemma 2:} Let $f \in \F^*$ with $(f)=\frac{***}{3\infty}$. Then $f = \alpha + \beta x$.
+\begin{proof}
+	Let $f=p+qy$ with $p, q \in K(t)$. We have $\lambda_\infty (f + \bar f) = \sigma t^{-2} + \dots$ so $p = \frac{1}{2} (f+\bar f) = \alpha + \beta x$.
+
+	Now, consider $f-\bar f = 2qy$. We get $\lambda_\infty (f-\bar f) = 2 \lambda_\infty (q) t^{-5} \sqrt \tau = 2 \gamma t^{-3}+\dots$ and since $\sqrt \tau$ is a a series of the form $1 + \dots$ we must have $\lambda_\infty (q) = \gamma t^2 + \dots$
+
+	Suppose $q \neq 0$, this implies $\frac{1}{q} = \tilde \delta + \tilde \epsilon x$. Rewriting to accomodate for $q=0$ gives $q=\frac{\epsilon}{x-\delta}$ with $\delta, \epsilon \in K$ as well so
+	\begin{align*}
+	  f=\alpha + \beta x +\frac{\epsilon}{x-\delta}y
+	\end{align*}
+	However, now $\lambda_\q (f) = \alpha + \beta (t^2+\delta) + \epsilon \sqrt \mu \frac{t \sqrt \tau}{t^2}$ for $\q = (\delta,0)$ which is equal to $\epsilon \sqrt \mu t^{-1} + \dots$. If $\epsilon \neq 0$ ($\mu$ is non zero anyway) this means that $\q$ is a new (true) pole for $f$ which contradicts $(f)=\frac{***}{3\infty}$, so $q$ must be 0.
+\end{proof}
+
+\textbf{Lemma 3:} Let $f \in \F^*$ with $(f)=\frac{****}{4\infty}$. Then $f = \alpha + \beta x + \gamma x^2$.
+
+\begin{proof}
+	(different function $f$): With $\lambda_\infty(f) = \gamma t^{-4}+\dots$ so $\lambda_\infty(f-\gamma x^2)$ being of the form $\sigma t^{-3}+\dots$ we fall into the case above and the claim follows.
+\end{proof}
+\vspace{-8mm}
+\fline
+
+Now, suppose we have the equivalent of the Haupthilfssatz from EK1 (This has yet to be proven and of course and could turn out to be quite the behemoth):
+
+\textbf{Theorem} For any $\P_1=\{\q_1,\q_2\}, \P_2= \{\q_3,\q_4\}$ such that $\P_1 + \P_2 = \P_3 = \{\q_5,\q_6\}$ we have a function $f$ in $\F$ such that $(f) = \frac{\q_1 \q_2 \q_3 \q_4}{\q_5 \q_6 \infty \infty}$.
+
+Here's the main result in hopefully legible notation:
+
+\textbf{Theorem} \textit{(Associativity)}: Given
+\begin{align*}
+	\underbrace{(\P + \Q)}_{= \T} + \R &= \S
+	\\
+	\text{and\hspace{8mm}}\P + \underbrace{(\Q + \R)}_{=\W} &= \S'
+\end{align*}
+with
+\begin{gather*}
+  \P=\{\p_1,\p_2\}, 
+  \Q=\{\q_1,\q_2\}, 
+  \R=\{\r_1,\r_2\}, 
+  \T=\{\t_1,\t_2\}, 
+  \W=\{\w_1,\w_2\},
+  \\
+  \S = \{\a, \b \}, 
+  \S' = \{\u, \v \},
+  \\
+  \a = (a,*), \b = (b,*)
+\end{gather*}
+we have a function $f$ with the following divisor:
+\begin{align*}
+  (f)=\frac{\p_1 \p_2 \q_1 \q_2}{\t_1 \t_2 \infty \infty}\frac{\t_1 \t_2 \r_1 \r_2}{\a \b \infty \infty}\frac{\u \v \infty \infty}{\p_1 \p_2 \w_1 \w_2}\frac{\w_1 \w_2 \infty \infty}{\q_1 \q_2 \r_1 \r_2} =\frac{\u \v}{\a \b}.
+\end{align*}
+This means that $\tilde f = f(x-a)(x-b)$ has divisor $(\tilde f) = \frac{\bar \a\hspace{.5mm}\bar \b\hspace{.5mm} \u\hspace{.5mm} \v}{4 \infty}$. By the last Lemma $\tilde f$ must be of the form $\kappa(x-\alpha_1)(x-\alpha_2)\in \bar K [x]$ and so
+\begin{align*}
+	f=\frac{\kappa(x-\alpha_1)(x-\alpha_2)}{(x-a)(x-b)}.
+\end{align*}
+But this has divisor
+\begin{align*}
+	(f) = \frac{\m \bar \m \n \bar \n}{\a \bar \a \b \bar \b}.
+\end{align*}
+So either $\a = \m$ and $\b = \bar \m$ or $\a = \m$ and $\b = \n$. First case implies $\S$ and $\S'$ equivalent to 0, second case implies $(f)=\frac{\a \b}{\a \b}$ and in both cases we're done.
+\end{document}

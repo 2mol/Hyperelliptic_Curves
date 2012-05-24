@@ -1,0 +1,45 @@
+\documentclass[ngerman,11pt,a4paper]{article}
+
+
+\usepackage{amsmath}
+\usepackage[german,ngerman]{babel}
+\usepackage[utf8]{inputenc}
+
+\begin{document}
+
+If $x_i \neq x_j$ for $i \neq j$ and $\prod_{i=1}^4 x_i \neq 0$, solve
+\begin{align*}
+  x_5^2+x_5(T_1-\sum_{i=1}^4 x_i) - \frac{T_2}{\prod_{i=1}^4 x_i} = 0
+\end{align*}
+
+with
+
+\begin{align*}
+  T_1 &= \frac{1-2j_2 j_3}{j_3^2}\\
+  T_2 &= \frac{j_0-e}{j_3^2}.
+\end{align*}
+
+Otherwise, if $x_i \neq x_j$ but $x_k = 0$ for some $k$ then solve
+
+\begin{align*}
+  x_5^2+x_5(T_1-\sum_{\substack{i=1 \\ i \neq k}}^4 x_i) - \frac{T_3}{\prod_{\substack{i=1 \\ i \neq k}}^4 x_i} = 0
+\end{align*}
+
+with
+
+\begin{align*}
+  T_3 &= \frac{d-2 j_0 j_1}{j_3^2}.
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
