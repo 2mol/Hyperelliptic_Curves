@@ -67,13 +67,13 @@ From now on we will use an ellipsis to denote terms of ascending order everywher
 		\end{align*}
 		with $\mu \in \bar K$ being $\prod_{i=2}^5 (x_0 - \alpha_i) = C'(x_0)$ which is non-zero because our curve is non-singular. Write therefore $C(\lpx) = \mu t^2 \tau_2$ with $\tau_2 = 1 + \dots$ and define $\lpy = \nu t \sigma_2$ with $\sigma_2 = \sqrt{\tau_2}$ and $\nu^2 = \mu$.%$\nu = \sqrt{\mu}$ for a fixed $\sqrt{\phantom{j}}:K\rightarrow K$.
 
-		\item Let $\q = \infty$. Define $\lpx = \frac{1}{t^2}$. It follows that
+		\item Let $\q = \infty$. Define $\lpx = t^{-2}$. It follows that
 		\begin{align*}
-			C(\frac{1}{t^2}) &= \frac{1}{t^{10}} + \frac{a}{t^8} + \frac{b}{t^6}
-											  + \frac{c}{t^4}    + \frac{d}{t^2} + e\\
-											 &= \frac{1}{t^{10}} (1 + \dots)
+			C(t^{-2}) &= t^{-10} + at^{-8} + bt^{-6}
+											  + ct^{-4}    + dt^{-2} + e\\
+											 &= t^{-10} (1 + \dots)
 		\end{align*}
-		So define $\lpy = \frac{1}{t^5}\sigma_3$ with the notation $\sigma_3 = \sqrt{\tau_3}$ as before.
+		So define $\lpy = t^{-5}\sigma_3$ with the notation $\sigma_3 = \sqrt{\tau_3}$ as before.
 	\end{enumerate}
 \end{defin}
 
@@ -112,7 +112,7 @@ From now on we will use an ellipsis to denote terms of ascending order everywher
   \begin{enumerate}[(a)]\parskip 1mm
 	  \item $\ordq (f) = \ordx f(x)$ if $\q = (x_0,y_0) \in \enkb$ with $y_0 \neq 0$.
 	  \item $\ordq (f) = 2 \ordx f(x)$ if $\q = (x_0,0) \in \enkb$.
-	  \item $\ordi (f) = 2 \ordn f(\frac{1}{x}) = 2 \ordii f(x)$.
+	  \item $\ordi (f) = 2 \ordn f(\frac 1 x) = 2 \ordii f(x)$.
 	\end{enumerate}\parskip 3mm
 	\textbf{Note} that the righthand sides of the equalities refer to the usual definition of the order of a rational function in a point $x_0 \in \bar K \cup \{ \ii \}$.%xxx We renamed the infinity in order to avoid a clash of notations.
 	\begin{proof}
@@ -122,9 +122,9 @@ From now on we will use an ellipsis to denote terms of ascending order everywher
 
 	  	\item Here $\lp (f) = f(x_0 + t^2) = t^{2e} g(x_0 + t^2)$ and again $g(x_0 + t^2) = g(x_0) + \dots$ so $\ord \lp (f) = 2e$.
 
-	  	\item For $\q = \infty$ we have $\lp (f) = f(\frac{1}{t^2}) = \frac{\alpha}{t^{2d}}+ \dots$ with $\alpha \neq 0$ if $d = \deg f$. Obviously, $\ordn f(\frac 1 x ) = \ordn \frac{\alpha + \dots}{x^d} = -d$ so $\ord \lp (f) = 2 \ordn f(\frac 1 x )$.
+	  	\item For $\q = \infty$ we have $\lp (f) = f(t^{-2}) = \alpha t^{-2d}+ \dots$ with $\alpha \neq 0$ if $d = \deg f$ so $\ordn f(\frac 1 x ) = -d$ and so $\ord \lp (f) = 2 \ordn f(\frac 1 x )$.
 		\end{enumerate}
-		Generally, if $f \in K(x)$ we can write $f = \frac p q$ for $p, q \in K[x]$ and we apply the above to $p$ and $q$, subtracting $\ordq q$ from $\ordq p$.
+		Generally, if $f \in K(x)$ we can write $f = \frac p q$ for $p, q \in K[x]$ and we apply the above to $p$ and $q$, subtracting $\ordq q$ from $\ordq p$.%xxx check this through?
 	\end{proof}
 \end{lemma}
 
@@ -145,7 +145,7 @@ From now on we will use an ellipsis to denote terms of ascending order everywher
     	\end{align*}
     	Calling this $l(t) = \lp (\bar f)$ and looking at the construction of $\lp$ we see that $\tau$ sports only even powers of $t$ so we see above that $l(-t) = \lp (f)$. As interchanging $t$ with $-t$ doesn't change the order, we're done.
 
-    	\item For $\q = \infty$, $\tau = 1 + a t^2 + b t^4 + c t^6 + d t^8 + c t^{10}$ features only even powers as well, so again $l(-t) = \lp (f)$ for $l(t) = \lp (\bar f) = g(\frac{1}{t^2}) - h(\frac{1}{t^2}) \frac{1}{t^5} \sqrt{\tau}$. Finally, $\lp (f)$ is equal to $\lpb (f)$ since $\infty = \bar \infty$. Again $\ord l(t) = \ord l(-t)$.
+    	\item For $\q = \infty$, $\tau = 1 + a t^2 + b t^4 + c t^6 + d t^8 + c t^{10}$ features only even powers as well, so again $l(-t) = \lp (f)$ for $l(t) = \lp (\bar f) = g(t^{-2}) - h(t^{-2}) t^{-5} \sqrt{\tau}$. Finally, $\lp (f)$ is equal to $\lpb (f)$ since $\infty = \bar \infty$. Again $\ord l(t) = \ord l(-t)$.
     \end{enumerate}
   \end{proof}
 \end{lemma}
@@ -230,10 +230,10 @@ From now on we will use an ellipsis to denote terms of ascending order everywher
 	Suppose $f \in \F^*$ has at most one pole at $\infty$ i.e. $\ordi f \geq -1$ and none for any other $\q \in \enkb$ so $\ordq f \geq 0$. Then $f$ is a constant.
 
 	\begin{proof}
-		With $f = g+hy$ such that $\ordq f \geq 0$ for every $\q \in \enkb$ and $\ordi f = -1$ we can write $\li (f) = \frac \kappa t + \dots$ with $\kappa \in \bar K$. Since we are only interested in the order, replace $f$ with $\frac f \kappa$ so $\li (f) = \frac 1 t + \dots$.
+		With $f = g+hy$ such that $\ordq f \geq 0$ for every $\q \in \enkb$ and $\ordi f = -1$ we can write $\li (f) = \kappa t^{-1} + \dots$ with $\kappa \in \bar K$. Since we are only interested in the order, replace $f$ with $\kappa^{-1} f$ so $\li (f) = t^{-1} + \dots$.
 		%With $f = g+hy$ such that $\ordq f \geq 0$ for every $\q \in \enkb$ we can assume that $\ordi f = -1$ because Lemma~\ref{nopol}. and $\li (f) = \frac 1 t + \dots$. If the trailing coefficient of $\li (f)$ were different from one, we can always xxx where $\alpha \in \bar K$. Due to  we assume that $\alpha \neq 0$ and may even take $\alpha = 1$ by replacing $f$ with $\frac f \alpha$.
 
-		Now remember that $\li (x) = \frac{1}{t^2}$ so $\li (x - f^2) = \frac \alpha t + \dots$, $\alpha \in \bar K$ and finally we have a regular power series $\li (x - f^2 - \alpha f)$ so
+		Now remember that $\li (x) = t^{-2}$ so $\li (x - f^2) = \alpha t^{-1} + \dots$, $\alpha \in \bar K$ and finally we have a regular power series $\li (x - f^2 - \alpha f)$ so
 		\begin{align*}
 		  \ordi (x - f^2 - \alpha f) &\geq 0\\
 		\intertext{and for any other $\q \in \enkb$ we have}
@@ -241,10 +241,10 @@ From now on we will use an ellipsis to denote terms of ascending order everywher
 		\end{align*}
 		which is positive by virtue of the prerequisite on $f$ and $\lpx = x_0 + \dots$. The previous Lemma now implies $x - f^2 - \alpha f \in \bar K$ so we see $x = f^2 + \alpha f$ as a polynomial $x = X(f)$ with $X(T) \in \bar K[T] \setminus \bar K$.
 
-		Do the same thing with $\lpy = \frac{1}{t^5}\sqrt \tau = \frac{1}{t^5} + \dots$ so
+		Do the same thing with $\lpy = t^{-5}\sqrt \tau = t^{-5} + \dots$ so
 		\begin{align*}
-		  \lp (y - f^5) &= \frac{\beta_4}{t^4} + \dots,\\
-		  \lp (y - f^5 - \beta_4 f^4) &= \frac{\beta_3}{t^3} + \dots
+		  \lp (y - f^5) &= \beta_4 t^{-4} + \dots,\\
+		  \lp (y - f^5 - \beta_4 f^4) &= \beta_3 t^{-3} + \dots
 		\end{align*}
 		and so on, so finally $\lp (y - f^5 - \beta_4 f^4 - \beta_3 f^3 - \beta_2 f^2 - \beta_1 f)$ is a power series again and must be in $\bar K$. As before $y = f^5 + \beta_4 f^4 + \beta_3 f^3 + \beta_2 f^2 + \beta_1 f = Y(f)$ with $Y(T)\in \bar K[T] \setminus \bar K$.
 
