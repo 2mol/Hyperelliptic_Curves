@@ -3,6 +3,9 @@
 
 \begin{document}
 
+Version 1 \scriptsize \hfill Juri; Hyperelliptic Curves --- Draft --- \today
+\normalsize
+
 \section{Rational Functions on Hyperelliptics}
 
 The goal of this chapter is to look at rational functions on the curve $y^2 = C(x)$ and to develop a reasonable notion of the order of a function in a point on the curve. We then give some basic properties for this order function before we introduce divisors and proceed to look at functions with a specified number of poles at infinity as a final preparation for the proof of associativity on $\J$. xxx %introduce divisors with the ultimate goal of xxx Blah
@@ -84,14 +87,14 @@ From now on we will use an ellipsis to denote terms of ascending order everywher
 % \vspace{0.6mm}
 
 \begin{lemma}\label{one}
-  Let $f \ in K[x,y] \subset \F$, $f \neq 0$ and $\q \in \enkb$, $\q = (x_0,y_0)$. Then
+  Let $f \in K[x,y] \subset \F$, $f \neq 0$ and $\q \in \enkb$, $\q = (x_0,y_0)$. Then
   \begin{enumerate}[(a)]\parskip 1mm
 	  \item ord$_{\q} f \geq 0$ and
 	  \item if $f(\q) = 0$ then ord$_{\q} f \geq 1$.
 	\end{enumerate}\parskip 3mm
 	\begin{proof}\hfill
 		\begin{enumerate}[(a)]\parskip 1mm
-	  	\item Because $\q \in \enkb$ we have $\lpx$, $\lpy \in \bar K[[t]]$ and with $f \in K[x,y]$ we have $\ordq (f) \geq 0$.
+	  	\item Because $\q \in \enkb$ we have $\lpx$, $\lpy \in \bar K[[t]]$ and with $f \in K[x,y]$ we have $\ordq (f) \in \mathbbm{N}$.
 	  	\item Write $f = A(x,y)$, $A(X,Y) \in K[X,Y]$. First, let $y_0 \neq 0$.
 	  	\begin{align*}
 	  	  \ordq f &= \ord A(\lpx, \lpy)\\
@@ -111,7 +114,7 @@ From now on we will use an ellipsis to denote terms of ascending order everywher
 	  \item $\ordq (f) = 2 \ordx f(x)$ if $\q = (x_0,0) \in \enkb$.
 	  \item $\ordi (f) = 2 \ordn f(\frac{1}{x}) = 2 \ordii f(x)$.
 	\end{enumerate}\parskip 3mm
-	\textbf{Note} that the righthand sides of the equalities refer to the usual definition of the order of a rational function in a point $x_0 \in \bar K \cup \{ \ii \}$. We renamed the infinity in order to avoid a clash of notations.
+	\textbf{Note} that the righthand sides of the equalities refer to the usual definition of the order of a rational function in a point $x_0 \in \bar K \cup \{ \ii \}$.%xxx We renamed the infinity in order to avoid a clash of notations.
 	\begin{proof}
 		First take $f \in K[x]$ and define $e = \ordx f \in \mathbbm{N}$ so $f = (x-x_0)^e g(x)$ with $g \in \bar K[x]$ and $g(x_0)\neq 0$.
 		\begin{enumerate}[(a)]
@@ -127,7 +130,7 @@ From now on we will use an ellipsis to denote terms of ascending order everywher
 
 \begin{lemma}\label{three}
   For $f \in \F^*$ and $\q \in \ekb$ the order satisfies $\ordq(\bar f) = \ordbq (f)$
-  \begin{proof}\hfill
+  \begin{proof} Split into three possible cases:
     \begin{enumerate}[1.]
     	\item For $\q \in \enkb$ with $y_0 \neq 0$ we've got $\lpx = x_0 + t$ and $\lpy = y_0 \sqrt \tau$. Therefore $\lpbx = x_0 + t = \lp (\bar x)$ and $\lpby = - y_0 \sqrt \tau = \lp (\bar y)$ so
     	\begin{align*}
@@ -198,7 +201,7 @@ From now on we will use an ellipsis to denote terms of ascending order everywher
   \begin{align*}
     (f) = \sum_{\q \in \ekb} \ordq f \cdot \q
   \end{align*}
-  where the empty sum is written (f) = 0 in case $f = 0$. Thanks to Lemma \ref{sform} the sum is finite and the sum of coefficients is 0.
+  where $(f) = 0$ if $f = 0$. Thanks to Lemma \ref{sform} the sum is finite and the sum of all coefficients is 0.
 
   Points $\q \in \ekb$ with a positive coefficient in $(f)$ are called zeroes of $f$ while those with a negative coefficient are called poles.
 \end{defin}
@@ -219,29 +222,33 @@ From now on we will use an ellipsis to denote terms of ascending order everywher
 	\end{proof}
 \end{lemma}
 
+\begin{theorem}\label{satz1}
+  Let $x = x(t)$, $y = y(t) \in K(t)$ such that $y(t)^2 = C(x(t))^2$. Then $x(t)$, $y(t) \in K$.
+\end{theorem}
+
 \begin{lemma}
 	Suppose $f \in \F^*$ has at most one pole at $\infty$ i.e. $\ordi f \geq -1$ and none for any other $\q \in \enkb$ so $\ordq f \geq 0$. Then $f$ is a constant.
 
 	\begin{proof}
-		With $f = g+hy$ such that $\ordq f \geq 0$ for every $\q \in \enkb$ and $\ordi f = -1$ we can write $\li (f) = \frac \alpha t + \dots$ with $\alpha \in \bar K$. Since we are only interested in the order, replace $f$ with $\frac f \alpha$
+		With $f = g+hy$ such that $\ordq f \geq 0$ for every $\q \in \enkb$ and $\ordi f = -1$ we can write $\li (f) = \frac \kappa t + \dots$ with $\kappa \in \bar K$. Since we are only interested in the order, replace $f$ with $\frac f \kappa$ so $\li (f) = \frac 1 t + \dots$.
 		%With $f = g+hy$ such that $\ordq f \geq 0$ for every $\q \in \enkb$ we can assume that $\ordi f = -1$ because Lemma~\ref{nopol}. and $\li (f) = \frac 1 t + \dots$. If the trailing coefficient of $\li (f)$ were different from one, we can always xxx where $\alpha \in \bar K$. Due to  we assume that $\alpha \neq 0$ and may even take $\alpha = 1$ by replacing $f$ with $\frac f \alpha$.
 
-		Now remember that $\li (x) = \frac{1}{t^2}$ so $\li (x - f^2) = \frac \beta t + \dots$, $\beta \in \bar K$ and finally we have a regular power series $\li (x - f^2 - \beta f)$ so
+		Now remember that $\li (x) = \frac{1}{t^2}$ so $\li (x - f^2) = \frac \alpha t + \dots$, $\alpha \in \bar K$ and finally we have a regular power series $\li (x - f^2 - \alpha f)$ so
 		\begin{align*}
-		  \ordi (x - f^2 - \beta f) &\geq 0\\
+		  \ordi (x - f^2 - \alpha f) &\geq 0\\
 		\intertext{and for any other $\q \in \enkb$ we have}
-		  \ordq (x - f^2 - \beta f) &\geq \min \{ \ordq (x) , \ordq (f^2) , \ordq f \}
+		  \ordq (x - f^2 - \alpha f) &\geq \min \{ \ordq (x) , \ordq (f^2) , \ordq f \}
 		\end{align*}
-		which is positive by virtue of the prerequisite on $f$ and $\lpx = x_0 + \dots$. The previous Lemma now implies $x - f^2 - \beta f \in \bar K$ so we see $x = f^2 + \beta f$ as a polynomial $x = X(f)$ with $X(T) \in \bar K[T]$.
+		which is positive by virtue of the prerequisite on $f$ and $\lpx = x_0 + \dots$. The previous Lemma now implies $x - f^2 - \alpha f \in \bar K$ so we see $x = f^2 + \alpha f$ as a polynomial $x = X(f)$ with $X(T) \in \bar K[T] \setminus \bar K$.
 
 		Do the same thing with $\lpy = \frac{1}{t^5}\sqrt \tau = \frac{1}{t^5} + \dots$ so
 		\begin{align*}
-		  \lp (y - f^5) &= \frac{\gamma}{t^4} + \dots,\\
-		  \lp (y - f^5 - \gamma f^4) &= \frac{\delta}{t^3} + \dots
+		  \lp (y - f^5) &= \frac{\beta_4}{t^4} + \dots,\\
+		  \lp (y - f^5 - \beta_4 f^4) &= \frac{\beta_3}{t^3} + \dots
 		\end{align*}
-		so finally $\lp (y - f^3 - \gamma f^2 - \delta f)$ is a power series again and must actually be in $\bar K$. Like before, $y = f^3 + \gamma f^2 + \delta f = Y(f)$ with $Y(T)\in \bar K[T]$.
+		and so on, so finally $\lp (y - f^5 - \beta_4 f^4 - \beta_3 f^3 - \beta_2 f^2 - \beta_1 f)$ is a power series again and must be in $\bar K$. As before $y = f^5 + \beta_4 f^4 + \beta_3 f^3 + \beta_2 f^2 + \beta_1 f = Y(f)$ with $Y(T)\in \bar K[T] \setminus \bar K$.
 
-		Combined we have $Y(f)^2 = C(X(f))$ but $K$ is algebraically closed, so either $f \in \bar K$ or $Y(T)^2 = C(X(T))$. The latter can't be true since xxx proves/says $X, Y \in \bar K$ but both are of degree strictly higher than one. % so $\left. Y(T)^2 - C(X(T)) \right|_{T=f} = 0$. This means that either
+		Combined we have $Y(f)^2 = C(X(f))$ but $K$ is algebraically closed, so either $f \in \bar K$ or $Y(T)^2 = C(X(T))$. The latter can't be true by Theorem \ref{satz1} and the former is in contradiction to $\ordi f = -1$, so actually $\ordi f \geq 0$.% so $\left. Y(T)^2 - C(X(T)) \right|_{T=f} = 0$. This means that either
 	\end{proof}
 \end{lemma}
 
