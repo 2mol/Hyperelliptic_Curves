@@ -218,16 +218,16 @@ From now on we will use an ellipsis to denote terms of ascending order everywher
 	  \end{align*}
 	  Both are greater than zero because $f$ has no poles and with the help of Lemma \ref{two} we conclude that $\ordx (f + \bar f) \geq 0$ and $\ordx (f \bar f) \geq 0$ respectively.
 
-	  But in $\bar K(x)$, a function $q$ with $\ordx q \geq 0$ for every $x_0 \in \bar K \cup \{ \ii \}$ must be constant, so both $f + \bar f$ and $f \bar f$ are constant functions. Since $f$ is a root of $(T-f)(T-\bar f) = T^2 - (f + \bar f)T + f \bar f$ which lies in $\bar K[T]$, $f$ lies in $\bar K$.
+	  But in $\bar K(x)$, a function $q$ with $\ordx q \geq 0$ for every $x_0 \in \bar K \cup \{ \ii \}$ must be constant, so both $f + \bar f$ and $f \bar f$ are constant functions. Since $f$ is a root of $(T-f)(T-\bar f) = T^2 - (f + \bar f)T + f \bar f$ which lies in $\bar K[T]$, $f$ lies in $\bar K \hspace{0.5mm} \cap \ \F^*$.
 	\end{proof}
 \end{lemma}
 
 \begin{theorem}\label{satz1}
-  Let $x = x(t)$, $y = y(t) \in K(t)$ such that $y(t)^2 = C(x(t))^2$. Then $x(t)$, $y(t) \in K$.
+  For a field $K$, let $x = x(t)$, $y = y(t) \in K(t)$ such that $y(t)^2 = C(x(t))^2$. Then $x(t)$, $y(t) \in K$.
 \end{theorem}
 
-\begin{lemma}
-	Suppose $f \in \F^*$ has at most one pole at $\infty$ i.e. $\ordi f \geq -1$ and none for any other $\q \in \enkb$ so $\ordq f \geq 0$. Then $f$ is a constant.
+\begin{lemma}\label{onepol}
+	Suppose $f \in \F^*$ has at most one pole at $\infty$ i.e. $\ordi f \geq -1$ and none for any other $\q \in \enkb$. Then $f$ is a constant $\alpha \in K$.
 
 	\begin{proof}
 		With $f = g+hy$ such that $\ordq f \geq 0$ for every $\q \in \enkb$ and $\ordi f = -1$ we can write $\li (f) = \kappa t^{-1} + \dots$ with $\kappa \in \bar K$. Since we are only interested in the order, replace $f$ with $\kappa^{-1} f$ so $\li (f) = t^{-1} + \dots$.
@@ -252,24 +252,52 @@ From now on we will use an ellipsis to denote terms of ascending order everywher
 	\end{proof}
 \end{lemma}
 
-\begin{lemma}
-	If $f \in \F^*$ has at most two poles at $\infty$ then $f$ is of the form $f = \alpha + \beta x$ with $\alpha, \beta \in K$.
+% \begin{lemma}%xxx incorporate this in proof of next lemma
+%   If $f$ is such that $\li (f)=\kappa t^3 + \dots$ then $\li (\bar f)=-\kappa t^3 + \dots$
+% \begin{proof}
+% 	By Lemma \ref{three} let $\li (\bar f) = \tilde \kappa t^3 + \dots$. Since $f + \bar f = 2p$ and ord$_\infty(p)$ is always even for $p \in K(x)$, we must have $\kappa + \tilde \kappa =0$.
+% \end{proof}
+% \end{lemma}
+
+\begin{lemma}\label{twopol}
+	If $f \in \F^*$ has at most two poles at $\infty$ and $\ordq f \geq 0$ for every $\q \in \enkb$ then $f$ is of the form $f = \alpha + \beta x$ with $\alpha, \beta \in K$.
 	\begin{proof}
-	
+		Because $\li (f) = \beta t^{-2} + \dots$ where $\beta \in K$ we have $\li (f - \beta x)= \gamma t^{-1} + \dots$ and thanks to Lemma \ref{onepol} we know this to imply $f - \beta x = \alpha$.
 	\end{proof}
 \end{lemma}
 
+% \begin{remark}
+%   Its easy to see that if $f$ is such that $\li (f)=\kappa t^3 + \dots$ then $\li (\bar f)=-\kappa t^3 + \dots$.	By Lemma \ref{three} let $\li (\bar f) = \tilde \kappa t^3 + \dots$. Since $f + \bar f = 2p$ and ord$_\infty(p)$ is always even for $p \in K(x)$, we must have $\kappa + \tilde \kappa =0$.
+% \end{remark} 
+
 \begin{lemma}
-	If $f \in \F^*$ has at most three poles at $\infty$ then $f$ is of the form $f = \alpha + \beta x$ with $\alpha, \beta \in K$.
+	If $f \in \F^*$ has at most three poles at $\infty$ and $\ordq f \geq 0$ for every $\q \in \enkb$ then $f$ is of the form $f = \alpha + \beta x$ with $\alpha, \beta \in K$.
 	\begin{proof}
-	
+		We can see that for instance for $\alpha_1$ one of the roots of $C(x)$ we have
+		\begin{align*}
+			\li (\frac{y}{x-\alpha_1}) &= (t^{-2} - \alpha_1)^{-1} t^{-5} \sqrt{\tau_3}\\
+			&= t^2 (1 + \dots)^{-1} t^{-5}(1 + \dots)\\
+			&= t^{-3} (1 + \dots).
+		\end{align*}
+		So if $\li (f) = \gamma t^{-3} + \dots$ then per Lemma \ref{twopol} we have
+		\begin{align*}
+			f - \gamma \frac{y}{x-\alpha_1} = \alpha + \beta x.
+		\end{align*}
+		But now for $\q = (\alpha_0, 0)$ we have
+		\begin{align*}
+		  \lp (f) &= \alpha + \beta (\alpha_1 + t^2) + \gamma \frac{\nu t \sqrt \tau_2}{t^{2}}
+		\end{align*}
+		and $\ordq (f) \geq 1$ so $\gamma$ must be 0 since $f$ does not have any poles in $\enkb$.
+		%We have $\lp (f) = \gamma t^{-3} + \dots$ and so $\lp (f - \bar f) = \delta t^{-2} + \dots$ because the order at infinity of $f - \bar f \in K(x)$ must be even by Lemma \ref{two} (c).
+
+
 	\end{proof}
 \end{lemma}
 
 \begin{lemma}
 	If $f \in \F^*$ has at most four poles at $\infty$ then $f$ is of the form $f = \alpha + \beta x + \gamma x^2$ with $\alpha, \beta, \gamma \in K$.
 	\begin{proof}
-	
+	  With $\li (f) = \gamma t^{-4} + \dots$ we know that $\li (f - \gamma x^2) = \delta t^{-3} + \dots$ and we use the previous Lemma to see that $f - \gamma x^2 = \alpha + \beta x$.
 	\end{proof}
 \end{lemma}
 
@@ -282,33 +310,33 @@ From now on we will use an ellipsis to denote terms of ascending order everywher
 
 
 
-\fline
+% \fline
 
-\textbf{Minilemma 1}: If $f$ is such that $\lambda_\infty (f)=\gamma t^e + \dots$ then $\lambda_\infty (\bar f)=-\gamma t^e + \dots$
+% \textbf{Minilemma 1}: If $f$ is such that $\li (f)=\gamma t^e + \dots$ then $\li (\bar f)=-\gamma t^e + \dots$
 
-\begin{proof}
-	Let $\lambda_\infty (\bar f) = \tilde \gamma t^e + \dots$. Since $f + \bar f = 2p$ and ord$_\infty(p)$ is always even for $p \in K(x)$, we must have $(\gamma + \tilde \gamma)t^{-3} + \dots = \sigma t^{-2} + \dots$ so $\gamma = - \tilde \gamma$.
-\end{proof}
+% \begin{proof}
+% 	Let $\li (\bar f) = \tilde \gamma t^e + \dots$. Since $f + \bar f = 2p$ and ord$_\infty(p)$ is always even for $p \in K(x)$, we must have $(\gamma + \tilde \gamma)t^{-3} + \dots = \sigma t^{-2} + \dots$ so $\gamma = - \tilde \gamma$.
+% \end{proof}
 
-\textbf{Lemma 2:} Let $f \in \F^*$ with $(f)=\frac{***}{3\infty}$. Then $f = \alpha + \beta x$.
-\begin{proof}
-	Let $f=p+qy$ with $p, q \in K(t)$. We have $\lambda_\infty (f + \bar f) = \sigma t^{-2} + \dots$ so $p = \frac{1}{2} (f+\bar f) = \alpha + \beta x$.
+% \textbf{Lemma 2:} Let $f \in \F^*$ with $(f)=\frac{***}{3\infty}$. Then $f = \alpha + \beta x$.
+% \begin{proof}
+% 	Let $f=p+qy$ with $p, q \in K(t)$. We have $\li (f + \bar f) = \sigma t^{-2} + \dots$ so $p = \frac{1}{2} (f+\bar f) = \alpha + \beta x$.
 
-	Now, consider $f-\bar f = 2qy$. We get $\lambda_\infty (f-\bar f) = 2 \lambda_\infty (q) t^{-5} \sqrt \tau = 2 \gamma t^{-3}+\dots$ and since $\sqrt \tau$ is a a series of the form $1 + \dots$ we must have $\lambda_\infty (q) = \gamma t^2 + \dots$
+% 	Now, consider $f-\bar f = 2qy$. We get $\li (f-\bar f) = 2 \li (q) t^{-5} \sqrt \tau = 2 \gamma t^{-3}+\dots$ and since $\sqrt \tau$ is a a series of the form $1 + \dots$ we must have $\li (q) = \gamma t^2 + \dots$
 
-	Suppose $q \neq 0$, this implies $\frac{1}{q} = \tilde \delta + \tilde \epsilon x$. Rewriting to accomodate for $q=0$ gives $q=\frac{\epsilon}{x-\delta}$ with $\delta, \epsilon \in K$ as well so
-	\begin{align*}
-	  f=\alpha + \beta x +\frac{\epsilon}{x-\delta}y
-	\end{align*}
-	However, now $\lambda_\q (f) = \alpha + \beta (t^2+\delta) + \epsilon \sqrt \mu \frac{t \sqrt \tau}{t^2}$ for $\q = (\delta,0)$ which is equal to $\epsilon \sqrt \mu t^{-1} + \dots$. If $\epsilon \neq 0$ ($\mu$ is non zero anyway) this means that $\q$ is a new (true) pole for $f$ which contradicts $(f)=\frac{***}{3\infty}$, so $q$ must be 0.
-\end{proof}
+% 	Suppose $q \neq 0$, this implies $\frac{1}{q} = \tilde \delta + \tilde \epsilon x$. Rewriting to accomodate for $q=0$ gives $q=\frac{\epsilon}{x-\delta}$ with $\delta, \epsilon \in K$ as well so
+% 	\begin{align*}
+% 	  f=\alpha + \beta x +\frac{\epsilon}{x-\delta}y
+% 	\end{align*}
+% 	However, now $\lambda_\q (f) = \alpha + \beta (t^2+\delta) + \epsilon \sqrt \mu \frac{t \sqrt \tau}{t^2}$ for $\q = (\delta,0)$ which is equal to $\epsilon \sqrt \mu t^{-1} + \dots$. If $\epsilon \neq 0$ ($\mu$ is non zero anyway) this means that $\q$ is a new (true) pole for $f$ which contradicts $(f)=\frac{***}{3\infty}$, so $q$ must be 0.
+% \end{proof}
 
-\textbf{Lemma 3:} Let $f \in \F^*$ with $(f)=\frac{****}{4\infty}$. Then $f = \alpha + \beta x + \gamma x^2$.
+% \textbf{Lemma 3:} Let $f \in \F^*$ with $(f)=\frac{****}{4\infty}$. Then $f = \alpha + \beta x + \gamma x^2$.
 
-\begin{proof}
-	(different function $f$): With $\lambda_\infty(f) = \gamma t^{-4}+\dots$ so $\lambda_\infty(f-\gamma x^2)$ being of the form $\sigma t^{-3}+\dots$ we fall into the case above and the claim follows.
-\end{proof}
-\vspace{-8mm}
-\fline
+% \begin{proof}
+% 	(different function $f$): With $\li(f) = \gamma t^{-4}+\dots$ so $\li(f-\gamma x^2)$ being of the form $\sigma t^{-3}+\dots$ we fall into the case above and the claim follows.
+% \end{proof}
+% \vspace{-8mm}
+% \fline
 
 \end{document}
