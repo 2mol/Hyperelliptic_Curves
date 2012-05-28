@@ -25,14 +25,14 @@ Version 4 \scriptsize \hfill Juri; Hyperelliptic Curves --- Draft --- \today
 \end{defin}
 % \vspace{2mm}
 \begin{defin}\label{defj}
-	Define $\J$ to be the set\scalebox{1.3}{ $\nicefrac{ \j }{\sim }$ }where $\j = \ekb \times \ekb$. $\J$ is called the `Jacobian' and the equivalence relation fullfills
+	Define $\J$ to be the set\scalebox{1.3}{ $\nicefrac{ \j }{\sim }$ }where $\j = \ekb \times \ekb$. It is called the ``Jacobian'' and the equivalence relation is defined by
 	\begin{align*}
 		(\q_1,\q_2) &\sim (\q_2,\q_1) \\
 		\text{and\hspace{5mm}} (\q,\bar \q) & \sim ( \infty , \infty ). 
 	\end{align*}
-	Write $\{ \q_1,\q_2 \}$ from now on and let bold letters denote points on the curve in the sense of classes of unordered pairs $\P =\{ \q_1, \q_2 \} \in \J$. The point $\{ \bar \q_1, \bar \q_2 \}$ will be called $\bar \P$ for now but can already tentatively be thought of as $-\P$. Call $\{ \infty, \infty \}$ the zero of our set. We will also permit ourselves the notation $\{ \q,\bar \q \} = 0$ and we refrain from explicitly stating that $\P$ is in fact an equivalence class.
+	Write $\{ \q_1,\q_2 \}$ from now on and let bold letters denote points on the curve in the sense of classes of unordered pairs $\P =\{ \q_1, \q_2 \} \in \J$. The point $\{ \bar \q_1, \bar \q_2 \}$ will be called $\bar \P$ for now but can already tentatively be thought of as $-\P$. Call $\{ \infty, \infty \}$ the zero of our set. Call $\q_i$ a point-component.% We will also permit ourselves the notation $\{ \q,\bar \q \} = 0$ and we refrain from explicitly stating that $\P$ is in fact an equivalence class.
 
-	A point $\q = (x_0,y_0)$ is called singular if it fulfills both $y_0=0$ and $C'(x_0) = 0$. A curve is called singular if and only if it has a singular point. We consider only non-singular hyperelliptics from here on.
+	A point $\q = (x_0,y_0)$ is called singular if it fulfills both $y_0=0$ and $C'(x_0) = 0$. A curve is called singular if and only if it has a singular point. We consider only non-singular hyperelliptics from here on; this amounts to $C(x)$ having no repeated factors over $\bar K$ (``squarefree)''.%xxx
 \end{defin}
 
 \subsection{The General Case}
@@ -73,14 +73,18 @@ Let $\P_1 = \{\q_1,\q_2\}$, $\P_2 = \{\q_3,\q_4\}$ with $\q_i = (x_i,y_i) \in \e
 
 	{\scshape Step 2a:} Knowing the coefficients $p_i$ of $p(x)$ we first assume that $p_3 \neq 0$, so can proceed to look for the two additional solutions of the sextic equation
 	\begin{align*}
-		\tag{$\ast$} \label{sex} C(x)-\left(p(x)\right)^2 = 0.
+		\tag{$\ast$} \label{sex} C(x)-\left ( p(x) \right )^2 = 0.
 	\end{align*}
-	Observe that this vanishes at $x_1, x_2, x_3$ and $x_4$, so write the lefthand side as $-p_3^2(x-x_1)(x-x_2)(x-x_3)(x-x_4)(x-x_5)(x-x_6)$ for $x_5$ and $x_6$ in $\bar K$. Comparing the coefficients of both expressions at $x^4$ and $x^5$ yields
+	Observe that this vanishes at $x_1, x_2, x_3$ and $x_4$, so write the lefthand side as
+	\begin{align*}
+		C(x)-\left(p(x)\right)^2 = -p_3^2(x-x_1)(x-x_2)(x-x_3)(x-x_4)(x-x_5)(x-x_6)
+	\end{align*}
+	 for $x_5$ and $x_6$ in $\bar K$. Comparing the coefficients of both expressions at $x^4$ and $x^5$ yields
 	\begin{align*}
 		\label{four} \tag{4} \sum_{\substack{i,j=1\\i<j}}^6 x_i x_j &= T_4\\
 		\tag{5} \text{and\hspace{5mm}} \sum_{i=1}^6 x_i &= T_5\\
 	\end{align*}
-	where $T_5 = \frac{1-2 p_2 p_3}{p_3^2}$ and $T_4 = \frac{p_2^2+2 p_1 p_3-a}{p_3^2}$.
+	where $T_4 = \frac{p_2^2+2 p_1 p_3-a}{p_3^2}$ and $T_5 = \frac{1-2 p_2 p_3}{p_3^2}$.
 	The first expression gives
 	\begin{align*}
 		x_6 \sum_{i=1}^5 x_i + \sum_{\substack{i,j=1\\i<j}}^5 x_i x_j = T_4.
@@ -110,14 +114,14 @@ Let $\P_1 = \{\q_1,\q_2\}$, $\P_2 = \{\q_3,\q_4\}$ with $\q_i = (x_i,y_i) \in \e
 
 	Compute $y_5 = p(x_5)$ and define $\P_1 + \P_2$ to be the point $\P_3 = \{ (x_5, y_5), \infty \}$.
 
-	{\scshape Step $1'$:} To extend our construction from $\enk$ to $\ek$ we now consider $\q_4 = \infty$ with the other $\q_i = (x_i,y_i)$ as before. We will later reason about why this is sufficient to cover the general case.
+	{\scshape Step $1'$:} To extend our construction from $\enk$ to $\ek$ we now consider $\q_4 = \infty$ with the other $\q_i = (x_i,y_i)$ as before. This can be seen as the $x_i$ still being pairwise distinct, only that one of them is allowed to be $\infty$ here.
 
 	There is no coordinate $x_4$ this time, so we pass a quadratic polynomial $p(x)$ through the remaining three points $(x_i,y_i)$. This means that we solve the linear system $\tilde V \cdot \mathbf{p} = \tilde \mathbf{y}$ where $\tilde V$ is the Vandermonde matrix for $x_i$, $i=1,..,3$ which incidentally is the upper-left 3$\times$3 sub-matrix of $V$. Here $\mathbf{p}=(p_0 \ p_1 \ p_2)^t$ and $\tilde \mathbf{y}=(y_1 \ y_2 \ y_3)^t$ are defined as expected.
 	%xxx want me to call it $\tilde p$ instead of p?
 
 	As before, the leading coefficient of $p(x)$ might or might not be zero, 
 	%but this time, dear reader, let us not give a toss
-	but \eqref{sex} will be quintic in either case, so we only have to worry about one step two.
+	but \eqref{sex} will be quintic in either case, so we only have to worry about one step 2.
 
 	{\scshape Step $2'$:} Doing a coefficient comparison at $x^3$ and at $x^4$ in \eqref{sex} gives
 	\begin{align*}
@@ -130,7 +134,8 @@ Let $\P_1 = \{\q_1,\q_2\}$, $\P_2 = \{\q_3,\q_4\}$ with $\q_i = (x_i,y_i) \in \e
 	\vspace{-2mm}
 	\fline
 	\begin{align*}
-	  \label{daggerp} \tag{$\dagger '$} x^2 - T_{4\infty} \cdot x + \left( T_{3\infty} - \sum_{\substack{i,j=1\\i<j}}^3 x_i x_j\right) = 0.
+		\label{daggerp} \tag{$\dagger '$} x^2 - \left( T_{4\infty} \sumthr \right) \cdot x + \left(T_{3\infty} - T_{4\infty} \sumthr + \sum_{\substack{i,j=1\\i\leq j}}^3 x_i x_j \right)
+	  %\label{daggerp} \tag{$\dagger '$} x^2 - T_{4\infty} \cdot x + \left( T_{3\infty} - \sum_{\substack{i,j=1\\i<j}}^3 x_i x_j\right) = 0.
 	\end{align*}
 	\fline
 
@@ -189,7 +194,7 @@ We will use this property extensively from now on and it will be worth the addit
 %xxx not 100\% satisfactory...I really want to show that this is not only justified but  inevitable.
 
 \newpage
-\subsection{List of Special Cases}
+\subsection{Complete List of Cases}
 
 Let's first list all configurations that can be taken by the $(x_i$, $y_i) \in \enk$:
 
@@ -205,7 +210,7 @@ Let's first list all configurations that can be taken by the $(x_i$, $y_i) \in \
 	\item Exactly three of the $x_i$ are equal, e.g. $x_1=x_2=x_3$ and
 	\begin{enumerate}[a.]
 		\item All three $y$-coordinates are equal: $y_1 = y_2 = y_3 \neq 0$.
-		\item Only two $y$-coordinates are equal: $y_1 = y_2 \neq 0$ so $y_3=-y_1$. \hfill $\star$
+		\item Only two $y$-coordinates are equal, e.g. $y_1 = y_2 \neq 0$ so $y_3=-y_1$. \hfill $\star$
 		\item All three $y_1=y_2=y_3=0$. \hfill $\star$
 	\end{enumerate}
 	\item All four $x_i$ are equal and
@@ -215,7 +220,7 @@ Let's first list all configurations that can be taken by the $(x_i$, $y_i) \in \
 		\item Exactly three of the $y_i$ are equal, e.g. $y_1=y_2=y_3=-y_4 \neq 0$. \hfill $\star$
 		\item All four $y_i=0$. \hfill $\star$
 	\end{enumerate}
-	\item The $x_i$ are equal two-by-two: $x_1=x_2$ and $x_3=x_4$ but $x_1 \neq x_3$ and
+	\item The $x_i$ are equal two by two, e.g. $x_1=x_2$ and $x_3=x_4$ but $x_1 \neq x_3$ and
 	\begin{enumerate}[a.]
 		\item $y_1 = y_2 \neq 0$ and $y_3=y_4 \neq 0$.
 		\item $y_1 = -y_2$ and $y_3=y_4 \neq 0$. \hfill $\star$
@@ -234,7 +239,7 @@ Due to \eqref{switch} and the property that $\{ \q_i, \q_j \} \sim 0$ whenever $
 	\item The general case where all $\q_i$ in $\ek$ are pairwise distinct from $\pm \q_j$.
 	\item The single tangential case where $\q_1 = \q_2 \in \enk$ with $y_1 \neq 0$ and the remaining $\q_3$, $\q_4 \in \ek$ are both distinct from each other as well as from $\pm \q_1, \bar \q_3$ and $\bar \q_4$.
 	\item The double tangential case where $\q_1 = \q_2 \in \enk$ with $y_1 \neq 0$ and $\q_3 = \q_4 \in \enk$ with $y_3 \neq 0$ and $\q_1 \neq \pm \q_3$.
-	\item The triple-point tangential case wherein $\q_1=\q_2=\q_3 \in \enk$ with $y_1 \neq 0$ and $\q_4 \in \ek$ differs from both $\pm \q_1$.
+	\item The triple-point case wherein $\q_1=\q_2=\q_3 \in \enk$ with $y_1 \neq 0$ and $\q_4 \in \ek$ differs from both $\pm \q_1$.
 	\item The quadruple case where all $\q_i \in \enk$ are equal with $y_i\neq 0$.
 \end{enumerate}
 \vspace{-4mm}
@@ -245,7 +250,7 @@ Due to \eqref{switch} and the property that $\{ \q_i, \q_j \} \sim 0$ whenever $
 \begin{enumerate}[(i)]
 	\item In both lists, the cases do not overlap.
 	
-	\item For the list to be complete, we must allow for $\q_i = \infty$ for some $i$. Note that one is sufficient, since if two or more $\q_i$ were to be $\infty$, we would be back at the zero case by virtue of \eqref{switch}, bringing the two infinities together in one point. As for the first case, we consider $\q_i \in \enk$ and $\q_i \in \ek$ in two seperate cases and postpone handling the latter.\label{extend}
+	\item For the list to be complete, we must allow for $\q_i = \infty$ for some $i$. Note that one is sufficient, since if two or more $\q_i$ were to be $\infty$, we would be back at the case 0 by virtue of \eqref{switch}, bringing the two infinities together in one point. As for case 1, we consider $\q_i \in \enk$ and $\q_i \in \ek$ in two separate cases and postpone handling the latter.\label{extend}
 
 	\item As for the first case, the constructions will a priori only be made on $\j$. It remains to check that this makes indeed for a well-defined addition on $\J$ by being invariant under the permutations $\q_1 \rightleftharpoons \q_2$ and $\q_3 \rightleftharpoons \q_4$.
 \end{enumerate}
@@ -256,7 +261,7 @@ Due to \eqref{switch} and the property that $\{ \q_i, \q_j \} \sim 0$ whenever $
 \setcounter{case}{-1}
 
 \begin{case}
-  {\scshape Addition with Zero:} As one might have anticipated, if $\P_2 = 0$ we define $\P_1 + \P_2 = \P_1$ for every $\P_1 \in \J$.
+  {\scshape Addition with Zero:} As one might have anticipated we define $\P_1 + \P_2 = \P_1$ for every $\P_1 \in \J$ if $\P_2 = \{\infty, \infty\} = 0$.
 \end{case}
 
 \setcounter{case}{1}
@@ -298,7 +303,7 @@ Due to \eqref{switch} and the property that $\{ \q_i, \q_j \} \sim 0$ whenever $
 \end{case}
 
 \begin{case}
-	{\scshape Second Order Tangential:} Let $\q_i \in \enk , \q_1=\q_2=\q_3$ but $x_1 \neq x_4$ and $y_1 \neq 0$. We can thus see this as a third-order intersection and demand that the curve and the polynomial share a second-order derivative at $\q_1$:
+	{\scshape Triple Point:} Let $\q_i \in \enk , \q_1=\q_2=\q_3$ but $x_1 \neq x_4$ and $y_1 \neq 0$. We can thus see this as a third-order intersection and demand that the curve and the polynomial share a second-order derivative at $\q_1$:
 	\begin{align*}\Vtri=
 			\begin{pmatrix}
 			1 & x_1 & x_1^2 & x_1^3\\
@@ -313,7 +318,7 @@ Due to \eqref{switch} and the property that $\{ \q_i, \q_j \} \sim 0$ whenever $
 \end{case}
 
 \begin{case}
-	{\scshape Third Order Tangential:} Given the quadruple situation where $\q_i = \q_1 \in \enk$ for every $i$ with $y_1 \neq 0$, we use
+	{\scshape Quadruple Point:} Given the situation where $\q_i = \q_1 \in \enk$ for every $i$ with $y_1 \neq 0$, we use
 	\begin{align*}\Vquad &=
 		\begin{pmatrix}
 			1 & x_1 & x_1^2 & x_1^3\\
@@ -356,6 +361,7 @@ To check whether our addition is well defined on $\J$ in each of the cases, we h
 
   Finally, the version of Step 2 we fall into remains the same, since it is only imposed by the distinction of $p_3$ being zero or not. %the variation of the dagger equation of Step 2.
 \end{proof}
+
 
 
 

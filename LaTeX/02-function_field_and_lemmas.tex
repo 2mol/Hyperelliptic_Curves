@@ -243,7 +243,6 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
 
 	\begin{proof}
 		With $f = g+hy$ such that $\ordq f \geq 0$ for every $\q \in \enkb$ and $\ordi f = -1$ we can write $\li (f) = \kappa t^{-1} + \dots$ with $\kappa \neq 0$ in $\bar K$. Since we are only interested in the order, replace $f$ with $\kappa^{-1} f$ so $\li (f) = t^{-1} + \dots$.
-		%With $f = g+hy$ such that $\ordq f \geq 0$ for every $\q \in \enkb$ we can assume that $\ordi f = -1$ because Lemma~\ref{nopol}. and $\li (f) = \frac 1 t + \dots$. If the trailing coefficient of $\li (f)$ were different from one, we can always xxx where $\alpha \in \bar K$. Due to  we assume that $\alpha \neq 0$ and may even take $\alpha = 1$ by replacing $f$ with $\frac f \alpha$.
 
 		Now remember that $\li (x) = t^{-2}$ so $\li (x - f^2) = \alpha t^{-1} + \dots$, $\alpha \in \bar K$ and finally we have a regular power series $\li (x - f^2 - \alpha f)$ so
 		\begin{align*}
@@ -270,23 +269,12 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
 	\end{proof}
 \end{lemma}
 
-% \begin{lemma}%xxx incorporate this in proof of next lemma
-%   If $f$ is such that $\li (f)=\kappa t^3 + \dots$ then $\li (\bar f)=-\kappa t^3 + \dots$
-% \begin{proof}
-% 	By Lemma \ref{three} let $\li (\bar f) = \tilde \kappa t^3 + \dots$. Since $f + \bar f = 2p$ and ord$_\infty(p)$ is always even for $p \in K(x)$, we must have $\kappa + \tilde \kappa =0$.
-% \end{proof}
-% \end{lemma}
-
 \begin{lemma}\label{twopol}
 	If $f \in \F^*$ has at most two poles at $\infty$ and $\ordq f \geq 0$ for every $\q \in \enkb$ then $f$ is of the form $f = \alpha + \beta x$ with $\alpha, \beta \in K$.
 	\begin{proof}
 		Because $\li (f) = \beta t^{-2} + \dots$ where $\beta \in \bar K$ we have $\li (f - \beta x)= \gamma t^{-1} + \dots$ and thanks to Lemma \ref{onepol} we know this to imply $f - \beta x = \alpha$.
 	\end{proof}
 \end{lemma}
-
-% \begin{remark}
-%   Its easy to see that if $f$ is such that $\li (f)=\kappa t^3 + \dots$ then $\li (\bar f)=-\kappa t^3 + \dots$.	By Lemma \ref{three} let $\li (\bar f) = \tilde \kappa t^3 + \dots$. Since $f + \bar f = 2p$ and ord$_\infty(p)$ is always even for $p \in K(x)$, we must have $\kappa + \tilde \kappa =0$.
-% \end{remark} 
 
 \begin{lemma}
 	If $f \in \F^*$ has at most three poles at $\infty$ and $\ordq f \geq 0$ for every $\q \in \enkb$ then $f$ is of the form $f = \alpha + \beta x$ with $\alpha, \beta \in K$.
@@ -308,7 +296,6 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
 		\end{align*}
 		so $\gamma \nu$ must be 0. Since $\nu = C'(x_0) \neq 0$ and $f$ does not have any poles in $\enkb$, $\gamma$ must be zero and so $f = \alpha + \beta x$.
 		%We have $\lp (f) = \gamma t^{-3} + \dots$ and so $\lp (f - \bar f) = \delta t^{-2} + \dots$ because the order at infinity of $f - \bar f \in K(x)$ must be even by Lemma \ref{two} (c).
-
 
 	\end{proof}
 \end{lemma}
