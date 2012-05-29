@@ -19,7 +19,7 @@ Version 4 \scriptsize \hfill Juri; Hyperelliptic Curves --- Draft --- \today
 
 	\textbf{Note} that we could obtain a more reduced form of $C(x)$, eliminating $a$ by shifting $x$ to $x-a/5$. However, since this would rob us of the possibility of char$(K) = 5$ without simplifying our coming calculations in any significant manner, we shall be reluctant towards using this trick.
 
-	For the purpose of clarity, let points on the hyperelliptic curve --- in the sense of solutions to $y^2=C(x)$ --- be designated by the calligraphic letter $\q=(x,y) \in \enkb$. The point opposite to $\q$ will be written $\bar \q = (x,-y)$ and by symmetry of the curve in $y$ also belongs to $\enkb$. In the case where $\q = \infty$, define $\bar \q = \infty$. We allow ourselves to write $\pm \q$ whenever we mean in fact `either $\q$ or $\bar \q$'.
+	For the purpose of clarity, let points on the hyperelliptic curve --- in the sense of solutions to $y^2=C(x)$ --- be designated by the calligraphic letter $\q=(x,y) \in \enkb$. The point opposite to $\q$ will be written $\bar \q = (x,-y)$ and by symmetry of the curve in $y$ also belongs to $\enkb$. In the case where $\q = \infty$, define $\bar \q = \infty$. %We allow ourselves to write $\pm \q$ whenever we mean in fact `either $\q$ or $\bar \q$'.
 
 	We want to consider the set of all pairs $(\q_1,\q_2)$ and tame it with an equivalence relation with the goal of obtaining an additive group:
 \end{defin}
@@ -39,7 +39,7 @@ Version 4 \scriptsize \hfill Juri; Hyperelliptic Curves --- Draft --- \today
 
 Let $\P_1 = \{\q_1,\q_2\}$, $\P_2 = \{\q_3,\q_4\}$ with $\q_i = (x_i,y_i) \in \enk$ or $\q_i = \infty$. To define $\P_3 = \P_1 + \P_2$ we distinguish between one general case and a number of special cases and first derive the results of the former before enumerating the latter ones.
 
-\begin{case} {\scshape Four Distinct Component-Points:}
+\begin{case} {\scshape Four Distinct Point-Components:}
 	Let first $\q_i \in \enk$ and $\P_i$ be defined as above with $x_i \neq x_j$ whenever $i \neq j$.
 
 	The overarching idea is to obtain a fifth and sixth $x$-coordinate and the corresponding $y$-coordinates by passing a polynomial of degree three through the four points $\q_i$. Ideally this should give us two additional intersections with the curve which we then use as the components of our point $\P_1 + \P_2$.
@@ -196,43 +196,36 @@ We will use this property extensively from now on and it will be worth the addit
 \newpage
 \subsection{Complete List of Cases}
 
-Let's first list all configurations that can be taken by the $(x_i$, $y_i) \in \enk$:
+As we strive to define $\{ \q_1 , \q_2 \} + \{ \q_3 , \q_4 \}$, for any $\q_i = (x_i,y_i) \in \enkb$ or $\q_i = \infty \in \ekb$ we observe that the following simplification takes place:
+
+Let $\{ i,j,k,l \}=\{ 1,2,3,4 \}$. Whenever $\q_i = \bar \q_j$ for $i \neq j$ we define
+\begin{align*}
+  \{ \q_1 , \q_2 \} + \{ \q_3 , \q_4 \} &= \{ \q_k , \q_l \} + \{ \q_i , \bar \q_i \}\\
+  &= \{ \q_k , \q_l \} + \{ \infty, \infty \}.
+\end{align*}
+The justification for this follows directly from \eqref{switch} and Definition \ref{defj}. It is easily checked that this sum remains well defined if the choice of $i$ and $j$ is not unique. This allows us to treat the above as a separate case in order to characterize the other cases solely through the $x$-coordinates of the $\q_i$, so% and otherwise xxx for all the others assume that equality between the $\q_i$ depend only on their $x$-coordinates:%any property we impose on the $\q_i$ we can just look at $x_i$:
+\begin{align*}
+  x_i = x_j \iff \q_i = \q_j
+\end{align*}
+for any $\q_i, \q_j \in \ekb$ provided we assign $\q_i = \infty$ the $x$-coordinate $x_i = \ii$.
+
+We may now write the distinction between the remaining cases as follows:
 
 \begin{enumerate}[A.]
 	\parskip 1mm
-	\item All $x_i$ are pairwise distinct.
-	\item Exactly two of the $x_i$ are equal, for instance $x_1=x_2$ and
-	\begin{enumerate}[a.]
-		\item $y_1 = y_2 \neq 0$.
-		\item $y_1 = -y_2 \neq 0$. \hfill $\star$
-		\item $y_1=y_2=0$. \hfill $\star$
-	\end{enumerate}
-	\item Exactly three of the $x_i$ are equal, e.g. $x_1=x_2=x_3$ and
-	\begin{enumerate}[a.]
-		\item All three $y$-coordinates are equal: $y_1 = y_2 = y_3 \neq 0$.
-		\item Only two $y$-coordinates are equal, e.g. $y_1 = y_2 \neq 0$ so $y_3=-y_1$. \hfill $\star$
-		\item All three $y_1=y_2=y_3=0$. \hfill $\star$
-	\end{enumerate}
-	\item All four $x_i$ are equal and
-	\begin{enumerate}[a.]
-		\item All four $y_i$ are equal but different from zero.
-		\item The $y_i$ are equal two by two, e.g. $y_1=y_2 \neq 0$ and $y_3=y_4 = -y_1$. \hfill $\star$
-		\item Exactly three of the $y_i$ are equal, e.g. $y_1=y_2=y_3=-y_4 \neq 0$. \hfill $\star$
-		\item All four $y_i=0$. \hfill $\star$
-	\end{enumerate}
-	\item The $x_i$ are equal two by two, e.g. $x_1=x_2$ and $x_3=x_4$ but $x_1 \neq x_3$ and
-	\begin{enumerate}[a.]
-		\item $y_1 = y_2 \neq 0$ and $y_3=y_4 \neq 0$.
-		\item $y_1 = -y_2$ and $y_3=y_4 \neq 0$. \hfill $\star$
-		\item $y_1 = -y_2$ and $y_3=-y_4$. \hfill $\star$
-	\end{enumerate}
+	\item The general case where all $x_1,..,x_4$ are pairwise distinct.
+	\item The case $x_i = x_j$ but $x_i$, $x_k$ and $x_l$ are pairwise distinct.
+	\item The case where $x_i = x_j$ and $x_k = x_l$ but $x_i \neq x_k$.
+	\item The case $x_i = x_j = x_k$ but $x_l \neq x_i$.
+	\item The case where $x_1 = x_2 = x_3 = x_4$.
 \end{enumerate}
+\parskip 3mm
 
-Due to \eqref{switch} and the property that $\{ \q_i, \q_j \} \sim 0$ whenever $x_i=x_j$ and $y_i = -y_j$, every case marked with $\star$ comes down to the addition with 0. Considering the possibility of $\q_i = \infty$ and reordering the above thus leads to the following condensed and complete list of cases for the addition law:
+Since we are allowed to permute point-components anyway, we may fix which of the $\q_i$ are equal and write everything out for the complete and final list:
 
 \vspace{-3mm}
 \fline
-\vspace{-2mm}
+% \vspace{-2mm}
 \begin{enumerate}\setcounter{enumi}{-1}
 	\parskip 1mm
 	\item The addition with zero, i.e. $\P + \{ \infty, \infty \}$ or in short $\P + 0$, $\P \in \J$.
@@ -242,7 +235,7 @@ Due to \eqref{switch} and the property that $\{ \q_i, \q_j \} \sim 0$ whenever $
 	\item The triple-point case wherein $\q_1=\q_2=\q_3 \in \enk$ with $y_1 \neq 0$ and $\q_4 \in \ek$ differs from both $\pm \q_1$.
 	\item The quadruple case where all $\q_i \in \enk$ are equal with $y_i\neq 0$.
 \end{enumerate}
-\vspace{-4mm}
+\vspace{-2mm}
 \fline
 \parskip 3mm
 
