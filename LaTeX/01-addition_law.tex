@@ -21,7 +21,7 @@ Version 4 \scriptsize \hfill Juri; Hyperelliptic Curves --- Draft --- \today
 
 	\textbf{Note} that we could obtain a more reduced form of $C(x)$, eliminating $a$ by shifting $x$ to $x-a/5$. However, since this would rob us of the possibility of char$(K) = 5$ without simplifying our coming calculations in any significant manner, we shall be reluctant towards using this trick.
 
-	For the purpose of clarity, let points on the hyperelliptic curve --- in the sense of solutions to $y^2=C(x)$ --- be designated by the calligraphic letter $\q=(x,y) \in \enkb$. The point opposite to $\q$ will be written $\bar \q = (x,-y)$ and by symmetry of the curve in $y$ also belongs to $\enkb$. In the case where $\q = \infty$, define $\bar \q = \infty$. %We allow ourselves to write $\pm \q$ whenever we mean in fact `either $\q$ or $\bar \q$'.
+	For the purpose of clarity, let points on the hyperelliptic curve --- in the sense of solutions to $y^2=C(x)$ --- be designated by the calligraphic letter $\q=(x,y) \in \enkb$. The point opposite to $\q$ will be written $\bar \q = (x,-y)$ and by symmetry of the curve in $y$ also belongs to $\enkb$. In the case where $\q = \infty$, define $\bar \q = \infty$.
 
 	We want to consider the set of all pairs $(\q_1,\q_2)$ and tame it with an equivalence relation with the goal of obtaining an additive group:
 \end{defin}
@@ -96,7 +96,6 @@ Let's start with $\P_1 = \{\q_1,\q_2\}$, $\P_2 = \{\q_3,\q_4\}$ with $\q_i = (x_
 	\vspace{-3mm}
 	\fline
 	\begin{align*}
-		%\tag{$\dag$} \label{dagger} x^2 - T_5 \cdot x+ \left(T_4 - T_5 \sumfo \right) = 0
 		\tag{$\dag$} \label{dagger} x^2 - \left(T_5 - \sumfo \right) \cdot x+ \left(T_4 - T_5 \sumfo + \sum_{\substack{i,j=1\\i\leq j}}^4 x_i x_j \right) = 0
 	\end{align*}
 	\fline
@@ -119,7 +118,6 @@ Let's start with $\P_1 = \{\q_1,\q_2\}$, $\P_2 = \{\q_3,\q_4\}$ with $\q_i = (x_
 	{\scshape Step $1'$:} To extend our construction from $\enk$ to $\ek$ we now consider $\q_4 = \infty$ with the other $\q_i = (x_i,y_i)$ as before. This can be seen as the $x_i$ still being pairwise distinct, only that one of them is allowed to be $\ii$ here.
 
 	There is no coordinate $x_4$ this time, so we pass a quadratic polynomial $p(x)$ through the remaining three points $(x_i,y_i)$. This means that we solve the linear system $\tilde V \cdot \mathbf{p} = \tilde \mathbf{y}$ where $\tilde V$ is the Vandermonde matrix for $x_i$, $i=1,..,3$ which incidentally is the upper-left 3$\times$3 sub-matrix of $V$. Here $\mathbf{p}=(p_0 \ p_1 \ p_2)^t$ and $\tilde \mathbf{y}=(y_1 \ y_2 \ y_3)^t$ are defined as expected.
-	%xxx want me to call it $\tilde p$ instead of p?
 
 	As before, the leading coefficient of $p(x)$ might or might not be zero, 
 	%but this time, dear reader, let us not give a toss
@@ -137,7 +135,6 @@ Let's start with $\P_1 = \{\q_1,\q_2\}$, $\P_2 = \{\q_3,\q_4\}$ with $\q_i = (x_
 	\fline
 	\begin{align*}
 		\label{daggerp} \tag{$\dagger '$} x^2 - \left( T_{4\infty} \sumthr \right) \cdot x + \left(T_{3\infty} - T_{4\infty} \sumthr + \sum_{\substack{i,j=1\\i\leq j}}^3 x_i x_j \right)
-	  %\label{daggerp} \tag{$\dagger '$} x^2 - T_{4\infty} \cdot x + \left( T_{3\infty} - \sum_{\substack{i,j=1\\i<j}}^3 x_i x_j\right) = 0.
 	\end{align*}
 	\fline
 
@@ -156,7 +153,7 @@ $\sim$
 		% \framebox{The eight cases illustrated}
 		\includegraphics[width=0.9\textwidth]{addition_general.pdf}
 
-		{\scshape Figure 1a}: The general case for the addition law in $\mathbbm{R}^2$ where $p_3 \neq 0$.
+		{\scshape Figure 1a}: The general case for the addition law in $\mathds{R}^2$ where $p_3 \neq 0$.
 
 		\vspace{1mm}
 
@@ -174,14 +171,11 @@ $\sim$
 	To this end we can check that interchanging $(x_i,y_i) \rightleftharpoons (x_j,y_j)$ does nothing to the resulting $\q_5$ and $\q_6$. This is the case because $p(x)$ does only depend on the solution of the linear system $V \cdot \mathbf{p} = \mathbf{y}$ on which the aforementioned permutation has no effect. With $p$ invariant, the subsequent steps remain unchanged as well.
 
 	Finally, the restriction to $K$ instead of $\bar K$ was to showcase the degree of the required field extension, a feat we will now leave aside by always using $\bar K$.
-  % xxx defined not only on j but on J as well.
 \end{remark}
 
 
 	%\textbf{Note} also that solving either of the dagger equations does not guarantee that the resulting $x_5$ or $x_6$ differ from the other $x_i$ or even from each other. In fact the situation may very well arise where for instance $x_6 = x_1$ because $p(x)$ happens to be tangential to the curve at $x_1$. The equation \eqref{sex} would then factor as $-p_3^2(x-x_1)^2\prod_{i=1}^5 (x-x_i)$.
 
-
-%xxx shall I mark this somehow/give it a title? Looks a bit puny with regards to the importance it carries.
 % \newpage
 Before we begin listing the special cases, we impose the following property: The sum of any $\P_1 = \{\q_1,\q_2\}$ and $\P_2 = \{\q_3,\q_4\}$ in $\J$ fulfills the equality
 \begin{align*}
@@ -195,19 +189,7 @@ Note that the general-case addition we just defined already fulfills this, as we
 	A substantial bonus of this is the fact that commutativity corresponds to the permutation $(1 \, 3)(2 \, 4)$ which by the above we now obtained for free.
 \end{remark}
 
-	% xxx It is immediately clear now that if we have a well-defined addition, then $-\P = \bar \P$ because $\{ \q_1 , \q_2 \} + \{ \bar \q_1 , \bar \q_2 \} = \{ \q_1 , \bar \q_1 \} + \{ \q_2 , \bar \q_2 \}=0$.
-	% xxx The property even gives us commutativity for free.
-
-
-
 %xxx not 100\% satisfactory...I really want to show that this is not only justified but  inevitable.
-
-
-% \newpage
-
-
-% \vspace{2mm}
-
 
 % \newpage
 
@@ -222,7 +204,7 @@ Let $\{ i,j,k,l \}=\{ 1,2,3,4 \}$. Whenever $\q_i = \bar \q_j$ for $i \neq j$ we
   \{ \q_1 , \q_2 \} + \{ \q_3 , \q_4 \} &= \{ \q_k , \q_l \} + \{ \q_i , \bar \q_i \}\\
   &= \{ \q_k , \q_l \} + \{ \infty, \infty \}.
 \end{align*}
-The justification for this follows directly from Remark \ref{permut} and Definition \ref{defj}. It is easily checked that this sum remains well defined if the choice of $i$ and $j$ is not unique. This allows us to treat the above as a separate case in order to characterize the other cases solely through the $x$-coordinates of the $\q_i$, so% and otherwise xxx for all the others assume that equality between the $\q_i$ depend only on their $x$-coordinates:%any property we impose on the $\q_i$ we can just look at $x_i$:
+The justification for this follows directly from Remark \ref{permut} and Definition \ref{defj}. It is easily checked that this sum remains well defined if the choice of $i$ and $j$ is not unique. This allows us to treat the above as a separate case in order to characterize the other cases solely through the $x$-coordinates of the $\q_i$, so
 \begin{align*}
   x_i = x_j \iff \q_i = \q_j
 \end{align*}
@@ -270,6 +252,24 @@ Since we are allowed to permute point-components anyway, we may fix which of the
 
 \subsection{Addition Law for the Special Cases}
 
+Before we handle the next construction steps we need an intermediate result.
+\vspace{-8mm}
+\begin{lemma}\label{div}
+  If $D(\tau) = D'(\tau) = \dots = D^{(k-1)}(\tau) = 0$ for a polynomial over a field of characteristic $0$ or $p \geq k$ then
+  \begin{align*}
+    (t - \tau)^k \mid D(t).
+  \end{align*}
+  \begin{proof}
+    Assume $\tau = 0$ by shifting $t$ to $t + \tau$. Now $D(t) = \sum_{i=0}^d a_i t^i$. Now
+    \begin{flalign*}
+      &&a_i = \frac{1}{i!} D^{(i)}(0) = 0 \text{\hspace{25mm}} i = 0 ,.., k-1
+    \end{flalign*}
+    so $t^k$ divides $D(t).$
+  \end{proof}
+\end{lemma}
+
+We will now use this property for $D(x)= C(x) - p^2(x)$ when factoring \eqref{sex}.
+
 \setcounter{case}{-1}
 
 \begin{case}
@@ -295,9 +295,12 @@ Since we are allowed to permute point-components anyway, we may fix which of the
 	The subscript indicates at which points the intersections have higher order.
 	Here $\ydoub$ is defined as $\mathbf{y}$ with $y_2$ replaced by $y_2'=\frac{C'(x_1)}{2 y_1}$ where $C'(x)$ is the derivative of $C$ and $2y_1 \neq 0$ because char$(\bar K) \neq 2$ and $y_1\neq 0$. Since $\det(\Vdoub) = (x_4-x_1)^2(x_3-x_1)^2(x_4-x_3)$ this fits neatly into our constraints by being non-zero exactly in the case where $x_1, x_3$ and $x_4$ are pairwise distinct.
 
-	Once $p(x)$ is determined, step two will be entirely identical to the general case and we can again solve \eqref{dagger2} or \eqref{dagger} for $x_5$ or $x_5$ and $x_6$.
-
-	%Now let $\q_4 = \infty$. As an analogue to case one and with the same constraints as above, the relevant matrix $\tilde V_1$ is again the upper-left $3 \times 3$ sub-matrix of $V_1$ and we solve $\tilde V_1 \cdot \mathbf{p} = \tilde \mathbf{y}_1$ for a three-element vector $\mathbf{p}$. Needless to say that $\tilde V_1$ is invertible and by obtaining $\mathbf{p}$ we can solve \eqref{daggerp} to get $x_5$ and $x_6$.
+	Once the polynomial is determined, we note that the $p^2(x)$ shares a tangent with $C(x)$ at $x_1$ on purpose, specifically
+	\begin{align*}
+	  D'(x_1) &= C'(x_1) - 2 p(x_1)p'(x_1)\\
+	  				&= C'(x_1) - 2 y_1 y_2' = 0
+	\end{align*}
+	so we use Lemma \ref{div} to see that the lefthand side of \eqref{sex} either factors as $-p_3^2(x-x_1)^2\prod_{i=3}^6(x-x_i)$ or $(x-x_1)^2\prod_{i=3}^5(x-x_i)$. Now step two will be entirely identical to that of the general case and we can again solve \eqref{dagger2} or \eqref{dagger} for $x_5$ or $x_5$ and $x_6$.
 \end{case}
 
 \begin{case}
@@ -311,7 +314,11 @@ Since we are allowed to permute point-components anyway, we may fix which of the
 		\end{pmatrix}.
 	\end{align*}
 
-	Now $\det(\Vddoub)=(x_3-x_1)^4$ and this is again different from zero precisely whenever $x_3 \neq x_1$, so as before solve $\Vddoub \cdot \mathbf{p} = \yddoub$ for $\mathbf{p}$, then \eqref{dagger} or \eqref{dagger2}.
+	Now $\det(\Vddoub)=(x_3-x_1)^4$ and this is again different from zero precisely whenever $x_3 \neq x_1$, so as before solve $\Vddoub \cdot \mathbf{p} = \yddoub$ for $\mathbf{p}$, then note that $D(x)$ has double zeroes at $x_1$ and $x_3$ by the same argument as in case 2.
+	% \begin{align*}
+	%   D'(x_3) = C'(x_3) - 2 y_3 y_3' = 0
+	% \end{align*}
+	By Lemma \ref{div} we know that \eqref{sex} has a factor $(x-x_1)^2(x-x_3)^2$ so we use the same procedure of case 1 with $x_2 = x_1$ and $x_4 = x_3$ to solve \eqref{dagger} or \eqref{dagger2}.
 \end{case}
 
 \begin{case}
@@ -324,9 +331,14 @@ Since we are allowed to permute point-components anyway, we may fix which of the
 			1 & x_4 & x_4^2 & x_4^3\\
 		\end{pmatrix}.
 	\end{align*}
-	Here $\det(\Vtri)=2(x_4-x_1)^3$ and with this, define $\ytri$ by taking $\ydoub$ and replacing the third coordinate by $y_3'' = \frac{C''(x_1)}{2y_1}-\frac{(C'(x_1))^2}{4y_1^3}$ where $C''(x)$ is the second-order derivative of $C$. Again, apply the same procedure of the second steps of case 1 to find $\P_3$.
+	Here $\det(\Vtri)=2(x_4-x_1)^3$ and with this, define $\ytri$ by taking $\ydoub$ and replacing the third coordinate by $y_3'' = \frac{C''(x_1)}{2y_1}-\frac{(C'(x_1))^2}{4y_1^3}$ where $C''(x)$ is the second-order derivative of $C$.
 
-	%Again, consider $\q_4 = \infty$ and as before we obtain a new system $\tilde V_{13} \cdot \mathbf{p} = \tilde \mathbf{y}_{13}$. $\tilde V_{13}$ is the upper-left $3 \times 3$ sub-matrix of $V_{13}$, is invertible and leads to $p(x)$ which we use to solve \eqref{daggerp}.
+	Apply Lemma \ref{div} as in case 2, only this time we also have
+	\begin{align*}
+	  D''(x_1) &= C''(x_1) - 2 p(x_1)p''(x_1) - 2 (p'(x_1))^2\\
+	  				 &= C''(x_1) - 2 y_1 y_3''- 2(y_2')^2 = 0
+	\end{align*}
+	as can be checked by glancing at the definition of $y_3''$. With \eqref{sex} factoring as $-p_3^2(x-x_1)^3\prod_{i=4}^6(x-x_i)=0$ or $(x-x_1)^3\prod_{i=4}^5(x-x_i)=0$, this again allows us to continue with one of the second steps of case 1 to find $\P_3$.
 \end{case}
 
 \begin{case}
@@ -343,10 +355,13 @@ Since we are allowed to permute point-components anyway, we may fix which of the
 
 	Here $\yquad$ is the same as $\ytri$ except for the last coordinate which should read
 	\begin{align*}
-		% y_4''' = \frac{1}{2y_0}\Big( C'''(x_0) - \frac{dy}{dx}\bigg|_{\q}\Big(\big(\frac{dy}{dx}\bigg|_{\q}\big)^2 - \frac{d^2y}{dx^2}\bigg|_{\q} \Big) \Big).
 		y_4''' = \frac{C'''(x_1)}{2y_1}-\frac{3C'(x_1)C''(x_1)}{4y_1^3}+\frac{3(C'(x_1))^3}{8y_1^5}
 	\end{align*}
-	where $C'''(x)$ is the third-order derivative of $C$. Once more, we solve the linear system $\Vquad \cdot \mathbf{p}=\yquad$ and subsequently \eqref{dagger} or \eqref{dagger2} and we're done.
+	where $C'''(x)$ is the third-order derivative of $C$. Once more, we solve the linear system $\Vquad \cdot \mathbf{p}=\yquad$. In addition to $D^{(i)}(x_1)=0$, $i=0,..,2$ we have
+	\begin{align*}
+	  D'''(x_1) = C'''(x_1) - 2 y_1 y_4''' - 6 y_2' y_3'' = 0
+	\end{align*}
+	so $D(x) = -p_3^2(x-x_1)^4(x-x_5)(x-x_6)$ or $D(x)=(x-x_1)^4(x-x_5)$ which we subsequently use to solve \eqref{dagger} or \eqref{dagger2} and we're done.
 \end{case}
 % \vspace{-4mm}
 \begin{center}
@@ -358,7 +373,6 @@ $\sim$
   In both cases we obtain a linear system of the form $\tilde V_{\ast} \cdot \mathbf{p} = \tilde \mathbf{y}_{\ast}$ for a three-element vector $\mathbf{p}$ and the vectors $\tilde \mathbf{y}_{1}$ and $\tilde \mathbf{y}_{11}$ are defined like their 4-element counterparts $\mathbf{y}_{1}$ and $\mathbf{y}_{11}$ with the last coordinate omitted.
 
   Both matrices $\tilde V_{\ast}$ are invertible and we therefore get a unique polynomial $p(x)$ wich we use to solve \eqref{daggerp}, obtaining $x_5$, $x_6$, $y_5=p(x_5)$ and $y_6=p(x_6)$ in $\bar K$ and we define $\{ \q_1 , \q_2\}+\{ \q_3 , \infty \} = \{ \q_5 , \q_6 \} = \{(x_5,-y_5),(x_6,-y_6)\}$.
-  %Now let $\q_4 = \infty$. As an analogue to case one and with the same constraints as above, the relevant matrix $\tilde V_1$ is again the upper-left $3 \times 3$ sub-matrix of $V_1$ and we solve $\tilde V_1 \cdot \mathbf{p} = \tilde \mathbf{y}_1$ for a three-element vector $\mathbf{p}$. Needless to say that $\tilde V_1$ is invertible and by obtaining $\mathbf{p}$ we can solve \eqref{daggerp} to get $x_5$ and $x_6$.
 
 \subsection{Well-Definedness of the Addition Law}
 
@@ -367,20 +381,12 @@ To check whether our addition is well defined on $\J$ in each of the cases, we h
 \textbf{Lemma:} In each given definition of `$+$', the result is invariant under the permutation $\q_i \rightleftharpoons \q_j$.
 
 \begin{proof}
-  Simultaneously interchanging $x_i \rightleftharpoons x_j$ and $y_i \rightleftharpoons y_j$ in our linear systems $V_{\ast} \cdot \mathbf{p} = \mathbf{y}_{\ast}$ has the effect of permuting the rows of $V_{\ast}$ and $\mathbf{y}_{\ast}$ and relabeling $(x_k,y_k)$ whenever $\q_k$ was equal to $\q_i$ or $\q_j$.% Observe that the relevant expressions $\det (V_{\ast})$ and $p_3$ are untouched by this manipulation.
+  Simultaneously interchanging $x_i \rightleftharpoons x_j$ and $y_i \rightleftharpoons y_j$ in our linear systems $V_{\ast} \cdot \mathbf{p} = \mathbf{y}_{\ast}$ has the effect of permuting the rows of $V_{\ast}$ and $\mathbf{y}_{\ast}$ and relabeling $(x_k,y_k)$ whenever $\q_k$ was equal to $\q_i$ or $\q_j$.
 
   Consequently the resulting $p(x)$ doesn't change, so neither do any of the terms $T_{\ast}$. The three dagger equations remain unchanged as well, as can easily be checked at \eqref{dagger}, \eqref{dagger2} and \eqref{daggerp} which are invariant under $x_i \rightleftharpoons x_j$.
 
-  Finally, the version of Step 2 we fall into remains the same, since it is only imposed by the distinction of $p_3$ being zero or not. %the variation of the dagger equation of Step 2.
+  Finally, the version of Step 2 we fall into remains the same, since it is only imposed by the distinction of $p_3$ being zero or not.
 \end{proof}
-
-
-%xxx \subsection{Closing Remarks}
-
-%xxx double (and triple?) zeroes of \eqref{sex} 
-
-
-
 
 % -----------------------------------------------------------------------------
 % THIS IS THE END. MY ONLY FRIEND, THE END. OF EVERYTHING THAT STANDS, THE END.

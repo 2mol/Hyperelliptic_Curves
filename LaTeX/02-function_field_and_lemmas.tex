@@ -28,7 +28,7 @@ The goal of this chapter is to look at rational functions on the hyperelliptic c
 
 \vspace{3mm}
 
-\textbf{Reminders}: For a field $K$ with char$(K) \neq 2$ a formal Laurent series written $\tau = \gamma t^e (1 + \dots)\in K (\! (t)\! )$ with $\gamma \in K^*$, $e \in \mathbbm{Z}$ has a a unique inverse $\tau^{-1} = \gamma^{-1} t^{-e} (1 + \dots) \in K (\! (t)\! )$.
+\textbf{Reminders}: For a field $K$ with char$(K) \neq 2$ a formal Laurent series written $\tau = \gamma t^e (1 + \dots)\in K (\! (t)\! )$ with $\gamma \in K^*$, $e \in \mathds{Z}$ has a a unique inverse $\tau^{-1} = \gamma^{-1} t^{-e} (1 + \dots) \in K (\! (t)\! )$.
 
 From now on we will use an ellipsis to denote any terms of ascending order everywhere where we are not interested in the specifics.
 
@@ -39,7 +39,7 @@ If $\tau$ is a formal Laurent series of the form $\tau = 1 + \sum_{i = 1}^{\inft
 $\sim$
 \end{center}
 
-In order to define the order of a function $f$ in a point $\q$, $\ordq (f) \in \mathbbm{Z}$ for $f \in \F^*$ and $\q \in \ekb$ we first construct a $K$-homomorphism
+In order to define the order of a function $f$ in a point $\q$, $\ordq (f) \in \mathds{Z}$ for $f \in \F^*$ and $\q \in \ekb$ we first construct a $K$-homomorphism
 \begin{align*}
   \lp: \F \rightarrow \bar K (\! (t)\! )
 \end{align*}
@@ -104,7 +104,7 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
 	\end{enumerate}\parskip 3mm
 	\begin{proof}\hfill
 		\begin{enumerate}[(a)]\parskip 1mm
-	  	\item Because $\q \in \enkb$ we have $\lpx$, $\lpy \in \bar K[[t]]$ so with $f \in K[x,y]$ we have $\ordq (f) \in \mathbbm{N}$.
+	  	\item Because $\q \in \enkb$ we have $\lpx$, $\lpy \in \bar K[[t]]$ so with $f \in K[x,y]$ we have $\ordq (f) \in \mathds{N}$.
 	  	\item Write $f = A(x,y)$, $A(X,Y) \in K[X,Y]$. First, let $y_0 \neq 0$.
 	  	\begin{align*}
 	  	  \ordq f &= \ord A(\lpx, \lpy)\\
@@ -126,7 +126,7 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
 	\end{enumerate}\parskip 3mm
 	\textbf{Note} that the righthand sides of the equalities refer to the usual definition of the order of a rational function in a point $x_0 \in \bar K \cup \{ \ii \}$.%xxx We renamed the infinity in order to avoid a clash of notations.
 	\begin{proof}
-		First take $f \in K[x]$ and define $e = \ordx f \in \mathbbm{N}$ so $f = (x-x_0)^e g(x)$ with $g \in \bar K[x]$ and $g(x_0)\neq 0$.
+		First take $f \in K[x]$ and define $e = \ordx f \in \mathds{N}$ so $f = (x-x_0)^e g(x)$ with $g \in \bar K[x]$ and $g(x_0)\neq 0$.
 		\begin{enumerate}[(a)]
 	  	\item If $\q =(x_0,y_0)$, $y_0 \neq 0$ then $\lp (f) = f(x_0 + t) = t^e g(x_0 + t)$ and so $\ord \lp (f) = e$ because $g(x_0 + t) = g(x_0) + \dots$ with $g(x_0) \neq 0$.
 
@@ -194,7 +194,7 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
     \begin{align*}
     	\sum_{x_0 \in \bar K \cup \{ \ii \}} \ordx g = 0
     \end{align*}
-    for any $g \in K(x)$ we have $s(f) = 0$ in $\mathbbm{Z}$.
+    for any $g \in K(x)$ we have $s(f) = 0$ in $\mathds{Z}$.
   \end{proof}
 \end{lemma}
 
