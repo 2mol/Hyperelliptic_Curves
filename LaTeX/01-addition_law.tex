@@ -15,7 +15,9 @@ Version 4 \scriptsize \hfill Juri; Hyperelliptic Curves --- Draft --- \today
 \subsection{Definitions and Notation}
 
 \begin{defin}
-	Let $K$ be a field with char$(K) \neq 2, 3$ and $\bar K$ its algebraic closure. Define the hyperelliptic curve of genus two $\enk$ as the set of solutions in $K^2$ to the equation $y^2=C(x)$ where $C(x)=x^5+ax^4+bx^3+cx^2+dx+e$ is a polynomial over $K$. Similarly, the set of solutions in the closure would be denoted $\enkb$.	Define $\ek$ as $\enk \cup \{ \infty \}$.
+	Let $K$ be a field with char$(K) \neq 2, 3$ and $\bar K$ its algebraic closure. Define the hyperelliptic curve of genus two $\enk$ as the set of solutions in $K^2$ to the equation $y^2=C(x)$ where $C(x)=x^5+ax^4+bx^3+cx^2+dx+e$ is a polynomial over $K$. Similarly, the set of solutions in the closure would be denoted $\enkb$.	Define $\ek$ as $\enkb \cup \{ \infty \}$.
+
+	To avoid a clash of notations, we call $\ii$ the infinity that we use in $K \cup \{ \ii \}.$
 
 	\textbf{Note} that we could obtain a more reduced form of $C(x)$, eliminating $a$ by shifting $x$ to $x-a/5$. However, since this would rob us of the possibility of char$(K) = 5$ without simplifying our coming calculations in any significant manner, we shall be reluctant towards using this trick.
 
@@ -114,7 +116,7 @@ Let $\P_1 = \{\q_1,\q_2\}$, $\P_2 = \{\q_3,\q_4\}$ with $\q_i = (x_i,y_i) \in \e
 
 	Compute $y_5 = p(x_5)$ and define $\P_1 + \P_2$ to be the point $\P_3 = \{ (x_5, y_5), \infty \}$.
 
-	{\scshape Step $1'$:} To extend our construction from $\enk$ to $\ek$ we now consider $\q_4 = \infty$ with the other $\q_i = (x_i,y_i)$ as before. This can be seen as the $x_i$ still being pairwise distinct, only that one of them is allowed to be $\infty$ here.
+	{\scshape Step $1'$:} To extend our construction from $\enk$ to $\ek$ we now consider $\q_4 = \infty$ with the other $\q_i = (x_i,y_i)$ as before. This can be seen as the $x_i$ still being pairwise distinct, only that one of them is allowed to be $\ii$ here.
 
 	There is no coordinate $x_4$ this time, so we pass a quadratic polynomial $p(x)$ through the remaining three points $(x_i,y_i)$. This means that we solve the linear system $\tilde V \cdot \mathbf{p} = \tilde \mathbf{y}$ where $\tilde V$ is the Vandermonde matrix for $x_i$, $i=1,..,3$ which incidentally is the upper-left 3$\times$3 sub-matrix of $V$. Here $\mathbf{p}=(p_0 \ p_1 \ p_2)^t$ and $\tilde \mathbf{y}=(y_1 \ y_2 \ y_3)^t$ are defined as expected.
 	%xxx want me to call it $\tilde p$ instead of p?
@@ -140,27 +142,14 @@ Let $\P_1 = \{\q_1,\q_2\}$, $\P_2 = \{\q_3,\q_4\}$ with $\q_i = (x_i,y_i) \in \e
 	\fline
 
 	Solve, call the two solutions $x_5$ and $x_6$, compute $y_5$ and $y_6$ through $p(x_5)$ and $p(x_6)$ and define $\P_1+\P_2$ to be $\P_3=\{ (x_5,-y_5) , (x_6,-y_6) \}=\{ \q_5, \q_6 \}$.
-
-\begin{remark}
-	Note that an interesting consequence is --- if the above does truly complete the general case --- that at most one of the $\q_i$ for $i=1, .. , 6$ can be the point at infinity, provided that the $\q_i$ for $i=1, .. , 4$ are all pairwise distinct.
-\end{remark}
-	%\textbf{Note} also that solving either of the dagger equations does not guarantee that the resulting $x_5$ or $x_6$ differ from the other $x_i$ or even from each other. In fact the situation may very well arise where for instance $x_6 = x_1$ because $p(x)$ happens to be tangential to the curve at $x_1$. The equation \eqref{sex} would then factor as $-p_3^2(x-x_1)^2\prod_{i=1}^5 (x-x_i)$.
 \end{case}
-\vspace{-5mm}
+
 \begin{center}
 $\sim$
 \end{center}
 
-%xxx shall I mark this somehow/give it a title? Looks a bit puny with regards to the importance it carries.
-Before we begin listing the special cases, we impose the following property on the addition of any two points:
 
-The sum of any $\{\q_1,\q_2\}$ and $\{\q_3,\q_4\}$ in $\J$ fulfills the following equality:
-\begin{align*}
-	\tag{$\diamondsuit$} \label{switch} \{\q_1,\q_2\} + \{\q_3,\q_4\} = \{\q_1,\q_3\} + \{\q_2,\q_4\}.
-\end{align*}
-
-\newpage
-\begin{figure}[ht]
+\begin{figure}[ht!]
 	\fline
 	\begin{center}
 		\vspace{1mm}
@@ -179,22 +168,48 @@ The sum of any $\{\q_1,\q_2\}$ and $\{\q_3,\q_4\}$ in $\J$ fulfills the followin
 	\fline
 \end{figure}
 
-\vspace{2mm}
+
 \begin{remark}
-We will use this property extensively from now on and it will be worth the additional trouble of having to check well-definedness because
-\begin{enumerate}[(i)]\parskip 0mm
-	\item Since \eqref{switch} implies that we can interchange \textit{any} two point-components in a given sum, we may now impose conditions on the $\q_i$ without mentioning whether they belong to $\P_1$ or $\P_2$.
-	\item As a result, the list of special cases can be written in a significantly more concise manner.
-	\item It is immediately clear now that if we have a well-defined addition, then $-\P = \bar \P$ because $\{ \q_1 , \q_2 \} + \{ \bar \q_1 , \bar \q_2 \} = \{ \q_1 , \bar \q_1 \} + \{ \q_2 , \bar \q_2 \}=0$.
-	\item The property even gives us commutativity for free.
-\end{enumerate}
-\parskip 3mm
+	Up to this point, we have only given the general-case rule for elements in $\j=\ekb \times \ekb$. We can however easily see that this is also well-defined on $\J$: The equivalence relation from Definition \ref{defj} corresponds to interchanging $\q_1$ and $\q_2$ or $\q_3$ and $\q_4$ or both.
+	Consequently we can check that interchanging $(x_i,y_i) \rightleftharpoons (x_j,y_j)$ does nothing to the resulting $\q_5$ and $\q_6$. This is the case because $p(x)$ does only depend on the solution of the linear system $V \cdot \mathbf{p} = \mathbf{y}$ on which the aforementioned permutation has no effect. With $p$ invariant, the subsequent steps remain unchanged as well.
+  % xxx defined not only on j but on J as well.
 \end{remark}
+
+
+	%\textbf{Note} also that solving either of the dagger equations does not guarantee that the resulting $x_5$ or $x_6$ differ from the other $x_i$ or even from each other. In fact the situation may very well arise where for instance $x_6 = x_1$ because $p(x)$ happens to be tangential to the curve at $x_1$. The equation \eqref{sex} would then factor as $-p_3^2(x-x_1)^2\prod_{i=1}^5 (x-x_i)$.
+
+
+%xxx shall I mark this somehow/give it a title? Looks a bit puny with regards to the importance it carries.
+% \newpage
+Before we begin listing the special cases, we impose the following property: The sum of any $\P_1 = \{\q_1,\q_2\}$ and $\P_2 = \{\q_3,\q_4\}$ in $\J$ fulfills the equality
+\begin{align*}
+	\tag{$\diamondsuit$} \label{switch} \P_1 + \P_2 &= \{\q_3,\q_2\} + \{\q_1,\q_4\}.
+\end{align*}
+Note that the general-case addition we just defined already fulfills this, as we noted before that interchanging any of the $(x_i, y_i)$ does not impact the solution $\mathbf{p}$ of the linear system nor any of the dagger equations.
+
+\begin{remark}\label{permut}
+	The property \eqref{switch} corresponds to the permutation $(1 \, 3)$ on the point-components $\q_i$. With Definition \ref{defj} allowing the permutations $(1 \, 2)$ and $(3 \, 4)$ this naturally leads to the observation that in fact all permutations of point-components must now leave the sum unchanged. It is easy to check that the three transpositions generate all of $S_4$ and the previous remark already provides compatibility with the construction of the general case.
+\end{remark}
+
+	% xxx It is immediately clear now that if we have a well-defined addition, then $-\P = \bar \P$ because $\{ \q_1 , \q_2 \} + \{ \bar \q_1 , \bar \q_2 \} = \{ \q_1 , \bar \q_1 \} + \{ \q_2 , \bar \q_2 \}=0$.
+	% xxx The property even gives us commutativity for free.
+
+
 
 %xxx not 100\% satisfactory...I really want to show that this is not only justified but  inevitable.
 
-\newpage
+
+% \newpage
+
+
+% \vspace{2mm}
+
+
+% \newpage
+
 \subsection{Complete List of Cases}
+
+We may now impose conditions on the relations between the $\q_i$ without mentioning whether they belong to $\P_1$ or $\P_2$. As a result, the list of special cases can be written in a significantly more concise manner.
 
 As we strive to define $\{ \q_1 , \q_2 \} + \{ \q_3 , \q_4 \}$, for any $\q_i = (x_i,y_i) \in \enkb$ or $\q_i = \infty \in \ekb$ we observe that the following simplification takes place:
 
@@ -203,7 +218,7 @@ Let $\{ i,j,k,l \}=\{ 1,2,3,4 \}$. Whenever $\q_i = \bar \q_j$ for $i \neq j$ we
   \{ \q_1 , \q_2 \} + \{ \q_3 , \q_4 \} &= \{ \q_k , \q_l \} + \{ \q_i , \bar \q_i \}\\
   &= \{ \q_k , \q_l \} + \{ \infty, \infty \}.
 \end{align*}
-The justification for this follows directly from \eqref{switch} and Definition \ref{defj}. It is easily checked that this sum remains well defined if the choice of $i$ and $j$ is not unique. This allows us to treat the above as a separate case in order to characterize the other cases solely through the $x$-coordinates of the $\q_i$, so% and otherwise xxx for all the others assume that equality between the $\q_i$ depend only on their $x$-coordinates:%any property we impose on the $\q_i$ we can just look at $x_i$:
+The justification for this follows directly from Remark \ref{permut} and Definition \ref{defj}. It is easily checked that this sum remains well defined if the choice of $i$ and $j$ is not unique. This allows us to treat the above as a separate case in order to characterize the other cases solely through the $x$-coordinates of the $\q_i$, so% and otherwise xxx for all the others assume that equality between the $\q_i$ depend only on their $x$-coordinates:%any property we impose on the $\q_i$ we can just look at $x_i$:
 \begin{align*}
   x_i = x_j \iff \q_i = \q_j
 \end{align*}
@@ -245,7 +260,7 @@ Since we are allowed to permute point-components anyway, we may fix which of the
 	
 	\item For the list to be complete, we must allow for $\q_i = \infty$ for some $i$. Note that one is sufficient, since if two or more $\q_i$ were to be $\infty$, we would be back at the case 0 by virtue of \eqref{switch}, bringing the two infinities together in one point. As for case 1, we consider $\q_i \in \enk$ and $\q_i \in \ek$ in two separate cases and postpone handling the latter.\label{extend}
 
-	\item As for the first case, the constructions will a priori only be made on $\j$. It remains to check that this makes indeed for a well-defined addition on $\J$ by being invariant under the permutations $\q_1 \rightleftharpoons \q_2$ and $\q_3 \rightleftharpoons \q_4$.
+	\item As for the first case, the constructions will a priori only be made on $\j$. It remains to check that this makes indeed for a well-defined addition on $\J$ by being invariant under the permutations $\q_i \rightleftharpoons \q_j$ for any $i$, $j$.
 \end{enumerate}
 \end{remark}
 
@@ -282,7 +297,7 @@ Since we are allowed to permute point-components anyway, we may fix which of the
 \end{case}
 
 \begin{case}
-	{\scshape Double Tangential:} Let $\q_i \in \enk$, $\q_1 = \q_2$ and $\q_3 = \q_4$ but $x_1 \neq x_3$ and $\q_i \neq \pm \q_i$ meaning that neither $y_1$ nor $y_3$ will be zero. As before, we lack equations for our linear system, requiring the use of a second tangential constraint. Replace the fourth row of $\Vdoub$ and $\ydoub$ exactly like we did for the second one: $y_4'=\frac{C'(x_3)}{2 y_3}$ and
+	{\scshape Double Tangential:} Let $\q_i \in \enk$, $\q_1 = \q_2$ and $\q_3 = \q_4$ but $x_1 \neq x_3$ and $\q_i \neq \bar \q_i$ meaning that neither $y_1$ nor $y_3$ will be zero. As before, we lack equations for our linear system, requiring the use of a second tangential constraint. Replace the fourth row of $\Vdoub$ and $\ydoub$ exactly like we did for the second one: $y_4'=\frac{C'(x_3)}{2 y_3}$ and
 	\begin{align*}\Vddoub=
 		\begin{pmatrix}
 			1 & x_1 & x_1^2 & x_1^3\\
@@ -356,15 +371,7 @@ To check whether our addition is well defined on $\J$ in each of the cases, we h
 \end{proof}
 
 
-
-
-%Matrices, det invariant under perm, xxx The same can be said for the explicit expression of $p_3$ noted in the general case. 
-
-
-
-%2. Invariance under $\q_1 \rightleftharpoons \q_3$. Note that combined with the above, this includes the permutation $\q_1 \rightleftharpoons \q_4$.
-
-%\subsection{Closing Remarks}
+%xxx \subsection{Closing Remarks}
 
 %xxx double (and triple?) zeroes of \eqref{sex} 
 
