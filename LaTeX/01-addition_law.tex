@@ -39,10 +39,10 @@ Version 4 \scriptsize \hfill Juri; Hyperelliptic Curves --- Draft --- \today
 
 \subsection{The General Case}
 
-Let $\P_1 = \{\q_1,\q_2\}$, $\P_2 = \{\q_3,\q_4\}$ with $\q_i = (x_i,y_i) \in \enk$ or $\q_i = \infty$. To define $\P_3 = \P_1 + \P_2$ we distinguish between one general case and a number of special cases and first derive the results of the former before enumerating the latter ones.
+Let's start with $\P_1 = \{\q_1,\q_2\}$, $\P_2 = \{\q_3,\q_4\}$ with $\q_i = (x_i,y_i) \in \enk$ or $\q_i = \infty$. To define $\P_3 = \P_1 + \P_2$ we distinguish between one general case and a number of special cases and first derive the results of the former before enumerating the latter ones.
 
 \begin{case} {\scshape Four Distinct Point-Components:}
-	Let first $\q_i \in \enk$ and $\P_i$ be defined as above with $x_i \neq x_j$ whenever $i \neq j$.
+	Let $\q_i \in \enk$ and $\P_i$ be defined as above with $x_i \neq x_j$ whenever $i \neq j$.
 
 	The overarching idea is to obtain a fifth and sixth $x$-coordinate and the corresponding $y$-coordinates by passing a polynomial of degree three through the four points $\q_i$. Ideally this should give us two additional intersections with the curve which we then use as the components of our point $\P_1 + \P_2$.
 
@@ -170,8 +170,10 @@ $\sim$
 
 
 \begin{remark}
-	Up to this point, we have only given the general-case rule for elements in $\j=\ekb \times \ekb$. We can however easily see that this is also well-defined on $\J$: The equivalence relation from Definition \ref{defj} corresponds to interchanging $\q_1$ and $\q_2$ or $\q_3$ and $\q_4$ or both.
-	Consequently we can check that interchanging $(x_i,y_i) \rightleftharpoons (x_j,y_j)$ does nothing to the resulting $\q_5$ and $\q_6$. This is the case because $p(x)$ does only depend on the solution of the linear system $V \cdot \mathbf{p} = \mathbf{y}$ on which the aforementioned permutation has no effect. With $p$ invariant, the subsequent steps remain unchanged as well.
+	Up to this point, we have only given the general-case rule for elements in $\ek \times \ek$. Extending to $\j = \ekb \times \ekb$ is trivial as we can simply choose $\bar K$ as the new $K$. The final step is to note that everything until now is well-defined on $\J$. The equivalence relation from Definition \ref{defj} corresponds to interchanging $\q_1$ and $\q_2$ or $\q_3$ and $\q_4$ or both.
+	To this end we can check that interchanging $(x_i,y_i) \rightleftharpoons (x_j,y_j)$ does nothing to the resulting $\q_5$ and $\q_6$. This is the case because $p(x)$ does only depend on the solution of the linear system $V \cdot \mathbf{p} = \mathbf{y}$ on which the aforementioned permutation has no effect. With $p$ invariant, the subsequent steps remain unchanged as well.
+
+	Finally, the restriction to $K$ instead of $\bar K$ was to showcase the degree of the required field extension, a feat we will now leave aside by always using $\bar K$.
   % xxx defined not only on j but on J as well.
 \end{remark}
 
@@ -189,6 +191,8 @@ Note that the general-case addition we just defined already fulfills this, as we
 
 \begin{remark}\label{permut}
 	The property \eqref{switch} corresponds to the permutation $(1 \, 3)$ on the point-components $\q_i$. With Definition \ref{defj} allowing the permutations $(1 \, 2)$ and $(3 \, 4)$ this naturally leads to the observation that in fact all permutations of point-components must now leave the sum unchanged. It is easy to check that the three transpositions generate all of $S_4$ and the previous remark already provides compatibility with the construction of the general case.
+
+	A substantial bonus of this is the fact that commutativity corresponds to the permutation $(1 \, 3)(2 \, 4)$ which by the above we now obtained for free.
 \end{remark}
 
 	% xxx It is immediately clear now that if we have a well-defined addition, then $-\P = \bar \P$ because $\{ \q_1 , \q_2 \} + \{ \bar \q_1 , \bar \q_2 \} = \{ \q_1 , \bar \q_1 \} + \{ \q_2 , \bar \q_2 \}=0$.
@@ -258,7 +262,7 @@ Since we are allowed to permute point-components anyway, we may fix which of the
 \begin{enumerate}[(i)]
 	\item In both lists, the cases do not overlap.
 	
-	\item For the list to be complete, we must allow for $\q_i = \infty$ for some $i$. Note that one is sufficient, since if two or more $\q_i$ were to be $\infty$, we would be back at the case 0 by virtue of \eqref{switch}, bringing the two infinities together in one point. As for case 1, we consider $\q_i \in \enk$ and $\q_i \in \ek$ in two separate cases and postpone handling the latter.\label{extend}
+	\item For the list to be complete, we must allow for $\q_i = \infty$ for some $i$. Note that one is sufficient, since if two or more $\q_i$ were to be $\infty$, we would be back at the case 0 by virtue of \eqref{switch}, bringing the two infinities together in one point. As for case 1, we consider $\q_i \in \enkb$ and $\q_i \in \ekb$ in two separate cases and postpone handling the latter.\label{extend}
 
 	\item As for the first case, the constructions will a priori only be made on $\j$. It remains to check that this makes indeed for a well-defined addition on $\J$ by being invariant under the permutations $\q_i \rightleftharpoons \q_j$ for any $i$, $j$.
 \end{enumerate}
@@ -274,7 +278,7 @@ Since we are allowed to permute point-components anyway, we may fix which of the
 
 \setcounter{case}{1}
 \begin{case}
-	{\scshape Tangential:} Let $\q_i\in \enk, \q_1 = \q_2$, $y_1 \neq 0$ but $x_1$, $x_3$ and $x_4$ are pairwise distinct. We cannot use the Vandermonde matrix in this case because it won't possess maximal rank, consequently being non-invertible. We can however obtain an additional equation by demanding that our polynomial $p(x)$ be tangential to the curve at $\q_1$. This gives
+	{\scshape Tangential:} Let $\q_i\in \enkb, \q_1 = \q_2$, $y_1 \neq 0$ but $x_1$, $x_3$ and $x_4$ are pairwise distinct. We cannot use the Vandermonde matrix in this case because it won't possess maximal rank, consequently being non-invertible. We can however obtain an additional equation by demanding that our polynomial $p(x)$ be tangential to the curve at $\q_1$. This gives
 	\begin{align*}
 	  2 y \frac{dy}{dx} &= 5  x^4 + 4 a x^3 + 3 b x^2 + 2 c x + d \\
 	  \text{and\hspace{8mm}} \frac{dy}{dx} &= 3 p_3 x^2 + 2 p_2 x + p_1
@@ -289,7 +293,7 @@ Since we are allowed to permute point-components anyway, we may fix which of the
 		\end{pmatrix}.
 	\end{align*}
 	The subscript indicates at which points the intersections have higher order.
-	Here $\ydoub$ is defined as $\mathbf{y}$ with $y_2$ replaced by $y_2'=\frac{C'(x_1)}{2 y_1}$ where $C'(x)$ is the derivative of $C$ and $2y_1 \neq 0$ because char$(K) \neq 2$ and $y_1\neq 0$. Since $\det(\Vdoub) = (x_4-x_1)^2(x_3-x_1)^2(x_4-x_3)$ this fits neatly into our constraints by being non-zero exactly in the case where $x_1, x_3$ and $x_4$ are pairwise distinct.
+	Here $\ydoub$ is defined as $\mathbf{y}$ with $y_2$ replaced by $y_2'=\frac{C'(x_1)}{2 y_1}$ where $C'(x)$ is the derivative of $C$ and $2y_1 \neq 0$ because char$(\bar K) \neq 2$ and $y_1\neq 0$. Since $\det(\Vdoub) = (x_4-x_1)^2(x_3-x_1)^2(x_4-x_3)$ this fits neatly into our constraints by being non-zero exactly in the case where $x_1, x_3$ and $x_4$ are pairwise distinct.
 
 	Once $p(x)$ is determined, step two will be entirely identical to the general case and we can again solve \eqref{dagger2} or \eqref{dagger} for $x_5$ or $x_5$ and $x_6$.
 
@@ -297,7 +301,7 @@ Since we are allowed to permute point-components anyway, we may fix which of the
 \end{case}
 
 \begin{case}
-	{\scshape Double Tangential:} Let $\q_i \in \enk$, $\q_1 = \q_2$ and $\q_3 = \q_4$ but $x_1 \neq x_3$ and $\q_i \neq \bar \q_i$ meaning that neither $y_1$ nor $y_3$ will be zero. As before, we lack equations for our linear system, requiring the use of a second tangential constraint. Replace the fourth row of $\Vdoub$ and $\ydoub$ exactly like we did for the second one: $y_4'=\frac{C'(x_3)}{2 y_3}$ and
+	{\scshape Double Tangential:} Let $\q_i \in \enkb$, $\q_1 = \q_2$ and $\q_3 = \q_4$ but $x_1 \neq x_3$ and $\q_i \neq \bar \q_i$ meaning that neither $y_1$ nor $y_3$ will be zero. As before, we lack equations for our linear system, requiring the use of a second tangential constraint. Replace the fourth row of $\Vdoub$ and $\ydoub$ exactly like we did for the second one: $y_4'=\frac{C'(x_3)}{2 y_3}$ and
 	\begin{align*}\Vddoub=
 		\begin{pmatrix}
 			1 & x_1 & x_1^2 & x_1^3\\
@@ -311,7 +315,7 @@ Since we are allowed to permute point-components anyway, we may fix which of the
 \end{case}
 
 \begin{case}
-	{\scshape Triple Point:} Let $\q_i \in \enk , \q_1=\q_2=\q_3$ but $x_1 \neq x_4$ and $y_1 \neq 0$. We can thus see this as a third-order intersection and demand that the curve and the polynomial share a second-order derivative at $\q_1$:
+	{\scshape Triple Point:} Let $\q_i \in \enkb , \q_1=\q_2=\q_3$ but $x_1 \neq x_4$ and $y_1 \neq 0$. We can thus see this as a third-order intersection and demand that the curve and the polynomial share a second-order derivative at $\q_1$:
 	\begin{align*}\Vtri=
 			\begin{pmatrix}
 			1 & x_1 & x_1^2 & x_1^3\\
@@ -326,7 +330,7 @@ Since we are allowed to permute point-components anyway, we may fix which of the
 \end{case}
 
 \begin{case}
-	{\scshape Quadruple Point:} Given the situation where $\q_i = \q_1 \in \enk$ for every $i$ with $y_1 \neq 0$, we use
+	{\scshape Quadruple Point:} Given the situation where $\q_i = \q_1 \in \enkb$ for every $i$ with $y_1 \neq 0$, we use
 	\begin{align*}\Vquad &=
 		\begin{pmatrix}
 			1 & x_1 & x_1^2 & x_1^3\\
@@ -349,7 +353,7 @@ Since we are allowed to permute point-components anyway, we may fix which of the
 $\sim$
 \end{center}
 
-  \textbf{Finally}, as noted in Remark \ref{rem}, \eqref{extend} we have yet to extend our definition from $\enk$ to $\ek$. Observe that this is only relevant for cases number two and four where we now consider $\q_4 = \infty$ as we did in {\scshape Step $1'$} of the general case. As an analogue to this, the relevant matrices $\tilde V_1$ and $\tilde V_{11}$ will be the upper-left $3 \times 3$ sub-matrices of their $\enk$-counterparts $V_1$ and $V_{11}$.
+  \textbf{Finally}, as noted in Remark \ref{rem}, \eqref{extend} we have yet to extend our definition from $\enkb$ to $\ekb$. Observe that this is only relevant for cases number two and four where we now consider $\q_4 = \infty$ as we did in {\scshape Step $1'$} of the general case. As an analogue to this, the relevant matrices $\tilde V_1$ and $\tilde V_{11}$ will be the upper-left $3 \times 3$ sub-matrices of their $\enkb$-counterparts $V_1$ and $V_{11}$.
 
   In both cases we obtain a linear system of the form $\tilde V_{\ast} \cdot \mathbf{p} = \tilde \mathbf{y}_{\ast}$ for a three-element vector $\mathbf{p}$ and the vectors $\tilde \mathbf{y}_{1}$ and $\tilde \mathbf{y}_{11}$ are defined like their 4-element counterparts $\mathbf{y}_{1}$ and $\mathbf{y}_{11}$ with the last coordinate omitted.
 
