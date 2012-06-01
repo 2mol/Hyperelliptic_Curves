@@ -134,7 +134,7 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
 
 	  	\item For $\q = \infty$ we have $\lp (f) = f(t^{-2}) = \kappa t^{-2d}+ \dots$ with $\kappa \neq 0$ if $d = \deg f$ so $\ordn f(\frac 1 x ) = -d$ and so $\ord \lp (f) = 2 \ordn f(\frac 1 x )$.
 		\end{enumerate}
-		Generally, if $f \in K(x)$ we can write $f = \frac p q$ for $p, q \in K[x]$ and we apply the above to $p$ and $q$, subtracting $\ordq q$ from $\ordq p$.%xxx check this through?
+		Generally, if $f \in K(x)$ we can write $f = \frac r q$ for $r, q \in K[x]$ and we apply the above to $r$ and $q$, subtracting $\ordq q$ from $\ordq r$.%xxx check this through?
 	\end{proof}
 \end{lemma}
 
@@ -169,7 +169,7 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
   \begin{proof}
     First take $f \in K[x,y]$, $f \neq 0$ and let $\q = (x_0,y_0) \in \enkb$ with $\ordq f \neq 0$. By Lemma \ref{one} (a) we know that $\ordq f \geq 1$. It follows that $\ordq (f \bar f) = \ordq f + \ordq \bar f \geq 1$. Now since $f = g + h y$, $f \bar f = g^2 - h^2 C(x)$ which lies in $K[x]$, so by Lemma \ref{two} we have $\ordx (f \bar f) = \ordq (f \bar f) \geq 1$. But there are only finitely many such $x_0$ and so only finitely many $y_0 = \pm \sqrt{C(x_0)}$.
 
-    For $f \in K(x,y)$, $f = \frac p q$, $p, q \in K[x,y]$ we have $\ordx f = \ordx p - \ordx q$ so there are also only finitely many $x_0$ for which this differs from zero.
+    For $f \in K(x,y)$, $f = \frac r q$, $r, q \in K[x,y]$ we have $\ordx f = \ordx r - \ordx q$ so there are also only finitely many $x_0$ for which this differs from zero.
 
     For the second claim, give a name to our sum
     \begin{align*}
