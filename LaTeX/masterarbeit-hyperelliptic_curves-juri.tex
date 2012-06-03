@@ -707,14 +707,41 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
 Version 1 \scriptsize \hfill Juri; Hyperelliptic Curves --- Draft --- \today
 \normalsize
 
+\textbf{Note:} I have renamed $\q_5, \q_6$ to $\bar \q_5, \bar \q_6$ since $\q_5 := (x_5,y_5)$ is more natural than $\q_5 := (x_5,-y_5)$. So now $\P_3$ is $\{ \bar \q_5, \bar \q_6 \}$. I'll change it in Chapter 1 as soon as I have the desire to do something tedious.
+
 \section{Associativity}
+
+\begin{lemma}
+  If $\q_i = (x_i, y_i) ,\q_i \in \enkb$ and we have 
+  \begin{align*}
+    \{ \q_1 , \q_2\}+\{\q_3 , \q_4\} = \{\bar \q_5 , \bar \q_6 \}
+  \end{align*}
+  with exactly $e$ of the $\q_i$ being equal, say to $\q_k$ for some $k \in \{1,..,6\}$, then
+  \begin{align*}
+    D(x) = (x-x_k)^e g(x)
+    % (x-x_k)^e \mid D(x).
+  \end{align*}
+  with $g(x_k) \neq 0$. xxx Rephrase, this is crap. Just say $\ord_{x_k} D(x) = e$
+  \begin{proof}
+    The statement has already been proven true for $e, i, k \leq 4$ in each of the different cases. By construction we have for $D(x) = C(x) - p^2(x)$
+		\begin{align*}
+			D(x) &= -p_3^2\prod_{i=1}^6(x-x_i)
+		\end{align*}
+		if $p_3 \neq 0$. If $p_3 = 0$ and therefore $\q_j = \infty$ for exactly one $j \in \{1,..,6\}$ then
+		\begin{align*}
+			D(x) &=  \prod_{\substack{i=1\\i \neq j}}^6(x-x_i).
+		\end{align*}
+		So by construction, $\q_5$ or $\q_6$ being equal to some other $\q_k$ contributes an additional factor $(x-x_k)$
+    %and are true for $\q_5$ or $\q_6$ by construction: are equal to any $q_k$, $k\in \{1,..,6\}$ then the origin of this xxx
+  \end{proof}
+\end{lemma}
 
 \begin{theorem}
   Let $\P_i \in \J$, $\P_i = \{ \q_1, \q_2 \}$, $\P_2 = \{ \q_3, \q_4 \}$ and $\P_3 = \{ \q_5, \q_6 \}$,
   \begin{align*}
     \P_1 + \P_2 = \P_3.
   \end{align*}
-  Then there is an $f \in \F^*$ that has as divisor
+  Then there exists an $f \in \F^*$ that has as divisor
   \begin{align*}\label{f}\tag{$\star$}
     (f) = \q_1 + \q_2 + \q_3 + \q_4 - \q_5 - \q_6 - 2 \infty.
   \end{align*}
@@ -728,10 +755,15 @@ Version 1 \scriptsize \hfill Juri; Hyperelliptic Curves --- Draft --- \today
     \begin{enumerate}[1.]\setcounter{enumi}{-1}
       \item If $\P_2 = 0$ then \eqref{f} is equal to $(f) = \q_1 + \q_2 + 2 \infty - \q_1 - \q_2 - 2 \infty = 0$, a condition that is fulfilled by $f = 1$.
 
-      \item Remember that in the general case, the $\q_i$, $i=1,..,4$ are all pairwise distinct. By design, if $\q_i\in \enkb$ then $s(\q_i) = 0$ so by Lemma \ref{one} we know that $\ordqi s \geq 1$. The same thing goes for $\bar \q_5$ and $\bar \q_6$. Consider two more things: One of the $\q_i$, $i=1,..,6$ might be $\infty$ and we have to check that $\bar \q_5$ and $\bar \q_6$ are not accidentaly equal to any of the $\q_i$ for $i=1,..,4$.
+      \item Remember that in the general case, the $\q_i$, $i=1,..,4$ are all pairwise distinct. By design, if $\q_i\in \enkb$ then $s(\q_i) = 0$ so by Lemma \ref{one} we know that $\ordqi s \geq 1$. The same thing goes for $\bar \q_5$ and $\bar \q_6$. But there are two more things to consider: One of the $\q_i$, $i=1,..,6$ might be $\infty$ and we have to check if $\bar \q_5$ or $\bar \q_6$ are accidentally equal to any of the $\q_i$ for $i=1,..,4$.
+
+      The first issue is addressed by distinguishing between the cases where this does happen and the second one xxx
+
+      LOADS OF RUBBISH. FUCK IT, WE'LL DO IT LIVE.
     \end{enumerate}
   \end{proof}
 \end{theorem}
+
 
 
 
