@@ -379,7 +379,8 @@ $\sim$
 
 To check whether our addition is well defined on $\J$ in each of the cases, we have to consider the permutation of point-components $\q_i$ under the equivalence relation from Definition \ref{defj}. Furthermore, to claim that all possible cases are all covered, it is necessary to check the permutations under \eqref{switch}. Both cases can be combined into a single one by the following statement:
 
-\textbf{Lemma:} In each given definition of `$+$', the result is invariant under the permutation $\q_i \rightleftharpoons \q_j$.
+\begin{lemma}
+In each given definition of `$+$', the result is invariant under the permutation $\q_i \rightleftharpoons \q_j$.
 
 \begin{proof}
   Simultaneously interchanging $x_i \rightleftharpoons x_j$ and $y_i \rightleftharpoons y_j$ in our linear systems $V_{\ast} \cdot \mathbf{p} = \mathbf{y}_{\ast}$ has the effect of permuting the rows of $V_{\ast}$ and $\mathbf{y}_{\ast}$ and relabeling $(x_k,y_k)$ whenever $\q_k$ was equal to $\q_i$ or $\q_j$.
@@ -388,6 +389,7 @@ To check whether our addition is well defined on $\J$ in each of the cases, we h
 
   Finally, the version of Step 2 we fall into remains the same, since it is only imposed by the distinction of $p_3$ being zero or not.
 \end{proof}
+\end{lemma}
 
 
 %------------------------------------------------------------------------------
@@ -707,11 +709,11 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
 Version 1 \scriptsize \hfill Juri; Hyperelliptic Curves --- Draft --- \today
 \normalsize
 
-\textbf{Note:} I have renamed $\q_5, \q_6$ to $\bar \q_5, \bar \q_6$ since $\q_5 := (x_5,y_5)$ is more natural than $\q_5 := (x_5,-y_5)$. So now $\P_3$ is $\{ \bar \q_5, \bar \q_6 \}$. I'll change it in Chapter 1 as soon as I have the desire to do something tedious.
+\textbf{Note:} I have renamed $\q_5, \q_6$ to $\bar \q_5, \bar \q_6$ since $\q_5 := (x_5,y_5)$ is a little more natural than $\q_5 := (x_5,-y_5)$. So now $\P_3$ is $\{ \bar \q_5, \bar \q_6 \}$. I'll change it in Chapter 1 as soon as I have the desire to do something tedious.
 
 \section{Associativity}
 
-\begin{lemma}
+\begin{lemma}\label{mult}
   If $\q_i = (x_i, y_i) ,\q_i \in \enkb$ and we have 
   \begin{align*}
     \{ \q_1 , \q_2\}+\{\q_3 , \q_4\} = \{\bar \q_5 , \bar \q_6 \}
@@ -736,33 +738,111 @@ Version 1 \scriptsize \hfill Juri; Hyperelliptic Curves --- Draft --- \today
   \end{proof}
 \end{lemma}
 
+
+
 \begin{theorem}
-  Let $\P_i \in \J$, $\P_i = \{ \q_1, \q_2 \}$, $\P_2 = \{ \q_3, \q_4 \}$ and $\P_3 = \{ \q_5, \q_6 \}$,
+  Let $\P_i \in \J$, $\P_i = \{ \q_1, \q_2 \}$, $\P_2 = \{ \q_3, \q_4 \}$ and $\P_3 = \{ \bar \q_5, \bar \q_6 \}$,
   \begin{align*}
     \P_1 + \P_2 = \P_3.
   \end{align*}
   Then there exists an $f \in \F^*$ that has as divisor
   \begin{align*}\label{f}\tag{$\star$}
-    (f) = \q_1 + \q_2 + \q_3 + \q_4 - \q_5 - \q_6 - 2 \infty.
+    (f) = \q_1 + \q_2 + \q_3 + \q_4 - \bar \q_5 - \bar \q_6 - 2 \infty.
   \end{align*}
-  \begin{proof}
-    In five of the six cases of the addition law we have our polynomial $p(x)$ passing through the points $(x_i, y_i)$ for $i = 1,..,6$. This prompts defining
-    \begin{align*}
-      s = y -p(x) \in \F^*
-    \end{align*}
-    in the expectation of getting either $f = \frac{y-p(x)}{(x-x_5)(x-x_6)}$ or $f = \frac{y-p(x)}{(x-x_5)}$.
-
-    \begin{enumerate}[1.]\setcounter{enumi}{-1}
-      \item If $\P_2 = 0$ then \eqref{f} is equal to $(f) = \q_1 + \q_2 + 2 \infty - \q_1 - \q_2 - 2 \infty = 0$, a condition that is fulfilled by $f = 1$.
-
-      \item Remember that in the general case, the $\q_i$, $i=1,..,4$ are all pairwise distinct. By design, if $\q_i\in \enkb$ then $s(\q_i) = 0$ so by Lemma \ref{one} we know that $\ordqi s \geq 1$. The same thing goes for $\bar \q_5$ and $\bar \q_6$. But there are two more things to consider: One of the $\q_i$, $i=1,..,6$ might be $\infty$ and we have to check if $\bar \q_5$ or $\bar \q_6$ are accidentally equal to any of the $\q_i$ for $i=1,..,4$.
-
-      The first issue is addressed by distinguishing between the cases where this does happen and the second one xxx
-
-      LOADS OF RUBBISH. FUCK IT, WE'LL DO IT LIVE.
-    \end{enumerate}
-  \end{proof}
 \end{theorem}
+
+\begin{remark}\label{alldiff}
+  Looking back at the construction of $\P_1 + \P_2 = \P_3$ we used the equivalence $\q_i = \q_j \iff x_i = x_j$, $\q_i, \q_j \in \ekb$, $x_i, x_j \in \bar K \cup \{\ii\}$ for $i, j \leq 4$ whenever not in the zero case. We can now easily see that this extends to $i, j \in \{1,..,6\}$. First note that at most one of the six $\q_i$ may equal $\infty$. By construction, the polynomial $p(x)$ passes through all those $\q_i$ that are in $\enkb$. This implies that if $\q_i = \bar \q_j$ we must have $-y_i = y_j = p(x_j) = p(x_i) = y_i$ so $y_i = 0$ in char$(K) \neq 2$ i.e. $\bar \q_i =\q_j = \q_i$.
+\end{remark}
+
+\newpage
+  \begin{proof}\textit{First part}
+
+  Note that if $\P_2 = 0$ then we want $(f) = \q_1 + \q_2 + 2 \infty - \q_1 - \q_2 - 2 \infty = 0$, a condition that is fulfilled by $f = 1$.
+
+  In all the other cases we have the polynomial $p(x)$ at our disposal.  We can now assume that we are not in the zero case. Since $y_i = p(x_i)$ for either all $x_i$ or for all except $i=j$ for a $j \in \{1,..,6\}$, we define
+  \begin{align*}
+  	q = y -p(x) \in K[x,y] \subset \F^*
+  \end{align*}
+  with the intention of showing that $(q) = \sum_{i=1}^6 \q_i - 6 \infty$.
+
+  By Lemma \ref{one} (b) we know that $\ordqi q \geq 1$ for those $\q_i$ that are not $\infty$.
+
+  Let's first assume that all $\q_i \in \enkb$. This means that we are in the case where $p(x)$ is of degree 3, so as $\li : x \mapsto t^{-2}$, $\ordi q = -6$. As $q \in K[x,y]$, the only negative order may stem from $\li$ which implies $\ordq q = 0$ for all $\q \in \enkb$ that are not one of the $\q_i$.
+
+  With Lemma \ref{mult}, if $e_i$ of the $\q_i$ are equal and $y_i \neq 0$ then with Lemma \ref{two} (a)
+  \begin{align*}
+    \ordqi q + \ordqi \bar q &= \ordqi q \bar q\\
+     								&= \ordqi D(x)\\
+     								&= e_i.
+  \end{align*}
+  But by Remark \ref{alldiff} we know that $\ordqi \bar q = 0$ as $q(\bar \q_i)$ can't be zero if $\bar \q_i \neq \q_i$, so $\ordqi q = e_i$. In the case where $y_i = 0$, the same Lemmas imply
+  \begin{align*}
+    \ordqi q + \ordqi \bar q = 2e_i
+  \end{align*}
+  and since $\bar \q_i = \q_i$, Lemma \ref{three} gives $\ordbqi q = \ordqi \bar q$ so again $\ordqi q = e_i$.
+
+  So in both cases, if $\q_i$ appears $e_i$ times in the sum $\P_1 + \P_2 = \P_3$ then it appears the same number of times in $(q)$ and all in all
+  \begin{align*}
+    (q) = \sum_{\{\q_i\}} e_i \q_i - 6 \infty = \sum_{i=1}^6 \q_i - 6 \infty.
+  \end{align*}
+  Now consider the case where $\q_k = \infty$ for some $k$. Because $p(x)$ is now of degree two or less and $\li : y \mapsto t^{-5}\sqrt \tau$ we have $\ordi q = -5$. This leads to
+	\begin{align*}
+    (q) = \sum_{\substack{i=1 \\ i \neq k}}^6 \q_i - 5 \infty = \sum_{i=1}^6 \q_i - 6 \infty.
+  \end{align*}
+
+\newpage
+	\textit{Second Part}
+
+	The divisor of $x - x_i$ is $(x - x_i) = \q_i + \bar \q_i -2 \infty$ both for $\q_i = \bar \q_i$ and $\q_i \neq \bar \q_i$.
+
+	(Note: I haven't explicitly given divisor properties like $(f g) = (f)+(g)$. Is this obvious enough to omit stating?)
+
+	We now make the distinction between $\q_5, \q_6 \neq \infty$ and $\q_6 = \infty$. In the first case it is easy to check that for $f = q (x - x_5)^{-1}(x - x_6)^{-1}$ we get
+	\begin{align*}
+	  (f) &= \sum_{i=1}^6 \q_i - 6 \infty - \q_5 - \bar \q_5 - \q_6 - \bar \q_6 + 4 \infty \\
+	  		&= \sum_{i=1}^4 \q_i- \bar \q_5 - \bar \q_6 - 2 \infty.
+	\end{align*}
+	which corresponds to the statement to prove. If $\q_6 = \infty$, we can define $f = q (x - x_5)^{-1}$ and check that
+	\begin{align*}
+	  (f) &= \sum_{i=1}^5 \q_i - 5 \infty - \q_5 - \bar \q_5 + 2 \infty \\
+	  		&= \sum_{i=1}^4 \q_i - \bar \q_5 - \bar \infty - 2 \infty.
+	\end{align*}
+	So the function $f$ that we were looking for is
+	\begin{align*}
+	  f = \frac{y-p(x)}{(x-x_5)(x-x_6)}
+	\end{align*}
+	if $\q_5$ and $\q_6$ are both different from $\infty$ and otherwise if $\q_6 = \infty$ then
+	\begin{align*}
+	  f = \frac{y-p(x)}{(x-x_5)}.
+	\end{align*}
+\end{proof}
+
+
+  % ------------------------------------
+
+
+
+  %   In five of the six cases of the addition law we have our polynomial $p(x)$ passing through the points $(x_i, y_i)$ for $i = 1,..,6$. This prompts defining 
+  %   \begin{align*}
+  %     s = y -p(x) \in \F^*
+  %   \end{align*}
+  %   in the expectation of getting either $f = \frac{y-p(x)}{(x-x_5)(x-x_6)}$ or $f = \frac{y-p(x)}{(x-x_5)}$.
+
+
+
+  %   \begin{enumerate}[1.]\setcounter{enumi}{-1}
+  %     \item If $\P_2 = 0$ then \eqref{f} is equal to $(f) = \q_1 + \q_2 + 2 \infty - \q_1 - \q_2 - 2 \infty = 0$, a condition that is fulfilled by $f = 1$.
+
+  %     \item Remember that in the general case, the $\q_i$, $i=1,..,4$ are all pairwise distinct. By design, if $\q_i\in \enkb$ then $s(\q_i) = 0$ so by Lemma \ref{one} we know that $\ordqi s \geq 1$. The same thing goes for $\bar \q_5$ and $\bar \q_6$. But there are two more things to consider: One of the $\q_i$, $i=1,..,6$ might be $\infty$ and we have to check if $\bar \q_5$ or $\bar \q_6$ are accidentally equal to any of the $\q_i$ for $i=1,..,4$.
+
+  %     The first issue is addressed by distinguishing between the cases where this does happen and the second one xxx
+
+  %     LOADS OF RUBBISH. FUCK IT, WE'LL DO IT LIVE.
+
+  %     ---------------------------
+  %   \end{enumerate}
+
 
 
 
