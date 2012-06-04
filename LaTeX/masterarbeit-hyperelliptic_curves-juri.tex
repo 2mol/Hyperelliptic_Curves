@@ -694,7 +694,7 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
 	\end{proof}
 \end{lemma}
 
-\begin{lemma}
+\begin{lemma}\label{fourpoles}
 	If $f \in \F^*$ has at most four poles at $\infty$ then $f$ is of the form $f = \alpha + \beta x + \gamma x^2$ with $\alpha, \beta, \gamma \in K$.
 	\begin{proof}
 	  With $\li (f) = \gamma t^{-4} + \dots$ we know that $\li (f - \gamma x^2) = \delta t^{-3} + \dots$ and we use the previous Lemma to see that $f - \gamma x^2 = \alpha + \beta x$.
@@ -723,7 +723,7 @@ Version 1 \scriptsize \hfill Juri; Hyperelliptic Curves --- Draft --- \today
     D(x) = (x-x_k)^e g(x)
     % (x-x_k)^e \mid D(x).
   \end{align*}
-  with $g(x_k) \neq 0$. xxx Rephrase, this is crap. Just say $\ord_{x_k} D(x) = e$
+  with $g(x_k) \neq 0$. This is of course equivalent to stating $\ord_{\hspace{-.4mm}x_k} D(x) = e$.
   \begin{proof}
     The statement has already been proven true for $e, i, k \leq 4$ in each of the different cases. By construction we have for $D(x) = C(x) - p^2(x)$
 		\begin{align*}
@@ -733,7 +733,7 @@ Version 1 \scriptsize \hfill Juri; Hyperelliptic Curves --- Draft --- \today
 		\begin{align*}
 			D(x) &=  \prod_{\substack{i=1\\i \neq j}}^6(x-x_i).
 		\end{align*}
-		So by construction, $\q_5$ or $\q_6$ being equal to some other $\q_k$ contributes an additional factor $(x-x_k)$
+		So by construction, $\q_5$ or $\q_6$ being equal to some other $\q_k$ contributes an additional factor $(x-x_k)$.
     %and are true for $\q_5$ or $\q_6$ by construction: are equal to any $q_k$, $k\in \{1,..,6\}$ then the origin of this xxx
   \end{proof}
 \end{lemma}
@@ -776,7 +776,7 @@ Version 1 \scriptsize \hfill Juri; Hyperelliptic Curves --- Draft --- \today
      								&= \ordqi D(x)\\
      								&= e_i.
   \end{align*}
-  But by Remark \ref{alldiff} we know that $\ordqi \bar q = 0$ as $q(\bar \q_i)$ can't be zero if $\bar \q_i \neq \q_i$, so $\ordqi q = e_i$. In the case where $y_i = 0$, the same Lemmas imply
+  But by Remark \ref{alldiff} we know that $\ordqi \bar q = 0$ as $q(\bar \q_i)$ can't be zero if $\bar \q_i \neq \q_i$, so $\ordqi q = e_i$. In the case where $y_i = 0$, the same lemmas imply
   \begin{align*}
     \ordqi q + \ordqi \bar q = 2e_i
   \end{align*}
@@ -818,31 +818,53 @@ Version 1 \scriptsize \hfill Juri; Hyperelliptic Curves --- Draft --- \today
 	\end{align*}
 \end{proof}
 
+\begin{theorem}
+  \textit{Associativity.} The sums
+  \begin{align*}
+	\underbrace{(\P + \Q)}_{= \T} + \R &= \S \\
+	\text{and\hspace{3mm}}\P + \underbrace{(\Q + \R)}_{=\W} &= \S'
+	\end{align*}
+	give the same result, namely $\S = \S'$.
 
-  % ------------------------------------
+	\begin{proof}
+		We will use the following notation:
+		\begin{gather*}
+	  \P=\{\p_1,\p_2\}, 
+	  \Q=\{\q_1,\q_2\}, 
+	  \R=\{\r_1,\r_2\}, 
+	  \T=\{\t_1,\t_2\}, 
+	  \W=\{\w_1,\w_2\},
+	  \\
+	  \S = \{\a, \b \}, 
+	  \S' = \{\u, \v \},
+	  \\
+	  \a = (a,*), \b = (b,*).
+		\end{gather*}
+  	Thanks to the previous theorem we have functions $f_{\P \Q}$, $f_{\T \R}$, $f_{\P \W}$ and $f_{\Q \R}$ in $\F^*$ such that the divisor of
+  	\begin{align*}
+  	  f = \frac{f_{\P \Q} f_{\T \R}}{f_{\P \W} f_{\Q \R}} 
+  	\end{align*}
+  	is
+  	\begin{align*}
+  	  (f)
+  	  = \ &   \p_1 + \p_2 + \q_1 + \q_2 - \t_1 - \t_2 - 2 \infty \\
+  	  	\ + & \ \t_1 + \t_2 + \r_1 + \r_2 - \a   - \b   - 2 \infty \\
+  	  	\ - & \ \p_1 - \p_2 - \w_1 - \w_2 + \u   + \v   + 2 \infty \\
+  	  	\ - & \ \q_1 - \q_2 - \r_1 - \r_2 + \w_1 + \w_2 + 2 \infty \\
+  	  =	\ & \u + \v -\a -\b.
+  	\end{align*}
+  	This means that $\tilde f = f(x-a)(x-b)$ has divisor $(\tilde f) = \bar \a + \bar \b+ \u + \v - 4 \infty$. By the Lemma \ref{fourpoles} $\tilde f$ must be of the form $\kappa(x-\alpha_1)(x-\alpha_2)\in \bar K [x]$ and so
+	\begin{align*}
+		f=\frac{\kappa(x-\alpha_1)(x-\alpha_2)}{(x-a)(x-b)}.
+	\end{align*}
+	But this has divisor
+	\begin{align*}
+		(f) = \m + \bar \m + \n + \bar \n - \a - \bar \a - \b - \bar \b.
+	\end{align*}
+	So either $\a = \m$ and $\b = \bar \m$ or $\a = \m$ and $\b = \n$. First case implies $\S$ and $\S'$ equivalent to 0, second case implies $(f)= \a + \b - \a - \b$ and in both cases we're done.
+	\end{proof}
 
-
-
-  %   In five of the six cases of the addition law we have our polynomial $p(x)$ passing through the points $(x_i, y_i)$ for $i = 1,..,6$. This prompts defining 
-  %   \begin{align*}
-  %     s = y -p(x) \in \F^*
-  %   \end{align*}
-  %   in the expectation of getting either $f = \frac{y-p(x)}{(x-x_5)(x-x_6)}$ or $f = \frac{y-p(x)}{(x-x_5)}$.
-
-
-
-  %   \begin{enumerate}[1.]\setcounter{enumi}{-1}
-  %     \item If $\P_2 = 0$ then \eqref{f} is equal to $(f) = \q_1 + \q_2 + 2 \infty - \q_1 - \q_2 - 2 \infty = 0$, a condition that is fulfilled by $f = 1$.
-
-  %     \item Remember that in the general case, the $\q_i$, $i=1,..,4$ are all pairwise distinct. By design, if $\q_i\in \enkb$ then $s(\q_i) = 0$ so by Lemma \ref{one} we know that $\ordqi s \geq 1$. The same thing goes for $\bar \q_5$ and $\bar \q_6$. But there are two more things to consider: One of the $\q_i$, $i=1,..,6$ might be $\infty$ and we have to check if $\bar \q_5$ or $\bar \q_6$ are accidentally equal to any of the $\q_i$ for $i=1,..,4$.
-
-  %     The first issue is addressed by distinguishing between the cases where this does happen and the second one xxx
-
-  %     LOADS OF RUBBISH. FUCK IT, WE'LL DO IT LIVE.
-
-  %     ---------------------------
-  %   \end{enumerate}
-
+\end{theorem}
 
 
 
