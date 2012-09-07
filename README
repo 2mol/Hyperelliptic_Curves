@@ -1,8 +1,8 @@
-TODO List:
+Big TODO List:
 
 - Add remarks in regard to the illustrations: only a slight geometrical-visual aid, nothing more...
 
-- Illustrations -> all special cases for p3 not 0 ?
+OK- Illustrations -> all special cases for p3 not 0 ?
 
 - Prove "switching". Or "prove" switching.
 
@@ -10,6 +10,22 @@ TODO List:
 
 - Write Chapter 0 - Wait for Masser's input
 
+
+
+-- Small TODO:
+Consistent eqn numbering
+References/bibliography
+changes in CH1 as announced in the note before CH3
+
+
+
 -- Bonus stage:
-- halving of points
-- switching for larger sums
+halving of points
+switching for larger sums
+
+
+-- Questions to Masser & myself:
+-----------------
+Lemma under 1.5, replace all \rightleftharpoons by "and"?
+Is the question of "assuming K algebraically closed or not" resolved?
+prove thm 1?
