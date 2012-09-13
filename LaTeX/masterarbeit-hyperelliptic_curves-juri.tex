@@ -3,6 +3,8 @@
 
 %-------------------------------------------------------------------------%
 % MASTERARBEIT (╯°□°）╯︵ ┻━┻       ┬─┬ノ( º _ ºノ)      (ノಠ益ಠ)ノ彡┻━┻   %
+%
+%                (ノ｀Д´)ノ彡┻━┻                  ┬─┬ノ( º _ ºノ)
 %-------------------------------------------------------------------------%
 
 \begin{document} %------------   \(◕ ◡ ◕\)   -----------------------------%
@@ -83,22 +85,22 @@ Let's start with $\P_1 = \{\q_1,\q_2\}$, $\P_2 = \{\q_3,\q_4\}$ with $\q_i = (x_
     \tag{$\ast$} \label{sex} C(x)-\left ( p(x) \right )^2 = 0.
   \end{align*}
   Observe that this vanishes at $x_1, x_2, x_3$ and $x_4$, so write the lefthand side as
-  \begin{align}
-    C(x)-\left(p(x)\right)^2 = -p_3^2(x-x_1)(x-x_2)(x-x_3)(x-x_4)(x-x_5)(x-x_6) %xxx
+  \begin{align}\tag{$*_1$}
+    C(x)-(p(x))^2 = -p_3^2(x-x_1)(x-x_2)(x-x_3)(x-x_4)(x-x_5)(x-x_6)
   \end{align}
-   for $x_5$ and $x_6$ in $\bar K$. Comparing the coefficients of both expressions at $x^4$ and $x^5$ yields
+   for $x_5$ and $x_6$ in $\bar K$. Comparing the coefficients at $x^4$ and $x^5$ yields
   \begin{align*}
-    \label{four} \tag{4} \sum_{\substack{i,j=1\\i<j}}^6 x_i x_j &= T_4\\
-    \tag{5} \text{and\hspace{5mm}} \sum_{i=1}^6 x_i &= T_5\\
+    \sum_{\substack{i,j=1\\i<j}}^6 x_i x_j &= T_4\\
+    \rlap{\hspace{-56mm}and} \sum_{i=1}^6 x_i &= T_5
   \end{align*}
   where $T_4 = \frac{p_2^2+2 p_1 p_3-a}{p_3^2}$ and $T_5 = \frac{1-2 p_2 p_3}{p_3^2}$.
   The first expression gives
   \begin{align*}
     x_6 \sum_{i=1}^5 x_i + \sum_{\substack{i,j=1\\i<j}}^5 x_i x_j = T_4.
   \end{align*}
-  Doing this twice and replacing $x_6$ with the information from (5) gives the tidy quadratic equation
+  Replacing $x_6$ by $T_4 - \sum_{\substack{i,j=1\\i<j}}^5 x_i x_j$ gives the tidy quadratic equation
 
-  \vspace{-3mm}
+  \vspace{-2mm}
   \fline
   \begin{align*}
     \tag{$\dag$} \label{dagger} x^2 - \left(T_5 - \sumfo \right) \cdot x+ \left(T_4 - T_5 \sumfo + \sum_{\substack{i,j=1\\i\leq j}}^4 x_i x_j \right) = 0
@@ -108,10 +110,10 @@ Let's start with $\P_1 = \{\q_1,\q_2\}$, $\P_2 = \{\q_3,\q_4\}$ with $\q_i = (x_
   of which $x_5$ is one solution and --- by symmetry of the above steps --- $x_6$ the other one. Compute $y_i=p(x_i)$, $i=5,6$ to obtain $\q_5 = \{ x_5, -y_5 \}$ and $\q_6 = \{ x_6, -y_6 \}$, at which point it becomes clear that the worst-case scenario for our field extension to accommodate the new coordinates is to be quadratic. Finally we define $\P_1 + \P_2$ to be equal to $\P_3 = \{ \q_5, \q_6 \}$.
 
   {\scshape Step 2b:} If $p_3$ were zero, the equation \eqref{sex} would be quintic instead. We may therefore write the lefthand side factorized, so
-  \begin{align}
-  (x-x_1)(x-x_2)(x-x_3)(x-x_4)(x-x_5), %xxx
+  \begin{align}\tag{$*_1$}
+  C(x) - (p(x))^2 =(x-x_1)(x-x_2)(x-x_3)(x-x_4)(x-x_5),
   \end{align}
-  again for $x_5$ somewhere in $\bar K$. Defining $T_{4\infty}=p_2^2 - a$ and comparing the coefficients at $x^4$ gives
+  again for $x_5$ somewhere in $\bar K$. We used the tag ($*_1$) twice to mean both equations. Defining $T_{4\infty}=p_2^2 - a$ and comparing the coefficients at $x^4$ gives
 
   \vspace{-3mm}
   \fline
@@ -134,8 +136,8 @@ Let's start with $\P_1 = \{\q_1,\q_2\}$, $\P_2 = \{\q_3,\q_4\}$ with $\q_i = (x_
 
   {\scshape Step $2'$:} Doing a coefficient comparison at $x^3$ and at $x^4$ in \eqref{sex} gives
   \begin{align*}
-    \tag{$3'$} \sum_{\substack{i,j=1\\i<j}}^3 x_i x_j + x_5\sum_{i=1}^3 x_i + x_5 x_6 &= b-2p_1 p_2\\
-    \tag{$4'$} \text{ and\hspace{5mm}}
+    \sum_{\substack{i,j=1\\i<j}}^3 x_i x_j + x_5\sum_{i=1}^3 x_i + x_5 x_6 &= b-2p_1 p_2\\
+    \rlap{\hspace{-50mm} and}
     \sum_{i=1}^3 x_i + x_5 + x_6 &= p_2^2-a.
   \end{align*}
   Call the righthand terms $T_{3\infty}$ and $T_{4\infty}$, combine both equations and obtain
@@ -143,11 +145,11 @@ Let's start with $\P_1 = \{\q_1,\q_2\}$, $\P_2 = \{\q_3,\q_4\}$ with $\q_i = (x_
   \vspace{-2mm}
   \fline
   \begin{align*}
-    \label{daggerp} \tag{$\dagger '$} x^2 - \left( T_{4\infty} \sumthr \right) \cdot x + \left(T_{3\infty} - T_{4\infty} \sumthr + \sum_{\substack{i,j=1\\i\leq j}}^3 x_i x_j \right)
+    \label{daggerp} \tag{$\dagger '$} x^2 - \left( T_{4\infty} - \sumthr \right) \cdot x + \left(T_{3\infty} - T_{4\infty} \sumthr + \sum_{\substack{i,j=1\\i\leq j}}^3 x_i x_j \right)
   \end{align*}
   \fline
 
-  Solve, call the two solutions $x_5$ and $x_6$, compute $y_5$ and $y_6$ through $p(x_5)$ and $p(x_6)$ and define $\P_1+\P_2$ to be $\P_3=\{ (x_5,-y_5) , (x_6,-y_6) \}=\{ \q_5, \q_6 \}$.
+  Solve, call the two solutions $x_5$ and $x_6$, compute $y_5$ and $y_6$ through $p(x_5)$ and $p(x_6)$ and define $\P_1+\P_2$ to be $\P_3=\{ (x_5,-y_5) , (x_6,-y_6) \}=\{ \bar \q_5, \bar \q_6 \}$.
 \end{case}
 
 \begin{center}
@@ -211,9 +213,10 @@ Let $\{ i,j,k,l \}=\{ 1,2,3,4 \}$. Whenever $\q_i = \bar \q_j$ for $i \neq j$ we
   && \{ \q_1 , \q_2 \} + \{ \q_3 , \q_4 \}
             &= \{ \q_i , \q_j \} + \{ \q_k , \q_l \} &\\
   &&        &= \{ \q_k , \q_l \} + \{ \q_j , \bar \q_j \} &\\
-  &&        &= \{ \q_k , \q_l \} + \{ \infty, \infty \} &\\
-  \rlap{so define} &&
-  \{ \q_1 , \q_2 \} + \{ \q_3 , \q_4 \} &= \{ \q_k , \q_l \}.
+  \label{zero}\tag{0}
+  &&        &= \{ \q_k , \q_l \} + \{ \infty, \infty \} = \{ \q_k , \q_l \}% &\\
+  %\rlap{so define} &&
+  %\{ \q_1 , \q_2 \} + \{ \q_3 , \q_4 \} &= \{ \q_k , \q_l \}.
 \end{flalign*}
 The justification for this follows directly from Remark \ref{permut} and Definition \ref{defj}. It is easily checked that this sum remains well defined if the choice of $i$ and $j$ is not unique. This allows us to treat the above as a separate case in order to characterize the other cases solely through the $x$-coordinates of the $\q_i$, so we may assume
 \begin{align*}
@@ -246,7 +249,8 @@ Since we are allowed to permute point-components anyway, we may fix which of the
 % \vspace{-2mm}
 \begin{enumerate}\setcounter{enumi}{-1}
   \parskip 1mm
-  \item The addition with zero, i.e. $\{ \q_1, \q_2 \} + \{ \infty, \infty \}$, $\q_1$, $\q_2 \in \ekb$.
+  %\item The addition with zero, i.e. $\{ \q_1, \q_2 \} + \{ \infty, \infty \}$, $\q_1$, $\q_2 \in \ekb$.
+  \item The addition with zero, i.e. $\q_1 = \bar \q_2$ with $\q_i \in \ekb$ for $i = 1,..,4$.
   \item The general case where $\q_i \neq \q_j$ and $\q_i \neq \bar \q_j$ for $i \neq j$.
   \item The single tangential case where all $\q_i$ as in case 1 with the exception of $\q_1 = \q_2 \in \enkb$ with $y_1 \neq 0$.%the remaining $\q_3$, $\q_4 \in \ek$ are both distinct from each other as well as from $\pm \q_1, \bar \q_3$ and $\bar \q_4$.
   \item The double tangential case where all $\q_i$ as in case 1 with the exception of $\q_1 = \q_2 \in \enkb$ with $y_1 \neq 0$ and $\q_3 = \q_4 \in \enkb$ with $y_3 \neq 0$.% and $\q_1 \neq \pm \q_3$.
@@ -285,12 +289,15 @@ Before we handle the next construction steps we need an intermediate result.
   \end{proof}
 \end{lemma}
 
-We will now use this property for $D(x)= C(x) - p^2(x)$ when factoring \eqref{sex}.
+\fline\vspace{-1mm}
+
+We will now use this property on $D(x)= C(x) - (p(x))^2$ when factoring \eqref{sex}.
+\fline
 
 \setcounter{case}{-1}
 
 \begin{case}
-  {\scshape Addition with Zero:} As one might have anticipated we define $\P_1 + \P_2 = \P_1$ for every $\P_1 \in \J$ if $\P_2 = \{\infty, \infty\} = 0$.
+  {\scshape Addition with Zero:} As \eqref{zero} anticipated, we define $\P_1 + \P_2 = \P_1$ for every $\P_1 \in \J$ if $\P_2 = \{ \q, \bar \q \} = 0$. Same thing for $\P_1 + \P_2 = \P_2$ if $\P_1 = 0$.
 \end{case}
 
 \begin{figure}[ht]
@@ -337,11 +344,11 @@ We will now use this property for $D(x)= C(x) - p^2(x)$ when factoring \eqref{se
             &= C'(x_1) - 2 y_1 y_2' = 0
   \end{align*}
   so we use Lemma \ref{div} to see that the lefthand side of \eqref{sex} either factors as
-  \begin{flalign*}
-    && -p_3^2(x-x_1)^2&\prod_{i=3}^6(x-x_i)&\\
-    \rlap{or} &&
-    (x-x_1)^2&\prod_{i=3}^5(x-x_i).
-  \end{flalign*}
+  \begin{align} \tag{$*_2$} \begin{split}
+    D(x) &= -p_3^2(x-x_1)^2 \prod_{i=3}^6(x-x_i)\\
+    \rlap{\hspace{-37mm} or}
+    D(x) &= (x-x_1)^2 \prod_{i=3}^5(x-x_i).
+  \end{split} \end{align}
   Now step two will be entirely identical to that of the general case and we can again solve \eqref{dagger2} or \eqref{dagger} for $x_5$ or $x_5$ and $x_6$.
 \end{case}
 
@@ -373,7 +380,13 @@ We will now use this property for $D(x)= C(x) - p^2(x)$ when factoring \eqref{se
   % \begin{align*}
   %   D'(x_3) = C'(x_3) - 2 y_3 y_3' = 0
   % \end{align*}
-  By Lemma \ref{div} we know that \eqref{sex} has a factor $(x-x_1)^2(x-x_3)^2$ so we use the same procedure of case 1 with $x_2 = x_1$ and $x_4 = x_3$ to solve \eqref{dagger} or \eqref{dagger2}.
+  By Lemma \ref{div} we know that \eqref{sex} has a factor $(x-x_1)^2(x-x_3)^2$ so we use
+  \begin{align} \tag{$*_3$} \begin{split}
+    D(x) &= -p_3^2(x-x_1)^2 (x-x_3)^2 (x-x_5)(x-x_6)\\
+    \rlap{\hspace{-25mm} or}
+    D(x) &= (x-x_1)^2 (x-x_3)^2 (x-x_5).
+  \end{split} \end{align}
+  and the procedure of case 1 with $x_2 = x_1$ and $x_4 = x_3$ to solve \eqref{dagger} or \eqref{dagger2}.
 \end{case}
 
 \begin{figure}[ht]
@@ -407,11 +420,12 @@ We will now use this property for $D(x)= C(x) - p^2(x)$ when factoring \eqref{se
              &= C''(x_1) - 2 y_1 y_3''- 2(y_2')^2 = 0
   \end{align*}
   as can be checked by glancing at the definition of $y_3''$. With \eqref{sex} factoring as
-  \begin{flalign*}
-    && -p_3^2(x-x_1)^3&\prod_{i=4}^6(x-x_i) &\\
-    \rlap{or} && (x-x_1)^3&\prod_{i=4}^5(x-x_i),
-  \end{flalign*}
-  this again allows us to continue with one of the second steps of case 1 to find $\P_3$.
+  \begin{align} \tag{$*_4$} \begin{split}
+    D(x) &= -p_3^2(x-x_1)^3 \prod_{i=4}^6(x-x_i) \\
+    \rlap{\hspace{-37mm} or}
+    D(x) &= (x-x_1)^3 \prod_{i=4}^5(x-x_i),
+  \end{split} \end{align}
+  this allows us to continue with one of the second steps of case 1 to find $\P_3$.
 \end{case}
 
 \begin{figure}[ht]
@@ -447,11 +461,11 @@ We will now use this property for $D(x)= C(x) - p^2(x)$ when factoring \eqref{se
   \begin{align*}
     D'''(x_1) = C'''(x_1) - 2 y_1 y_4''' - 6 y_2' y_3'' = 0
   \end{align*}
-  \vspace{-8mm}
-  \begin{flalign*}
-  \rlap{so either} && D(x) &= -p_3^2(x-x_1)^4(x-x_5)(x-x_6) &\\
-  \rlap{or} && D(x) &= (x-x_1)^4(x-x_5)
-  \end{flalign*}
+  \vspace{-6mm}
+  \begin{align} \tag{$*_5$} \begin{split}
+    \rlap{\hspace{-31.5mm} so either} D(x) &= -p_3^2(x-x_1)^4(x-x_5)(x-x_6) \\
+    \rlap{\hspace{-31.5mm} or}  D(x) &= (x-x_1)^4(x-x_5)
+  \end{split} \end{align}
   which we subsequently use to solve \eqref{dagger} or \eqref{dagger2} and we're done.
 \end{case}
 
@@ -751,9 +765,9 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
     \begin{flalign*}
       \rlap{Do the same thing with}
                 && \hspace{11mm}
-                  \li (y) = t^{-5}\sqrt \tau_3 &= t^{-5} + \cdots &\\
-      \rlap{so} &&               \li (y - f^5) &= \beta_4 t^{-4} + \cdots &\\
-      \rlap{and}&& \li (y - f^5 - \beta_4 f^4) &= \beta_3 t^{-3} + \cdots
+                  \li (y) = t^{-5}\sqrt \tau_3 &= \hspace{3.9mm} t^{-5} + \cdots &\\
+      \rlap{so} &&               \li (y - f^5) &=        \beta_4 t^{-4} + \cdots &\\
+      \rlap{and}&& \li (y - f^5 - \beta_4 f^4) &=        \beta_3 t^{-3} + \cdots
     \end{flalign*}
     and so on, so $\li (y - f^5 - \beta_4 f^4 - \beta_3 f^3 - \beta_2 f^2 - \beta_1 f)$ is a power series as well. Again $y = f^5 + \beta_4 f^4 + \beta_3 f^3 + \beta_2 f^2 + \beta_1 f + \beta_0 = Y(f)$ with $Y(T)\in \bar K[T] \setminus \bar K$.% because as above we can take the minimal order for every $\q \in \enkb$ of the terms in the sum $y - Y(f)$ to get $\ordq (y - Y(f)) \geq 0$.
     
@@ -775,7 +789,9 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
     We can see that for instance for $\alpha_1$ one of the roots of $C(x)$ we have
     \begin{align*}
       \li \left(\frac{y}{x-\alpha_1}\right) &= (t^{-2} - \alpha_1)^{-1} t^{-5} \sqrt{\tau_3}\\
+      \vphantom{\frac x y}
       &= t^2 (1 + \cdots)^{-1} t^{-5}(1 + \cdots)\\
+      \vphantom{\frac x y}
       &= t^{-3} (1 + \cdots).
     \end{align*}
     So if $\li (f) = \gamma t^{-3} + \cdots$ then per Lemma \ref{twopol} we have
@@ -814,16 +830,16 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
   \begin{align*}
     \{ \q_1 , \q_2\}+\{\q_3 , \q_4\} = \{\bar \q_5 , \bar \q_6 \}
   \end{align*}
-  with $\q_j = \infty$ for at most one $j \in \{1,..,6\}$. This means that we are in one of the cases 1--5 of the addition law which involved passing a polynomial $p$ through all $\q_i \neq \infty$. Now remember that we defined $D(x) = C(x) - p^2(x)$.
+  with $\q_j = \infty$ for at most one $j \in \{1,..,6\}$. This means that we are in one of the cases 1--5 of the addition law which involved passing a polynomial $p$ through all $\q_i \neq \infty$. Now remember that we defined $D(x) = C(x) - (p(x))^2$.
 
-  If exactly $e$ of the $\q_i$ are equal, say to some $\q_k$ for a $k \in \{1,..,6\}$, then
+  If exactly $e_i$ of the $\q_i$ are equal, say to some $\q_k$ for a $k \in \{1,..,6\}$, then
   \begin{align*} %(xxx, reminder: $D(x) = C(x) - p^2(x)$ OR $D(x) = \prod ...$)
     D(x) = (x-x_k)^e g(x)
     % (x-x_k)^e \mid D(x).
   \end{align*}
-  with $g(x_k) \neq 0$. This is of course equivalent to stating $\ord_{\hspace{-.4mm}x_k} D(x) = e$.
+  with $g(x_k) \neq 0$ and $e = e_i = e_k$. This is of course equivalent to stating $\text{ord}_{x=x_k}\hspace{0.4mm} D(x) = e_k$ and is nothing other than the order of the intersection of $p(x)$ and the curve at $\q_k$. The choice of $k$ obviously does not matter.
   \begin{proof} %The statement has already been proven true for $e, i, k \leq 4$ in each of the different cases.
-    By construction we have% for $D(x) = C(x) - p^2(x)$
+    By construction we have in all non-zero cases% for $D(x) = C(x) - p^2(x)$
     \begin{align*}
       D(x) &= -p_3^2\prod_{i=1}^6(x-x_i)
     \end{align*}
@@ -855,11 +871,14 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
 \end{remark}
 
 \newpage
-  \begin{proof}\textit{First part}
+\begin{proof}\textit{First part}
 
-  Note that if $\P_2 = 0$ then we want $(f) = \q_1 + \q_2 + 2 \infty - \q_1 - \q_2 - 2 \infty = 0$, a condition that is fulfilled by $f = 1$.
+  Begin with the observation that in case 0 we are looking for a function $f$ with divisor $(f) = \q_1 + \bar \q_1 - 2 \infty$. If $\q_1 \neq \infty$, we may take $f = x-x_1$, otherwise $f = 1$ fulfills the criterion \eqref{f}, so we are completely done there.
 
-  In all the other cases we have the polynomial $p(x)$ at our disposal.  We can now assume that we are not in the zero case. Since $y_i = p(x_i)$ for all $i$ except possibly $i=6$, we define
+  %Note that if $\P_2 = 0$ then we want $(f) = \q_1 + \q_2 + 2 \infty - \q_1 - \q_2 - 2 \infty = 0$, a condition that is fulfilled by $f = 1$. xxx
+  %Assume that we are not in 
+  %xxx (change order) In all the other cases we have the polynomial $p(x)$ at our disposal.  We can now assume that we are not in the zero case. Since $y_i = p(x_i)$ for all $i$ except possibly $i=6$, we define
+  Exclude the zero case from now on, so for the remaining cases we have the polynomial $p(x)$ at our disposal. As $y_i = p(x_i)$ whenever $\q_i \neq \infty$, we define%for all $i$ except possibly $i=6$, we define
   \begin{align*}
     q = y -p(x) \in K[x,y] \subset \F^*
   \end{align*}
@@ -867,14 +886,26 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
 
   By Lemma \ref{one} (b) we know that $\ordqi q \geq 1$ for those $\q_i$ that are not $\infty$.
 
-  Let's first assume that all $\q_i \in \enkb$. This means that we are in the case where $p(x)$ is of degree 3, so as $\li (x) = t^{-2}$ we see that $\ordi q = -6$. As $q \in K[x,y]$, the only negative order may be at $\infty$ which implies $\ordq q = 0$ for all $\q \in \enkb$ that are not one of the $\q_i$. % nope. later
+  Let's first assume that all $\q_i \in \enkb$. This means that we are in the case where $p(x)$ is of degree 3, so as $\li (x) = t^{-2}$ we see that $\ordi q = -6$.
 
-  With Lemma \ref{mult}, if $e_i$ of the $\q_i$ are equal and $y_i \neq 0$ then with Lemma \ref{two} (a)
+
+
+
+  %XXXxxx As $q \in K[x,y]$, the only negative order may be at $\infty$ which implies $\ordq q = 0$ for all $\q \in \enkb$ that are not one of the $\q_i$. 
+
+  % nope. later <-----------------------------------------
+
+
+
+  Use Lemma \ref{mult} in conjunction with Lemma \ref{two} to see that for each of the $\q_i$
+  %%%%%%  With Lemma \ref{mult}, if $e_i$ of the $\q_i$ are equal and $y_i \neq 0$ then with Lemma \ref{two} (a)
   \begin{align*}
     \ordqi q + \ordqi \bar q &= \ordqi q \bar q\\
-                    &= \ordqi D(x)\\
-                    &= e_i.% here: since sum e_i = 6, ord = 0 for any other point
+                    &= \text{ord}_{x=x_i}\hspace{0.4mm} D(x)\\
+                    &= e_i.% here: since sum e_i = 6, ord = 0 for any other point <-------------
   \end{align*}
+  As in Lemma \ref{mult}, $e_i$ denotes the exact number of occurrences of $\q_i$.%, i.e. exactly $e_i$ of the $\q_i$ equal to some $\q_k$.
+
   But by Remark \ref{alldiff} we know that $\ordqi \bar q = 0$ as $q(\bar \q_i)$ can't be zero if $\bar \q_i \neq \q_i$, so $\ordqi q = e_i$. In the case where $y_i = 0$, the same lemmas imply
   \begin{align*}
     \ordqi q + \ordqi \bar q = 2e_i
@@ -889,7 +920,7 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
   \begin{align*}
     (q) = \sum_{\substack{i=1 \\ i \neq k}}^6 \q_i - 5 \infty = \sum_{i=1}^6 \q_i - 6 \infty
   \end{align*}
-  completing the first part of our proof.
+  completing the first part of our proof, as no more than one $\q_k$ may be $\infty$.
   %so now the first part of the proof is covered.
 
 \newpage
@@ -945,7 +976,7 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
     \begin{align*}
       f = \frac{f_{\P \Q} f_{\T \R}}{f_{\P \W} f_{\Q \R}} 
     \end{align*}
-    is
+    is\vspace{-8mm}
     \begin{alignat*}{7}
       (f)
       = & \ \p_1 &+{}& \p_2 &+{}& \q_1 &+{}& \q_2 &-{}& \t_1 &-{}& \t_2 &-{}& 2 \infty \\
