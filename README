@@ -1,14 +1,14 @@
 Big TODO List:
 
-<PM OK- Add remarks in regard to the illustrations: only a slight geometrical-visual aid, nothing more...
+<OK-plusminus- Add remarks in regard to the illustrations: only a slight geometrical-visual aid, nothing more...
 <OK- Illustrations -> all special cases for p3 not 0 ?
-- Prove "switching". Or "prove" switching.
+<OK- Prove "switching". Or "prove" switching.
 - Write Chapter 0 - Wait for Masser's input
 <OK--- Consistent eqn numbering
 - References/bibliography
 <OK- changes in CH1 as announced in the note before CH3
 - as above, but in graphics! fuck...
-- take out char K = 5
+<OK (check)- take out char K = 5
 
 
 -- Bonus stage:
@@ -25,3 +25,4 @@ switching for larger sums
 -(F) write as a comment/note?
 - Resolved I think -> little problem with 'first part' comment on top/exclusion of the zero case: is it a problem that f is not unique (better expressed: that f depends on how we write the sum?)? Could be no problem...
 - Weierstrass points <- clarification? I don't know how to formulate. And do I include \infty or not? Pretty sure the way I put it isn't really right.
+-remark that thm2 kind of depends how the sum is written? so divisor not unique.

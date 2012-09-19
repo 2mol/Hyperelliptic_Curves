@@ -24,8 +24,6 @@ Version 5 \scriptsize \hfill Juri; Hyperelliptic Curves --- Draft --- \today
   \end{align*}
   is a polynomial over $K$. Similarly, the set of solutions in the closure would be denoted $\enkb$.  Define $\ek$ as $\enkb \cup \{ \infty \}$.
 
-  %To avoid a clash of notations, we call $\ii$ the infinity that we use in $K \cup \{ \ii \}.$
-
   \textbf{Note} that we could obtain a more reduced form of $C(x)$, eliminating $a$ by shifting $x$ to $x-a/5$. However, since this would rob us of the possibility of char$(K) = 5$ without simplifying our coming calculations in any significant manner, we shall be reluctant towards using this trick.
 
   For the purpose of clarity, let points on the hyperelliptic curve --- in the sense of solutions to $y^2=C(x)$ --- be designated by the calligraphic letter $\q=(x,y) \in \enkb$. The point opposite to $\q$ will be written $\bar \q = (x,-y)$ and by symmetry of the curve in $y$ also belongs to $\enkb$. In the case where $\q = \infty$, define $\bar \q = \infty$.
@@ -39,7 +37,7 @@ Version 5 \scriptsize \hfill Juri; Hyperelliptic Curves --- Draft --- \today
     (\q_1,\q_2) &\sim (\q_2,\q_1) \\
     \text{and\hspace{5mm}} (\q,\bar \q) & \sim ( \infty , \infty ). 
   \end{align*}
-  Write $\{ \q_1,\q_2 \}$ from now on and let bold letters denote points on the curve in the sense of classes of unordered pairs $\P =\{ \q_1, \q_2 \} \in \J$. The point $\{ \bar \q_1, \bar \q_2 \}$ will be called $\bar \P$ for now but can already tentatively be thought of as $-\P$. Call $\{ \infty, \infty \}$ the zero of our set. Call $\q_i$ a point-component.% We will also permit ourselves the notation $\{ \q,\bar \q \} = 0$ and we refrain from explicitly stating that $\P$ is in fact an equivalence class.
+  Write $\{ \q_1,\q_2 \}$ from now on and let bold letters denote points on the curve in the sense of classes of unordered pairs $\P =\{ \q_1, \q_2 \} \in \J$. The point $\{ \bar \q_1, \bar \q_2 \}$ will be called $\bar \P$ for now but can already tentatively be thought of as $-\P$. Call $\{ \infty, \infty \}$ the zero of our set. Call $\q_i$ a point-component.
 
   A point $\q = (x_0,y_0)$ is called singular if it fulfills both $y_0=0$ and $C'(x_0) = 0$. A curve is called singular if and only if it has a singular point. We consider only non-singular hyperelliptics from here on; this amounts to $C(x)$ having no repeated factors over $\bar K$ (``squarefree'').
 \end{defin}
@@ -117,7 +115,7 @@ Let's start with $\P_1 = \{\q_1,\q_2\}$, $\P_2 = \{\q_3,\q_4\}$ with $\q_i = (x_
   \begin{align}\tag{$*_1$}
   D(x) = (x-x_1)(x-x_2)(x-x_3)(x-x_4)(x-x_5),
   \end{align}
-  again for $x_5$ somewhere in $\bar K$. We used the tag ($*_1$) twice to mean both equations. Defining $T_{4\infty}=p_2^2 - a$ and comparing the coefficients at $x^4$ gives
+  again for $x_5$ somewhere in $\bar K$. We used the tag ($*_1$) twice to refer to  both equations. Defining $T_{4\infty}=p_2^2 - a$ and comparing the coefficients at $x^4$ gives
 
   \vspace{-3mm}
   \fline
@@ -140,8 +138,6 @@ Let's start with $\P_1 = \{\q_1,\q_2\}$, $\P_2 = \{\q_3,\q_4\}$ with $\q_i = (x_
       1 & x_3 & x_3^2\\
     \end{pmatrix}
   \end{align*}
-  % Of course $\mathbf{p}=(p_0 \ p_1 \ p_2)^t$ and $\tilde \mathbf{y}=(y_1 \ y_2 \ y_3)^t$ are defined as can be expected.
-  % $i=1,..,3$ which incidentally is the upper-left 3$\times$3 sub-matrix of $V$. Here $\mathbf{p}=(p_0 \ p_1 \ p_2)^t$ and $\tilde \mathbf{y}=(y_1 \ y_2 \ y_3)^t$ are defined as expected.
   As before, the leading coefficient of $p(x)$ might or might not be zero, 
   %but this time, dear reader, let us not give a toss
   but \eqref{sex} will be quintic in either case, so we only have to worry about one step 2.
@@ -167,10 +163,6 @@ Let's start with $\P_1 = \{\q_1,\q_2\}$, $\P_2 = \{\q_3,\q_4\}$ with $\q_i = (x_
 
   Solve, call the two solutions $x_5$ and $x_6$, compute $y_5$ and $y_6$ through $p(x_5)$ and $p(x_6)$ and define $\P_1+\P_2$ to be $\P_3=\{ (x_5,-y_5) , (x_6,-y_6) \}=\{ \bar \q_5, \bar \q_6 \}$.
 \end{case}
-
-% \begin{center}
-% $\sim$
-% \end{center}
 
 
 \begin{figure}[ht!]
@@ -201,7 +193,7 @@ Let's start with $\P_1 = \{\q_1,\q_2\}$, $\P_2 = \{\q_3,\q_4\}$ with $\q_i = (x_
 \end{remark}
 
 
-  %\textbf{Note} also that solving either of the dagger equations does not guarantee that the resulting $x_5$ or $x_6$ differ from the other $x_i$ or even from each other. In fact the situation may very well arise where for instance $x_6 = x_1$ because $p(x)$ happens to be tangential to the curve at $x_1$. The equation \eqref{sex} would then factor as $-p_3^2(x-x_1)^2\prod_{i=1}^5 (x-x_i)$.
+%\textbf{Note} also that solving either of the dagger equations does not guarantee that the resulting $x_5$ or $x_6$ differ from the other $x_i$ or even from each other. In fact the situation may very well arise where for instance $x_6 = x_1$ because $p(x)$ happens to be tangential to the curve at $x_1$. The equation \eqref{sex} would then factor as $-p_3^2(x-x_1)^2\prod_{i=1}^5 (x-x_i)$.
 
 % \newpage
 Before we begin listing the special cases, we impose the following property: The sum of any $\P_1 = \{\q_1,\q_2\}$ and $\P_2 = \{\q_3,\q_4\}$ in $\J$ fulfills the equality
@@ -230,9 +222,7 @@ Let $\{ i,j,k,l \}=\{ 1,2,3,4 \}$. Whenever $\q_i = \bar \q_j$ for $i \neq j$ we
             &= \{ \q_i , \q_j \} + \{ \q_k , \q_l \} &\\
   &&        &= \{ \q_k , \q_l \} + \{ \q_j , \bar \q_j \} &\\
   \label{zero}\tag{0}
-  &&        &= \{ \q_k , \q_l \} + \{ \infty, \infty \} = \{ \q_k , \q_l \}% &\\
-  %\rlap{so define} &&
-  %\{ \q_1 , \q_2 \} + \{ \q_3 , \q_4 \} &= \{ \q_k , \q_l \}.
+  &&        &= \{ \q_k , \q_l \} + \{ \infty, \infty \} = \{ \q_k , \q_l \}
 \end{flalign*}
 The justification for this follows directly from Remark \ref{permut} and Definition \ref{defj}. It is easily checked that this sum remains well defined if the choice of $i$ and $j$ is not unique. This allows us to treat the above as a separate case in order to characterize the other cases solely through the $x$-coordinates of the $\q_i$, so we may assume
 \begin{align*}
@@ -240,11 +230,6 @@ The justification for this follows directly from Remark \ref{permut} and Definit
 \end{align*}
 for any $\q_i, \q_j \in \ekb$, provided we assign $\q_i = \infty$ the $x$-coordinate $x_i = \infty$. 
 There is a possibility for ambiguity of ``$\infty$'' here, which we will however avoid later on by making it obvious which infinity we are working with.
-%There is a possibility for ambiguity of ``$\infty$'', which we will have to avoid later on.
-
-%Concerning the ambiguity of ``$\infty$'' here, we will have it obvious which infinity we are working with.
-
-%To avoid the obvious clash of notations here, we will make sure to avoid any ambiguity about 
 
 We may now write the distinction between the remaining cases as follows:
 
@@ -269,14 +254,12 @@ Since we are allowed to permute point-components anyway, we may fix which of the
 
 \vspace{-3mm}
 \fline
-% \vspace{-2mm}
 \begin{enumerate}\setcounter{enumi}{-1}
   \parskip 1mm
-  %\item The addition with zero, i.e. $\{ \q_1, \q_2 \} + \{ \infty, \infty \}$, $\q_1$, $\q_2 \in \ekb$.
   \item The addition with zero, i.e. $\q_1 = \bar \q_2$ with $\q_i \in \ekb$ for $i = 1,..,4$.
   \item The general case where $\q_i \neq \q_j$ and $\q_i \neq \bar \q_j$ for $i \neq j$.
-  \item The single tangential case where all $\q_i$ as in case 1 with the exception of $\q_1 = \q_2 \in \enkb$ with $y_1 \neq 0$.%the remaining $\q_3$, $\q_4 \in \ek$ are both distinct from each other as well as from $\pm \q_1, \bar \q_3$ and $\bar \q_4$.
-  \item The double tangential case where all $\q_i$ as in case 1 with the exception of $\q_1 = \q_2 \in \enkb$ with $y_1 \neq 0$ and $\q_3 = \q_4 \in \enkb$ with $y_3 \neq 0$.% and $\q_1 \neq \pm \q_3$.
+  \item The single tangential case where all $\q_i$ as in case 1 with the exception of $\q_1 = \q_2 \in \enkb$ with $y_1 \neq 0$.
+  \item The double tangential case where all $\q_i$ as in case 1 with the exception of $\q_1 = \q_2 \in \enkb$ with $y_1 \neq 0$ and $\q_3 = \q_4 \in \enkb$ with $y_3 \neq 0$.
   \item The triple point case wherein $\q_1=\q_2=\q_3 \in \enkb$ with $y_1 \neq 0$ and $\q_4 \in \ekb$ differs from both $\q_1$ and $\bar \q_1$.
   \item The quadruple point case where all $\q_i \in \enkb$ are equal with $y_1\neq 0$.
 \end{enumerate}
@@ -324,16 +307,15 @@ We will now use this property on $D(x)= C(x) - (p(x))^2$ when factoring \eqref{s
   \fline
   \begin{center}
     \vspace{1mm}
-    % \framebox{The eight cases illustrated}
     \includegraphics[width=0.9\textwidth]{addition_almost_zero.pdf}
 
-    {\scshape Figure 0a}: Illustrating a limit argument where $\q_3$ is very close to $\bar \q_4$.%xxx
+    {\scshape Figure 0a}: Illustrating a limit argument where $\q_3$ is very close to $\bar \q_4$.
 
     \vspace{1mm}
 
     \includegraphics[width=0.9\textwidth]{addition_zero.pdf}
 
-    {\scshape Figure 0b} The addition with zero and justifying $\{ \q , \bar \q \} \sim 0$.%xxx
+    {\scshape Figure 0b} The addition with zero and justifying $\{ \q , \bar \q \} \sim 0$.
   \end{center}
   \vspace{-1.5mm}
   \fline
@@ -344,7 +326,7 @@ We will now use this property on $D(x)= C(x) - (p(x))^2$ when factoring \eqref{s
   {\scshape Tangential:} Let $\q_i\in \enkb, \q_1 = \q_2$, $y_1 \neq 0$ but $x_1$, $x_3$ and $x_4$ are pairwise distinct. We cannot use the Vandermonde matrix in this case because it won't possess maximal rank, consequently being non-invertible. We can however obtain an additional equation by demanding that our polynomial $p(x)$ be tangential to the curve at $\q_1$. This gives
   \begin{align*}
     2 y \frac{dy}{dx} &= 5  x^4 + 4 a x^3 + 3 b x^2 + 2 c x + d \\
-    \text{and\hspace{8mm}} \frac{dy}{dx} &= 3 p_3 x^2 + 2 p_2 x + p_1
+    \rlap{\hspace{-37.5mm} and} \frac{dy}{dx} &= 3 p_3 x^2 + 2 p_2 x + p_1
   \end{align*}
   meaning that the system to solve for $\mathbf{p}$ is now $\Vdoub \cdot \mathbf{p} = \ydoub$ with
   \begin{align*}\Vdoub=
@@ -362,10 +344,9 @@ We will now use this property on $D(x)= C(x) - (p(x))^2$ when factoring \eqref{s
   \fline
   \begin{center}
     \vspace{1mm}
-    % \framebox{The eight cases illustrated}
     \includegraphics[width=0.9\textwidth]{addition_single_tan.pdf}
 
-    {\scshape Figure 2}: The case of a tangential intersection at $\q_1$.%xxx
+    {\scshape Figure 2}: The case of a tangential intersection at $\q_1$.
   \end{center}
   \vspace{-1.5mm}
   \fline
@@ -389,10 +370,9 @@ We will now use this property on $D(x)= C(x) - (p(x))^2$ when factoring \eqref{s
   \fline
   \begin{center}
     \vspace{1mm}
-    % \framebox{The eight cases illustrated}
     \includegraphics[width=0.9\textwidth]{addition_double_tan.pdf}
 
-    {\scshape Figure 3}: Two tangential intersection at $\q_1$ and $\q_3$ respectively.%xxx
+    {\scshape Figure 3}: Two tangential intersection at $\q_1$ and $\q_3$ respectively.
   \end{center}
   \vspace{-1.5mm}
   \fline
@@ -410,9 +390,6 @@ We will now use this property on $D(x)= C(x) - (p(x))^2$ when factoring \eqref{s
   \end{align*}
 
   Now $\det(\Vddoub)=(x_3-x_1)^4$ and this is again different from zero precisely whenever $x_3 \neq x_1$, so as before solve $\Vddoub \cdot \mathbf{p} = \yddoub$ for $\mathbf{p}$, then note that $D(x)$ has double zeroes at $x_1$ and $x_3$ by the same argument as in case 2.
-  % \begin{align*}
-  %   D'(x_3) = C'(x_3) - 2 y_3 y_3' = 0
-  % \end{align*}
   By Lemma \ref{div} we know that \eqref{sex} has a factor $(x-x_1)^2(x-x_3)^2$ so we use
   \begin{align} \tag{$*_3$} \begin{split}
     D(x) &= -p_3^2(x-x_1)^2 (x-x_3)^2 (x-x_5)(x-x_6)\\
@@ -439,10 +416,9 @@ We will now use this property on $D(x)= C(x) - (p(x))^2$ when factoring \eqref{s
   \fline
   \begin{center}
     \vspace{1mm}
-    % \framebox{The eight cases illustrated}
     \includegraphics[width=0.9\textwidth]{addition_triple.pdf}
 
-    {\scshape Figure 4}: An intersection of order three at $\q_1$.%xxx
+    {\scshape Figure 4}: An intersection of order three at $\q_1$.
   \end{center}
   \vspace{-1.5mm}
   \fline
@@ -463,7 +439,6 @@ We will now use this property on $D(x)= C(x) - (p(x))^2$ when factoring \eqref{s
 \end{case}
 
 
-
 \begin{case}
   {\scshape Quadruple Point:} Given the situation where $\q_i = \q_1 \in \enkb$ for every $i$ with $y_1 \neq 0$, we use
   \begin{align*}\Vquad &=
@@ -480,10 +455,9 @@ We will now use this property on $D(x)= C(x) - (p(x))^2$ when factoring \eqref{s
   \fline
   \begin{center}
     \vspace{1mm}
-    % \framebox{The eight cases illustrated}
     \includegraphics[width=0.9\textwidth]{addition_quadruple.pdf}
 
-    {\scshape Figure 5}: An intersection of order four at $\q_1$.%xxx
+    {\scshape Figure 5}: An intersection of order four at $\q_1$.
   \end{center}
   \vspace{-1.5mm}
   \fline
@@ -507,7 +481,6 @@ We will now use this property on $D(x)= C(x) - (p(x))^2$ when factoring \eqref{s
 
 
 
-% \vspace{-4mm}
 \begin{center}
 $\sim$
 \end{center}
@@ -548,9 +521,8 @@ In each given definition of ``$+$'', the result is invariant under the interchan
 
 \section{Rational Functions on Hyperelliptics}
 
-The goal of this chapter is to look at rational functions on the hyperelliptic curve $y^2 = C(x)$ and to define a notion of the order of a function in a point on the curve. We then give some basic properties for this order function before we introduce divisors and proceed to look at functions with a specified number of poles at $\infty$ as a preparation for the proof of associativity on $\J$. %introduce divisors with the ultimate goal of Blah
+The goal of this chapter is to look at rational functions on the hyperelliptic curve $y^2 = C(x)$ and to define a notion of the order of a function in a point on the curve. We then give some basic properties for this order function before we introduce divisors and proceed to look at functions with a specified number of poles at $\infty$ as a preparation for the proof of associativity on $\J$.
 
-% \subsection{The Function Field}
 \subsection{Function Field and Order of Rational Functions}
 
 \begin{defin}
@@ -558,7 +530,6 @@ The goal of this chapter is to look at rational functions on the hyperelliptic c
   \begin{align*}
     \F = \bigslant{K(x)[y]}{\big(y^2-C(x)\big)}.
   \end{align*}
-  % Define $\F$ to be the ring \scalebox{1.2}{$\nicefrac{K(x)[y]}{(y^2-C(x))}$}. Because \mbox{$y^2-C(x)$} is irreducible in $K(x)[y]$ the ideal it generates is maximal and so $\F$ is a field.
   As $y^2-C(x)$ is irreducible in $K(x)[y]$, $\F$ is a field
   % want me to write why?
   and $\F = K(x) + K(x) y$, so write elements $f \in \F$ as $f = g + hy$ where $g,h \in K(x)$. Define $\bar f = g - hy$.
@@ -606,12 +577,11 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
     Define $\lpx = x_0 + t^2$. Now
     \begin{align*}
       C(\lpx) &= t^2 \prod_{i=2}^5 (x_0 -\alpha_i + t^2) \\
-              % &= \mu t^2 + \cdots\\
               &= \mu t^2 (1 + \cdots)
     \end{align*}
     with $\mu \in \bar K$ being $\mu = \prod_{i=2}^5 (x_0 - \alpha_i) = C'(x_0)$ which is non-zero because our curve is non-singular. Write therefore $C(\lpx) = \mu t^2 \tau_2$ with $\tau_2$ of the form $1 + \cdots$ and define $\lpy = \nu t \sqrt{\tau_2}$ with $\nu^2 = \mu$, $\nu \in  \bar K$.
 
-    Note that we may choose one out of two square roots for $\nu$ so whichever we take we demand that we stay consistent in our choice for now. It will however turn out that this choice bears no effect on definition \ref{def-ord}. %$\nu = \sqrt{\mu}$ for a fixed $\sqrt{\phantom{j}}:K\rightarrow K$.
+    Note that we may choose one out of two square roots for $\nu$ so whichever we take we demand that we stay consistent in our choice for now. It will however turn out that this choice bears no effect on definition \ref{def-ord}.
 
     \item Let $\q = \infty$. Define $\lpx = t^{-2}$. It follows that
     \begin{align*}
@@ -676,7 +646,7 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
 
       \item For $\q = \infty$ we have $\lp (f) = f(t^{-2}) = \kappa t^{-2d}+ \cdots$ with $\kappa \neq 0$ if $d = \deg f$ so $\ordn f(\frac 1 x ) = -d$ and so $\ord \lp (f) = 2 \ordn f(\frac 1 x )$.
     \end{enumerate}
-    Generally, if $f \in K(x)$ we can write $f = \frac r q$ for $r, q \in K[x]$ and apply $\ordx f = \ordx r - \ordx q$ in order to use the above on $r$ and $q$. % check this through?
+    Generally, if $f \in K(x)$ we can write $f = \frac r q$ for $r, q \in K[x]$ and apply $\ordx f = \ordx r - \ordx q$ in order to use the above on $r$ and $q$.
   \end{proof}
 \end{lemma}
 
@@ -710,7 +680,7 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
   %(Summenformel)
   If $f \in \F^*$ then the set $\big \{ \q \in \ekb \ \big | \ \ordq f \neq 0 \big \}$ is finite and
   \begin{align*}
-    \sum_{\q \in \ekb} \ordq f = 0.%\tag{Summenformel}
+    \sum_{\q \in \ekb} \ordq f = 0.
   \end{align*}
   \begin{proof}
     First take $f \in K[x,y]$, $f \neq 0$ and let $\q = (x_0,y_0) \in \enkb$, $y_0 \neq 0$, with $\ordq f \neq 0$. By Lemma \ref{one} (a) we know that $\ordq f \geq 1$. It follows that $\ordq (f \bar f) = \ordq f + \ordq \bar f \geq 1$. Now since $f = g + h y$, $f \bar f = g^2 - h^2 C(x)$ which lies in $K[x]$, so by Lemma \ref{two} we have $\ordx (f \bar f) = \ordq (f \bar f) \geq 1$. But there are only finitely many such $x_0$ and so only finitely many such $y_0 = \pm \sqrt{C(x_0)}$.
@@ -720,7 +690,6 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
     For the second claim, give our sum the name
     \begin{align*}
       s(f) &= \sum_{\q \in \ekb} \ordq f
-           % \stackrel{=}{\text{Lemma \ref{three}}} 
     \end{align*}
     and note that $s(f) = s(\bar f)$ due to Lemma \ref{three} and the fact that we take the sum over all $\q$. Because $\ordq (f \bar f ) = \ordq (f) + \ordq ( \bar f )$ we can see that
     \begin{align*}
@@ -734,9 +703,8 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
             + 2 \sum_{x_0 = \infty} \ordx f \bar f\\
             %
             &=2 \sum_{x_0 \in \bar K \cup \{ \infty \}} \ordx f \bar f.
-            %&= \underbrace{2\sum_{\stackrel{x_0 \neq \infty}{x_0 \neq \alpha_i}} \ordx f \bar f}_{Test} + \underbrace{2\sum}_{\text{Lemma \ref{two} (b)}} + \underbrace{2\sum}_{\text{Lemma \ref{two} (c)}}
     \end{align*}
-    Here $\alpha_i$ are the points on which $C(x)$ vanishes % and the $2$ in the first term stems from the fact that every $x_0$ comes from two points, $\q$ and $\bar \q$.
+    Here $\alpha_i$ are the points on which $C(x)$ vanishes
     and since
     \begin{align*}
       \sum_{x_0 \in \bar K \cup \{ \infty \}} \ordx g = 0
@@ -750,10 +718,6 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
 % \end{center}
 
 \subsection{Divisors and Lemmas}
-
-% $\widehat{\infty}$ $\tilde{\infty}$ $\bar{\infty}$ $\breve{\infty}$ $\check{\infty}$ $\underline{\infty}$
-
-% $\ord_{\widehat{\infty}} f(x)$ $\ord_{\tilde{\infty}} f(x)$ $\ord_{\underline{\infty}} f(x)$ $\ord_{\breve{\infty}} f(x)$ $\ord_{\check{\infty}} f(x)$
 
 \begin{defin}
   The divisor of a function $f \in \F^*$ is the formal sum
@@ -808,10 +772,9 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
       \rlap{so} &&               \li (y - f^5) &=        \beta_4 t^{-4} + \cdots &\\
       \rlap{and}&& \li (y - f^5 - \beta_4 f^4) &=        \beta_3 t^{-3} + \cdots
     \end{flalign*}
-    and so on, so $\li (y - f^5 - \beta_4 f^4 - \beta_3 f^3 - \beta_2 f^2 - \beta_1 f)$ is a power series as well. Again $y = f^5 + \beta_4 f^4 + \beta_3 f^3 + \beta_2 f^2 + \beta_1 f + \beta_0 = Y(f)$ with $Y(T)\in \bar K[T] \setminus \bar K$.% because as above we can take the minimal order for every $\q \in \enkb$ of the terms in the sum $y - Y(f)$ to get $\ordq (y - Y(f)) \geq 0$.
-    
+    and so on, so $\li (y - f^5 - \beta_4 f^4 - \beta_3 f^3 - \beta_2 f^2 - \beta_1 f)$ is a power series as well. Again $y = f^5 + \beta_4 f^4 + \beta_3 f^3 + \beta_2 f^2 + \beta_1 f + \beta_0 = Y(f)$ with $Y(T)\in \bar K[T] \setminus \bar K$.    
 
-    Combined we have the polynomial equation $Y(f)^2 - C(X(f)) = 0$ over $\bar K$ whose algebraic closure dictates either $f \in \bar K$ or $Y(T)^2 = C(X(T))$. The latter can't be true by Theorem \ref{satz1} and the former is in contradiction to $\ordi f = -1$.%, so actually $\ordi f \geq 0$.% so $\left. Y(T)^2 - C(X(T)) \right|_{T=f} = 0$. This means that either
+    Combined we have the polynomial equation $Y(f)^2 - C(X(f)) = 0$ over $\bar K$ whose algebraic closure dictates either $f \in \bar K$ or $Y(T)^2 = C(X(T))$. The latter can't be true by Theorem \ref{satz1} and the former is in contradiction to $\ordi f = -1$.
   \end{proof}
 \end{lemma}
 
@@ -830,16 +793,9 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
 
     With $f = h y$ we have $-3 = \ordi f = \ordi h + \ordi y = \ordi h - 5$ so $\ordi h = 2$. Writing $h = \frac r q$ for $r, q \in K[x]$ coprime, this means that $q$ cannot be constant. Use this to pick a $\xi \in \bar K$ with $q(\xi) = 0$, implying $r(\xi) \neq 0$ by coprimality.
 
-    Pick a point $\r = (\xi, \eta)$ in $\enkb$. If $\xi \neq \alpha_i$ then $\text{ord}_\r \hspace{0.5mm} y = 0$ and $\text{ord}_\r \hspace{0.5mm} q \geq 1$ from which we follow $\text{ord}_\r \hspace{0.4mm} f = \text{ord}_\r \hspace{0.4mm} \frac y q \leq -1$, a contradiction. In case $\xi$ is a Weierstrass Point, $\xi = \alpha_i$ then $\text{ord}_\r \hspace{0.5mm} y = 1$ and $\text{ord}_\r \hspace{0.5mm} q \geq 2$ and so we get the same contradiction. This finishes the proof.%, as it shows that there can be no functions $f \in \F^*$ with exactly three poles at $\infty$ and none otherwise.
+    Pick a point $\r = (\xi, \eta)$ in $\enkb$. If $\xi \neq \alpha_i$ then $\text{ord}_\r \hspace{0.5mm} y = 0$ and $\text{ord}_\r \hspace{0.5mm} q \geq 1$ from which we follow $\text{ord}_\r \hspace{0.4mm} f = \text{ord}_\r \hspace{0.4mm} \frac y q \leq -1$, a contradiction. In case $\xi$ is a Weierstrass Point, $\xi = \alpha_i$ then $\text{ord}_\r \hspace{0.5mm} y = 1$ and $\text{ord}_\r \hspace{0.5mm} q \geq 2$ and so we get the same contradiction. This finishes the proof.
   \end{proof}
 \end{lemma}
-
-
-
-
-
-
-
 
 \begin{lemma}\label{fourpoles}
   If $f \in \F^*$ has a pole of order at most four at $\infty$ then $f$ is of the form $f = \alpha + \beta x + \gamma x^2$ with $\alpha, \beta, \gamma \in K$.
@@ -852,8 +808,6 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
 \newpage
 %------------------------------------------------------------------------------
 
-%\textbf{Note:} I have renamed $\q_5, \q_6$ to $\bar \q_5, \bar \q_6$ since $\q_5 := (x_5,y_5)$ is a little more natural than $\q_5 := (x_5,-y_5)$. So now $\P_3$ is $\{ \bar \q_5, \bar \q_6 \}$. I'll change it in Chapter 1 as soon as I have the desire to do something tedious.
-
 \section{Associativity}
 
 \begin{lemma}\label{mult}
@@ -864,12 +818,11 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
   with $\q_j = \infty$ for at most one $j \in \{1,..,6\}$. This means that we are in one of the cases 1--5 of the addition law which involved passing a polynomial $p$ through all $\q_i \neq \infty$. Now remember that we defined $D(x) = C(x) - (p(x))^2$.
 
   If exactly $e_i$ of the $\q_i$ are equal, say to some $\q_k$ for a $k \in \{1,..,6\}$, then
-  \begin{align*} %(xxx, reminder: $D(x) = C(x) - p^2(x)$ OR $D(x) = \prod ...$)
+  \begin{align*}
     D(x) = (x-x_k)^e g(x)
-    % (x-x_k)^e \mid D(x).
   \end{align*}
   with $g(x_k) \neq 0$ and $e = e_i = e_k$. This is of course equivalent to stating $\text{ord}_{x=x_k}\hspace{0.4mm} D(x) = e_k$ and is nothing other than the order of the intersection of $p(x)$ and the curve at $\q_k$. The choice of $k$ obviously does not matter.
-  \begin{proof} %The statement has already been proven true for $e, i, k \leq 4$ in each of the different cases.
+  \begin{proof}
     In all non-zero cases we know the expression for the various $D(x)$ as derived at the various ($*_i$) and ($*_i'$) for cases 1--5, which all come down to
     \begin{align*}
       D(x) &= -p_3^2\prod_{i=1}^6(x-x_i)
@@ -878,75 +831,56 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
     \begin{align*}
       D(x) &=  \prod_{\substack{i=1\\i \neq j}}^6(x-x_i).
     \end{align*}
-    So by construction, $\q_i$ being equal to some $\q_k$ contributes a factor $x-x_k$.    %So by construction, $\q_5$ or $\q_6$ being equal to some other $\q_k$ contributes an additional factor $x-x_k$.
-    %
-    %and are true for $\q_5$ or $\q_6$ by construction: are equal to any $q_k$, $k\in \{1,..,6\}$ then the origin of this
+    So by construction, $\q_i$ being equal to some $\q_k$ contributes a factor $x-x_k$.
   \end{proof}
 \end{lemma}
 
 
 
-\begin{theorem}
+\begin{theorem}\label{hhs}
   Let $\P_1 = \{ \q_1, \q_2 \}, \P_2 = \{ \q_3, \q_4 \}, \P_3 = \{ \bar \q_5, \bar \q_6 \}$ be in $\J$ with
   \begin{align*}
     \P_1 + \P_2 = \P_3.
   \end{align*}
   Then there exists an $f \in \F^*$ with divisor
-  \begin{align*}%\label{f}\tag{$\earth$} %xxx shitty tag
+  \begin{align*}
     (f) = \q_1 + \q_2 + \q_3 + \q_4 - \bar \q_5 - \bar \q_6 - 2 \infty.
   \end{align*}
 \end{theorem}
 
+\begin{remark}
+  Looking back at the complete list of cases, we simplified things twofold. First, at \eqref{switch} we imposed that permutation between $\q_1, \q_2, \q_3$ and $\q_4$ was permitted. Second, we isolated the zero case in order to state that in any other case the situation $\q_i = \bar \q_j$ for $i \neq j$, $i, j = 1,..,4$ never occurs.
 
-% XXXXXXXXXXXXXXXXXXXXXX 
+  Now, by construction of the sum in all non-zero cases it is easy to check that the same properties hold for the whole set $\{ \q_i \mid i = 1,..,6 \}$ for a given sum.
 
-%                                                                   remark?
+  The polynomial $p(x)$ passes through all those $\q_i$ that are in $\enkb$. This implies that if $\q_i = \bar \q_j$ we must have $-y_i = y_j = p(x_j) = p(x_i) = y_i$ so $y_i = 0$ in char$(K) \neq 2$ i.e. $\bar \q_i =\q_j = \q_i$. This is helpful for the next proof.
+\end{remark}
 
-% \begin{remark}\label{alldiff}
-%   Looking back at Remark \ref{permut}
-
-%   Looking back at the construction of $\P_1 + \P_2 = \P_3$ we used the equivalence $\q_i = \q_j \iff x_i = x_j$, $\q_i, \q_j \in \ekb$, $x_i, x_j \in \bar K \cup \{\infty\}$ for $i, j \leq 4$ whenever not in the zero case. We can now easily see that this extends to $i, j \in \{1,..,6\}$. First note that at most one of the six $\q_i$ may equal $\infty$. By construction, the polynomial $p(x)$ passes through all those $\q_i$ that are in $\enkb$. This implies that if $\q_i = \bar \q_j$ we must have $-y_i = y_j = p(x_j) = p(x_i) = y_i$ so $y_i = 0$ in char$(K) \neq 2$ i.e. $\bar \q_i =\q_j = \q_i$.
-% \end{remark}
 
 \newpage
 \begin{proof}\textit{First part}
 
   Begin with the observation that in case 0 we are looking for a function $f$ with divisor $(f) = \q_1 + \bar \q_1 - 2 \infty$. If $\q_1 \neq \infty$, we may take $f = x-x_1$, otherwise $f = 1$ fills the criterion, so we are completely done with case 0.
 
-  %Note that if $\P_2 = 0$ then we want $(f) = \q_1 + \q_2 + 2 \infty - \q_1 - \q_2 - 2 \infty = 0$, a condition that is fulfilled by $f = 1$. xxx
-  %Assume that we are not in 
-  %xxx (change order) In all the other cases we have the polynomial $p(x)$ at our disposal.  We can now assume that we are not in the zero case. Since $y_i = p(x_i)$ for all $i$ except possibly $i=6$, we define
-  Exclude the zero case from now on, so for the remaining cases we have the polynomial $p(x)$ at our disposal. As $y_i = p(x_i)$ whenever $\q_i \neq \infty$, we define%for all $i$ except possibly $i=6$, we define
+  Exclude the zero case from now on, so for the remaining cases we have the polynomial $p(x)$ at our disposal. As $y_i = p(x_i)$ whenever $\q_i \neq \infty$, we define
   \begin{align*}
     q = y -p(x) \in K[x,y] \subset \F^*
   \end{align*}
-  with the intention of showing that $(q) = \sum_{i=1}^6 \q_i - 6 \infty$.
+  with the intention of showing that $(q) = \q_1 + \q_2 + \q_3 + \q_4 + \q_5 + \q_6 - 6 \infty$.
 
   By Lemma \ref{one} (b) we know that $\ordqi q \geq 1$ for those $\q_i$ that are not $\infty$.
 
   Let's first assume that all $\q_i \in \enkb$. This means that we are in the case where $p(x)$ is of degree 3, so as $\li (x) = t^{-2}$ we see that $\ordi q = -6$.
 
-
-
-
-  %XXXxxx As $q \in K[x,y]$, the only negative order may be at $\infty$ which implies $\ordq q = 0$ for all $\q \in \enkb$ that are not one of the $\q_i$. 
-
-  % nope. later <-----------------------------------------
-
-
-
   Use Lemma \ref{mult} in conjunction with Lemma \ref{two} to see that for each of the $\q_i$
-  %%%%%%  With Lemma \ref{mult}, if $e_i$ of the $\q_i$ are equal and $y_i \neq 0$ then with Lemma \ref{two} (a)
   \begin{align*}
     \ordqi q + \ordqi \bar q &= \ordqi q \bar q\\
                     &= \text{ord}_{x=x_i}\hspace{0.4mm} D(x)\\
-                    &= e_i.% here: since sum e_i = 6, ord = 0 for any other point <-------------
+                    &= e_i.
   \end{align*}
-  As in Lemma \ref{mult}, $e_i$ denotes the exact number of occurrences of $\q_i$. Since $\sum e_i = 6$ and $q \in K[x,y]$ implies the only negative order may be at $\infty$, we have $\ordq q = 0$ for all $\q \in \enkb$ that are not one of the $\q_i$.
+  As in Lemma \ref{mult}, $e_i$ denotes the exact number of occurrences of $\q_i$. Also note $\ordqi \bar q = 0$, otherwise $q - \bar q = 2y$ would imply $y_i = 0$ which we excluded.
 
-  %Now $\ordqi \bar q = 0$, otherwise $q - \bar q = 2y$ would imply $y_i = 0$ which we excluded.%, i.e. exactly $e_i$ of the $\q_i$ equal to some $\q_k$.
-
-  % But by Remark \ref{alldiff} we know that $\ordqi \bar q = 0$ as $q(\bar \q_i)$ can't be zero if $\bar \q_i \neq \q_i$, so $\ordqi q = e_i$.
+  Since $q \in K[x,y]$ implies the only negative order may be at $\infty$ and $\sum e_i = 6$, $\ordi q = -6$, we have $\ordq q = 0$ for all $\q \in \enkb$ that are not some $\q_i$.
 
   In the case where $y_i = 0$, the same lemmas imply
   \begin{align*}
@@ -963,14 +897,11 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
     (q) = \sum_{\substack{i=1 \\ i \neq k}}^6 \q_i - 5 \infty = \sum_{i=1}^6 \q_i - 6 \infty
   \end{align*}
   completing the first part of our proof, as no more than one $\q_k$ may be $\infty$.
-  %so now the first part of the proof is covered.
 
 \newpage
   \textit{Second Part}
 
   The divisor of $x - x_i$ is $(x - x_i) = \q_i + \bar \q_i -2 \infty$ both for $\q_i = \bar \q_i$ and $\q_i \neq \bar \q_i$.
-
-  %(Note: I haven't explicitly given divisor properties like $(f g) = (f)+(g)$. Is this obvious enough to omit stating?)
 
   Without loss of generality let $\q_5 \neq \infty$ and distinguish between $\q_6 \neq \infty$ and $\q_6 = \infty$. In the first case it is easy to check that for $f = q (x - x_5)^{-1}(x - x_6)^{-1}$%\hspace{-3.9mm},
   \begin{align*}
@@ -1025,15 +956,13 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
       + & \ \t_1 &+{}& \t_2 &+{}& \r_1 &+{}& \r_2 &-{}& \a   &-{}& \b   &-{}& 2 \infty \\
       - & \ \p_1 &-{}& \p_2 &-{}& \w_1 &-{}& \w_2 &+{}& \u   &+{}& \v   &+{}& 2 \infty \\
       - & \ \q_1 &-{}& \q_2 &-{}& \r_1 &-{}& \r_2 &+{}& \w_1 &+{}& \w_2 &+{}& 2 \infty \\
-      %= & \ &&& \u   &+{}& \v   &-{}& \a   &-{}& \b.
       = &&&&&&&&&&&&& \hspace{-35mm} \u + \v - \a - \b.
     \end{alignat*}
-    % Of course we leave away the cases where any of the $\P \Q \R$ are zero %%nope, not necessary (?)
     This leaves us with three cases: both $\a$ and $\b$ being $\infty$, only $\b$ being $\infty$ and neither being $\infty$. In the first case Lemma \ref{twopol} tells us $\u = \bar \v$ so $\S' = 0 = \S$.
 
     In the second case, $a \neq \infty$ so we can look at $\tilde f = (x - a) f$which now has divisor $(\tilde f) = \u + \v + \bar \b - 3 \infty$ but only two real poles at $\infty$ according to Lemma \ref{threepol}. This means that either $\u = \infty$ or $\v = \infty$. Either way, the other one has to be equal to $\b$, again as can be seen in Lemma \ref{twopol}, and so $\S = \S'$
 
-    This leaves $\tilde f = (x-a)(x-b)f$ which has divisor $(\tilde f) = \bar \a + \bar \b+ \u + \v - 4 \infty$. By Lemma \ref{fourpoles}, $\tilde f$ must be of the form $\kappa (x-\varrho)(x-\varsigma) \in \bar K [x]$ and so
+    This leaves $\tilde f = (x-a)(x-b)f$ which has divisor $(\tilde f) = \bar \a + \bar \b+ \u + \v - 4 \infty$. By Lemma \ref{fourpoles}, $\tilde f$ must be of the form $\kappa (x-\varrho)(x-\varsigma) \in \bar K [x]$, $\kappa \neq 0$ and so
   \begin{align*}
     f=\frac{\kappa (x-\varrho)(x-\varsigma)}{(x-a)(x-b)}.
   \end{align*}
@@ -1046,8 +975,15 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
 
 \end{theorem}
 
-
-
+\begin{remark}
+  We can finally prove property \eqref{switch} we imposed on page \pageref{switch} with the exact same technique of the theorem above. Let's have the two sums
+  \begin{align*}
+    \{\q_1,\q_2\} + \{\q_3,\q_4\} &= \{ \q_5, \q_6 \} \\
+    \rlap{\hspace{-38mm} and}
+    \{\q_3,\q_2\} + \{\q_1,\q_4\} &= \{ \q_5', \q_6' \}.
+  \end{align*}
+  Use Theorem \ref{hhs} again to get two functions $f_1$ and $f_2$ corresponding to the two sums. Let's just look at the third case of the proof above. Defining the function $f = \frac{f_1}{f_2}$ we conclude that $(f)$ must equal to both $\q_5' + \q_6' - \q_5 - \q_6$ and $\m + \bar \m + \n + \bar \n - \q_5 -\bar \q_5 - \q_6 - \bar \q_6$ for some $\m$, $\n \in \ekb$. As above, this means either $\q_5' = \q_5$ and $\q_6' = \q_6$ or the other way around.
+\end{remark}
 
 % -----------------------------------------------------------------------------
 % THIS IS THE END. MY ONLY FRIEND, THE END. OF EVERYTHING THAT STANDS, THE END.
