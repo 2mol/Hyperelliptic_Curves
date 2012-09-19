@@ -18,7 +18,7 @@ Version 5 \scriptsize \hfill Juri; Hyperelliptic Curves --- Draft --- \today
 \subsection{Definitions and Notation}
 
 \begin{defin}
-  Let $K$ be a field with char$(K) \neq 2, 3$ and $\bar K$ its algebraic closure. Define the hyperelliptic curve of genus two $\enk$ as the set of solutions in $K^2$ to the equation $y^2=C(x)$ where
+  Let $K$ be a field with char$(K) \neq 2, 3, 5$ and $\bar K$ its algebraic closure. Define the hyperelliptic curve of genus two $\enk$ as the set of solutions in $K^2$ to the equation $y^2=C(x)$ where
   \begin{align*}
     C(x)=x^5+ax^4+bx^3+cx^2+dx+e
   \end{align*}
@@ -41,7 +41,7 @@ Version 5 \scriptsize \hfill Juri; Hyperelliptic Curves --- Draft --- \today
   \end{align*}
   Write $\{ \q_1,\q_2 \}$ from now on and let bold letters denote points on the curve in the sense of classes of unordered pairs $\P =\{ \q_1, \q_2 \} \in \J$. The point $\{ \bar \q_1, \bar \q_2 \}$ will be called $\bar \P$ for now but can already tentatively be thought of as $-\P$. Call $\{ \infty, \infty \}$ the zero of our set. Call $\q_i$ a point-component.% We will also permit ourselves the notation $\{ \q,\bar \q \} = 0$ and we refrain from explicitly stating that $\P$ is in fact an equivalence class.
 
-  A point $\q = (x_0,y_0)$ is called singular if it fulfills both $y_0=0$ and $C'(x_0) = 0$. A curve is called singular if and only if it has a singular point. We consider only non-singular hyperelliptics from here on; this amounts to $C(x)$ having no repeated factors over $\bar K$ (``squarefree'').%naananananaaanaaa
+  A point $\q = (x_0,y_0)$ is called singular if it fulfills both $y_0=0$ and $C'(x_0) = 0$. A curve is called singular if and only if it has a singular point. We consider only non-singular hyperelliptics from here on; this amounts to $C(x)$ having no repeated factors over $\bar K$ (``squarefree'').
 \end{defin}
 
 \subsection{The General Case}
@@ -78,17 +78,21 @@ Let's start with $\P_1 = \{\q_1,\q_2\}$, $\P_2 = \{\q_3,\q_4\}$ with $\q_i = (x_
       1 & x_4 & x_4^2 & y_4\\   
     \end{vmatrix}
   \end{align*}
-  and the next step will depend on whether $p(x)$ is truly of degree 3 or not.
+  and the next step will depend on whether $p(x)$ is truly of degree 3 or not.\vspace{-1mm}
+\fline
+\vspace{-2.5mm}
+  \begin{align*}\tag{$\ast$} \label{sex}
+    \rlap{\hspace{-44.5mm} Define}
+    D(x) = C(x)-\left ( p(x) \right )^2.
+  \end{align*}\vspace{-5mm}
+  \hrule
 
-  {\scshape Step 2a:} Knowing the coefficients $p_i$ of $p(x)$ we first assume that $p_3 \neq 0$ so we can proceed to look for the two additional solutions of the sextic equation
-  \begin{align*}
-    \tag{$\ast$} \label{sex} C(x)-\left ( p(x) \right )^2 = 0.
-  \end{align*}
+  {\scshape Step 2a:} Knowing the coefficients $p_i$ we first assume $p_3 \neq 0$ so we can proceed to look for the additional solutions of the sextic equation $D(x) = 0$.
   Observe that this vanishes at $x_1, x_2, x_3$ and $x_4$, so write the lefthand side as
   \begin{align}\tag{$*_1$}
-    C(x)-(p(x))^2 = -p_3^2(x-x_1)(x-x_2)(x-x_3)(x-x_4)(x-x_5)(x-x_6)
+    D(x) = -p_3^2(x-x_1)(x-x_2)(x-x_3)(x-x_4)(x-x_5)(x-x_6)
   \end{align}
-   for $x_5$ and $x_6$ in $\bar K$. Comparing the coefficients at $x^4$ and $x^5$ yields
+   for $x_5$ and $x_6$ unknowns in $\bar K$. Comparing the coefficients at $x^4$ and $x^5$ yields
   \begin{align*}
     \sum_{\substack{i,j=1\\i<j}}^6 x_i x_j &= T_4\\
     \rlap{\hspace{-56mm}and} \sum_{i=1}^6 x_i &= T_5
@@ -107,11 +111,11 @@ Let's start with $\P_1 = \{\q_1,\q_2\}$, $\P_2 = \{\q_3,\q_4\}$ with $\q_i = (x_
   \end{align*}
   \fline
 
-  of which $x_5$ is one solution and --- by symmetry of the above steps --- $x_6$ the other one. Compute $y_i=p(x_i)$, $i=5,6$ to obtain $\q_5 = \{ x_5, -y_5 \}$ and $\q_6 = \{ x_6, -y_6 \}$, at which point it becomes clear that the worst-case scenario for our field extension to accommodate the new coordinates is to be quadratic. Finally we define $\P_1 + \P_2$ to be equal to $\P_3 = \{ \q_5, \q_6 \}$.
+  of which $x_5$ is one solution and --- by symmetry of the above steps --- $x_6$ the other one. Compute $y_i=p(x_i)$ for $i=5,6$ to obtain $\q_5 = \{ x_5, y_5 \}$ and $\q_6 = \{ x_6, y_6 \}$, at which point it becomes clear that the worst-case scenario for our field extension to accommodate the new coordinates is to be quadratic. Finally we define $\P_1 + \P_2$ to be equal to $\P_3 = \{ \bar \q_5, \bar \q_6 \}$.
 
-  {\scshape Step 2b:} If $p_3$ were zero, the equation \eqref{sex} would be quintic instead. We may therefore write the lefthand side factorized, so
+  {\scshape Step 2b:} If $p_3$ were zero, the equation \eqref{sex} would be quintic instead. We may therefore write the lefthand side factorized, so we get a different $D(x)$,
   \begin{align}\tag{$*_1$}
-  C(x) - (p(x))^2 =(x-x_1)(x-x_2)(x-x_3)(x-x_4)(x-x_5),
+  D(x) = (x-x_1)(x-x_2)(x-x_3)(x-x_4)(x-x_5),
   \end{align}
   again for $x_5$ somewhere in $\bar K$. We used the tag ($*_1$) twice to mean both equations. Defining $T_{4\infty}=p_2^2 - a$ and comparing the coefficients at $x^4$ gives
 
@@ -124,20 +128,32 @@ Let's start with $\P_1 = \{\q_1,\q_2\}$, $\P_2 = \{\q_3,\q_4\}$ with $\q_i = (x_
 
   and we may rejoice in the implication of $x_5$ staying in $K$.
 
-  Compute $y_5 = p(x_5)$ and define $\P_1 + \P_2$ to be the point $\P_3 = \{ (x_5, y_5), \infty \}$.
+  Compute $y_5 = p(x_5)$ and define $\P_1 + \P_2$ to be the point $\P_3 = \{ (x_5, -y_5), \infty \}$.
 
   {\scshape Step $1'$:} To extend our construction from $\enk$ to $\ek$ we now consider $\q_4 = \infty$ with the other $\q_i = (x_i,y_i)$ as before. This can be seen as the $x_i$ still being pairwise distinct, only that one of them is allowed to be $\infty$ here.
 
-  There is no coordinate $x_4$ this time, so we pass a quadratic polynomial $p(x)$ through the remaining three points $(x_i,y_i)$. This means that we solve the linear system $\tilde V \cdot \mathbf{p} = \tilde \mathbf{y}$ where $\tilde V$ is the Vandermonde matrix for $x_i$, $i=1,..,3$ which incidentally is the upper-left 3$\times$3 sub-matrix of $V$. Here $\mathbf{p}=(p_0 \ p_1 \ p_2)^t$ and $\tilde \mathbf{y}=(y_1 \ y_2 \ y_3)^t$ are defined as expected.
-
+  There is no coordinate $x_4$ this time, so we pass a quadratic polynomial $p(x)$ through the remaining three points $(x_i,y_i)$. This means that we solve the linear system $\tilde V \cdot \mathbf{p} = \tilde \mathbf{y}$ where $\tilde V$ is the Vandermonde matrix for $x_i$, $i=1,..,3$,
+  \begin{align*}\tilde V=
+    \begin{pmatrix}
+      1 & x_1 & x_1^2\\
+      1 & x_2 & x_2^2\\
+      1 & x_3 & x_3^2\\
+    \end{pmatrix}
+  \end{align*}
+  % Of course $\mathbf{p}=(p_0 \ p_1 \ p_2)^t$ and $\tilde \mathbf{y}=(y_1 \ y_2 \ y_3)^t$ are defined as can be expected.
+  % $i=1,..,3$ which incidentally is the upper-left 3$\times$3 sub-matrix of $V$. Here $\mathbf{p}=(p_0 \ p_1 \ p_2)^t$ and $\tilde \mathbf{y}=(y_1 \ y_2 \ y_3)^t$ are defined as expected.
   As before, the leading coefficient of $p(x)$ might or might not be zero, 
   %but this time, dear reader, let us not give a toss
   but \eqref{sex} will be quintic in either case, so we only have to worry about one step 2.
 
-  {\scshape Step $2'$:} Doing a coefficient comparison at $x^3$ and at $x^4$ in \eqref{sex} gives
+  {\scshape Step $2'$:} Doing a coefficient comparison at $x^3$ and at $x^4$ in \eqref{sex} through
+  \begin{align*}\tag{$*_1'$}
+    D(x) = (x-x_1)(x-x_2)(x-x_3)(x-x_5)(x-x_6),
+  \end{align*}\vspace{-8mm}
   \begin{align*}
-    \sum_{\substack{i,j=1\\i<j}}^3 x_i x_j + x_5\sum_{i=1}^3 x_i + x_5 x_6 &= b-2p_1 p_2\\
-    \rlap{\hspace{-50mm} and}
+    \rlap{\hspace{-21mm} gives}
+    \sum_{\substack{i,j=1\\i<j}}^3 x_i x_j + x_5\sum_{i=1}^3 x_i + x_6\sum_{i=1}^3 x_i + x_5 x_6 &= b-2p_1 p_2\\
+    \rlap{\hspace{-59mm} and}
     \sum_{i=1}^3 x_i + x_5 + x_6 &= p_2^2-a.
   \end{align*}
   Call the righthand terms $T_{3\infty}$ and $T_{4\infty}$, combine both equations and obtain
@@ -152,9 +168,9 @@ Let's start with $\P_1 = \{\q_1,\q_2\}$, $\P_2 = \{\q_3,\q_4\}$ with $\q_i = (x_
   Solve, call the two solutions $x_5$ and $x_6$, compute $y_5$ and $y_6$ through $p(x_5)$ and $p(x_6)$ and define $\P_1+\P_2$ to be $\P_3=\{ (x_5,-y_5) , (x_6,-y_6) \}=\{ \bar \q_5, \bar \q_6 \}$.
 \end{case}
 
-\begin{center}
-$\sim$
-\end{center}
+% \begin{center}
+% $\sim$
+% \end{center}
 
 
 \begin{figure}[ht!]
@@ -234,15 +250,22 @@ We may now write the distinction between the remaining cases as follows:
 
 \begin{enumerate}
   \parskip 1mm
-  \item The general case where all $x_1,..,x_4$ are pairwise distinct.
-  \item The case $x_i = x_j$ but $x_i$, $x_k$ and $x_l$ are pairwise distinct.
-  \item The case where $x_i = x_j$ and $x_k = x_l$ but $x_i \neq x_k$.
-  \item The case $x_i = x_j = x_k$ but $x_l \neq x_i$.
-  \item The case where $x_1 = x_2 = x_3 = x_4$.
+  \item The general case where $x_1,x_2,x_3,x_4$ are pairwise distinct.
+  \item The case where exactly two of $x_1,x_2,x_3,x_4$ are equal.
+  \item The case where $x_1,x_2,x_3,x_4$ are equal in pairs.
+  \item The case where exactly three of $x_1,x_2,x_3,x_4$ are equal.
+  \item The case where where all of $x_1,x_2,x_3,x_4$ are equal.
 \end{enumerate}
 \parskip 3mm
 
-Since we are allowed to permute point-components anyway, we may fix which of the $\q_i$ are equal and write everything out for the complete and final list:
+
+\newpage
+
+Since we are allowed to permute point-components anyway, we may fix which of the $\q_i$ are equal and write everything out for the complete and final list.
+
+\begin{center}
+  Given the addition $\{ \q_1 , \q_2 \} + \{ \q_3 , \q_4 \}$, distinguish between the following:
+\end{center}
 
 \vspace{-3mm}
 \fline
@@ -265,7 +288,7 @@ Since we are allowed to permute point-components anyway, we may fix which of the
 \begin{enumerate}[(i)]
   \item In both lists, the cases do not overlap.
   
-  \item For the list to be complete, we must allow for $\q_i = \infty$ for some $i$. Note that one is sufficient, since if two or more $\q_i$ were to be $\infty$, we would be back at the case 0 by virtue of \eqref{switch}, bringing the two infinities together in one point. As for case 1, we consider $\q_i \in \enkb$ and $\q_i \in \ekb$ in two separate cases and postpone handling the latter.\label{extend}
+  \item For the list to be complete, we must allow for $\q_i = \infty$ for some $i$. Note that one is sufficient, since if two or more $\q_i$ were to be $\infty$, we would be back at the case 0 by virtue of \eqref{switch}, bringing the two infinities together in one point. As we did for case 1, we consider $\q_i \in \enkb$ and $\q_i \in \ekb$ in two separate cases and postpone handling the latter.\label{extend}
 
   \item As for the first case, the constructions will a priori only be made on $\j$. It remains to check that this makes indeed for a well-defined addition on $\J$ by being invariant under interchanges of $\q_i$ and $\q_j$ for any $i$, $j$.
 \end{enumerate}
@@ -289,15 +312,12 @@ Before we handle the next construction steps we need an intermediate result.
   \end{proof}
 \end{lemma}
 
-\fline\vspace{-1mm}
-
 We will now use this property on $D(x)= C(x) - (p(x))^2$ when factoring \eqref{sex}.
-\fline
 
 \setcounter{case}{-1}
 
 \begin{case}
-  {\scshape Addition with Zero:} As \eqref{zero} anticipated, we define $\P_1 + \P_2 = \P_1$ for every $\P_1 \in \J$ if $\P_2 = \{ \q, \bar \q \} = 0$. Same thing for $\P_1 + \P_2 = \P_2$ if $\P_1 = 0$.
+  {\scshape Addition with Zero:} As anticipated, \eqref{zero} gives $\P_1 + \P_2 = \P_1$ for every $\P_1 \in \J$ if $\P_2 = \{ \q, \bar \q \} = 0$. Similarly $\P_1 + \P_2 = \P_2$ if $\P_1 = 0$.
 \end{case}
 
 \begin{figure}[ht]
@@ -338,6 +358,19 @@ We will now use this property on $D(x)= C(x) - (p(x))^2$ when factoring \eqref{s
   The subscript indicates at which points the intersections have higher order.
   Here $\ydoub$ is defined as $\mathbf{y}$ with $y_2$ replaced by $y_2'=\frac{C'(x_1)}{2 y_1}$ where $C'(x)$ is the derivative of $C$ and $2y_1 \neq 0$ because char$(\bar K) \neq 2$ and $y_1\neq 0$. Since $\det(\Vdoub) = (x_4-x_1)^2(x_3-x_1)^2(x_4-x_3)$ this fits neatly into our constraints by being non-zero exactly in the case where $x_1, x_3$ and $x_4$ are pairwise distinct.
 
+\begin{figure}[ht]
+  \fline
+  \begin{center}
+    \vspace{1mm}
+    % \framebox{The eight cases illustrated}
+    \includegraphics[width=0.9\textwidth]{addition_single_tan.pdf}
+
+    {\scshape Figure 2}: The case of a tangential intersection at $\q_1$.%xxx
+  \end{center}
+  \vspace{-1.5mm}
+  \fline
+\end{figure}
+
   Once the polynomial is determined, we note that the $p^2(x)$ shares a tangent with $C(x)$ at $x_1$ on purpose, specifically
   \begin{align*}
     D'(x_1) &= C'(x_1) - 2 p(x_1)p'(x_1)\\
@@ -357,9 +390,9 @@ We will now use this property on $D(x)= C(x) - (p(x))^2$ when factoring \eqref{s
   \begin{center}
     \vspace{1mm}
     % \framebox{The eight cases illustrated}
-    \includegraphics[width=0.9\textwidth]{addition_single_tan.pdf}
+    \includegraphics[width=0.9\textwidth]{addition_double_tan.pdf}
 
-    {\scshape Figure 2}: The case of a tangential intersection at $\q_1$.%xxx
+    {\scshape Figure 3}: Two tangential intersection at $\q_1$ and $\q_3$ respectively.%xxx
   \end{center}
   \vspace{-1.5mm}
   \fline
@@ -389,18 +422,6 @@ We will now use this property on $D(x)= C(x) - (p(x))^2$ when factoring \eqref{s
   and the procedure of case 1 with $x_2 = x_1$ and $x_4 = x_3$ to solve \eqref{dagger} or \eqref{dagger2}.
 \end{case}
 
-\begin{figure}[ht]
-  \fline
-  \begin{center}
-    \vspace{1mm}
-    % \framebox{The eight cases illustrated}
-    \includegraphics[width=0.9\textwidth]{addition_double_tan.pdf}
-
-    {\scshape Figure 3}: Two tangential intersection at $\q_1$ and $\q_3$ respectively.%xxx
-  \end{center}
-  \vspace{-1.5mm}
-  \fline
-\end{figure}
 
 \begin{case}
   {\scshape Triple Point:} Let $\q_i \in \enkb , \q_1=\q_2=\q_3$ but $x_1 \neq x_4$ and $y_1 \neq 0$. We can thus see this as a third-order intersection and demand that the curve and the polynomial share a second-order derivative at $\q_1$:
@@ -413,6 +434,19 @@ We will now use this property on $D(x)= C(x) - (p(x))^2$ when factoring \eqref{s
     \end{pmatrix}.
   \end{align*}
   Here $\det(\Vtri)=2(x_4-x_1)^3$ and with this, define $\ytri$ by taking $\ydoub$ and replacing the third coordinate by $y_3'' = \frac{C''(x_1)}{2y_1}-\frac{(C'(x_1))^2}{4y_1^3}$ where $C''(x)$ is the second-order derivative of $C$.
+
+\begin{figure}[ht]
+  \fline
+  \begin{center}
+    \vspace{1mm}
+    % \framebox{The eight cases illustrated}
+    \includegraphics[width=0.9\textwidth]{addition_triple.pdf}
+
+    {\scshape Figure 4}: An intersection of order three at $\q_1$.%xxx
+  \end{center}
+  \vspace{-1.5mm}
+  \fline
+\end{figure}
 
   Apply Lemma \ref{div} as in case 2, only this time we also have
   \begin{align*}
@@ -428,18 +462,7 @@ We will now use this property on $D(x)= C(x) - (p(x))^2$ when factoring \eqref{s
   this allows us to continue with one of the second steps of case 1 to find $\P_3$.
 \end{case}
 
-\begin{figure}[ht]
-  \fline
-  \begin{center}
-    \vspace{1mm}
-    % \framebox{The eight cases illustrated}
-    \includegraphics[width=0.9\textwidth]{addition_triple.pdf}
 
-    {\scshape Figure 4}: An intersection of order three at $\q_1$.%xxx
-  \end{center}
-  \vspace{-1.5mm}
-  \fline
-\end{figure}
 
 \begin{case}
   {\scshape Quadruple Point:} Given the situation where $\q_i = \q_1 \in \enkb$ for every $i$ with $y_1 \neq 0$, we use
@@ -452,22 +475,6 @@ We will now use this property on $D(x)= C(x) - (p(x))^2$ when factoring \eqref{s
     \end{pmatrix}
   \end{align*}
   which is invertible in all fields but those of characteristic 2 and 3.
-
-  Here $\yquad$ is the same as $\ytri$ except for the last coordinate which should read
-  \begin{align*}
-    y_4''' = \frac{C'''(x_1)}{2y_1}-\frac{3C'(x_1)C''(x_1)}{4y_1^3}+\frac{3(C'(x_1))^3}{8y_1^5}
-  \end{align*}
-  where $C'''(x)$ is the third-order derivative of $C$. Once more, we solve the linear system $\Vquad \cdot \mathbf{p}=\yquad$. In addition to $D^{(i)}(x_1)=0$, $i=0,..,2$ we have
-  \begin{align*}
-    D'''(x_1) = C'''(x_1) - 2 y_1 y_4''' - 6 y_2' y_3'' = 0
-  \end{align*}
-  \vspace{-6mm}
-  \begin{align} \tag{$*_5$} \begin{split}
-    \rlap{\hspace{-31.5mm} so either} D(x) &= -p_3^2(x-x_1)^4(x-x_5)(x-x_6) \\
-    \rlap{\hspace{-31.5mm} or}  D(x) &= (x-x_1)^4(x-x_5)
-  \end{split} \end{align}
-  which we subsequently use to solve \eqref{dagger} or \eqref{dagger2} and we're done.
-\end{case}
 
 \begin{figure}[ht!]
   \fline
@@ -482,23 +489,48 @@ We will now use this property on $D(x)= C(x) - (p(x))^2$ when factoring \eqref{s
   \fline
 \end{figure}
 
+  Here $\yquad$ is the same as $\ytri$ except for the last coordinate which should read
+  \begin{align*}
+    y_4''' = \frac{C'''(x_1)}{2y_1}-\frac{3C'(x_1)C''(x_1)}{4y_1^3}+\frac{3(C'(x_1))^3}{8y_1^5}
+  \end{align*}
+  where $C'''(x)$ is the third-order derivative of $C$. Once more, we solve the linear system $\Vquad \cdot \mathbf{p}=\yquad$. In addition to $D^{(i)}(x_1)=0$, $i=0,..,2$ we have
+  \begin{align*}
+    D'''(x_1) = C'''(x_1) - 2 y_1 y_4''' - 6 y_2' y_3'' = 0
+  \end{align*}
+  \vspace{-6mm}
+  \begin{align} \tag{$*_5$} \begin{split}
+    \rlap{\hspace{-32.5mm} so either} D(x) &= -p_3^2(x-x_1)^4(x-x_5)(x-x_6) \\
+    \rlap{\hspace{-32.5mm} or}  D(x) &= (x-x_1)^4(x-x_5)
+  \end{split} \end{align}
+  which we subsequently use to solve \eqref{dagger} or \eqref{dagger2} and we're done.
+\end{case}
+
+
+
 % \vspace{-4mm}
 \begin{center}
 $\sim$
 \end{center}
 
-  \textbf{Finally}, as noted in Remark \ref{rem}, \eqref{extend} we have yet to extend our definition from $\enkb$ to $\ekb$. Observe that this is only relevant for cases number two and four where we now consider $\q_4 = \infty$ as we did in {\scshape Step $1'$} of the general case. As an analogue to this, the relevant matrices $\tilde V_1$ and $\tilde V_{11}$ will be the upper-left $3 \times 3$ sub-matrices of their $\enkb$-counterparts $V_1$ and $V_{11}$.
+\textbf{Finally}, as noted in Remark \ref{rem}, \eqref{extend} we have yet to extend our definition from $\enkb$ to $\ekb$. Observe that this is only relevant for cases number two and four where we now consider $\q_4 = \infty$ as we did in {\scshape Step $1'$} of the general case. As an analogue to this, the relevant matrices $\tilde V_1$ and $\tilde V_{11}$ will be the upper-left $3 \times 3$ sub-matrices of their $\enkb$-counterparts $V_1$ and $V_{11}$.
 
-  In both cases we obtain a linear system of the form $\tilde V_{\ast} \cdot \mathbf{p} = \tilde \mathbf{y}_{\ast}$ for a three-element vector $\mathbf{p}$ and the vectors $\tilde \mathbf{y}_{1}$ and $\tilde \mathbf{y}_{11}$ are defined like their 4-element counterparts $\mathbf{y}_{1}$ and $\mathbf{y}_{11}$ with the last coordinate omitted.
+In both cases we obtain a linear system of the form $\tilde V_{\ast} \cdot \mathbf{p} = \tilde \mathbf{y}_{\ast}$ for a three-element vector $\mathbf{p}$ and the vectors $\tilde \mathbf{y}_{1}$ and $\tilde \mathbf{y}_{11}$ are defined like their 4-element counterparts $\mathbf{y}_{1}$ and $\mathbf{y}_{11}$ with the last coordinate omitted.
 
-  Both matrices $\tilde V_{\ast}$ are invertible and we therefore get a unique polynomial $p(x)$ wich we use to solve \eqref{daggerp}, obtaining $x_5$, $x_6$, $y_5=p(x_5)$ and $y_6=p(x_6)$ in $\bar K$ and we define $\{ \q_1 , \q_2\}+\{ \q_3 , \infty \} = \{ \q_5 , \q_6 \} = \{(x_5,-y_5),(x_6,-y_6)\}$.
+Both matrices $\tilde V_{\ast}$ are invertible and we therefore get a unique polynomial $p(x)$ wich we use to solve \eqref{daggerp}, obtaining $x_5$, $x_6$, $y_5=p(x_5)$ and $y_6=p(x_6)$ in $\bar K$ and we define $\{ \q_1 , \q_2\}+\{ \q_3 , \infty \} = \{ \bar \q_5 , \bar \q_6 \} = \{(x_5,-y_5),(x_6,-y_6)\}$.
+
+The counterparts to ($*_2$) and ($*_4$) in these cases are
+\begin{align*}
+  \tag{$*_2'$} D(x) &= (x-x_1)^2(x-x_3)(x-x_5)(x-x_6)\\
+  \rlap{\hspace{-29.3mm} and}
+  \tag{$*_4'$} D(x) &= (x-x_1)^3(x-x_5)(x-x_6)
+\end{align*}
 
 \subsection{Well-Definedness of the Addition Law}
 
 To check whether our addition is well defined on $\J$ in each of the cases, we have to consider the permutation of point-components $\q_i$ under the equivalence relation from Definition \ref{defj}. Furthermore, to claim that all possible cases are all covered, it is necessary to check the permutations under \eqref{switch}. Both cases can be combined into a single one by the following statement:
 
 \begin{lemma}
-In each given definition of `$+$', the result is invariant under the interchange of $\q_i$ and $\q_j$.
+In each given definition of ``$+$'', the result is invariant under the interchange of $\q_i$ and $\q_j$.
 
 \begin{proof}
   Simultaneously interchanging $x_i \rightleftharpoons x_j$ and $y_i \rightleftharpoons y_j$ in our linear systems $V_{\ast} \cdot \mathbf{p} = \mathbf{y}_{\ast}$ has the effect of permuting the rows of $V_{\ast}$ and $\mathbf{y}_{\ast}$ and relabeling $(x_k,y_k)$ whenever $\q_k$ was equal to $\q_i$ or $\q_j$.
@@ -540,7 +572,7 @@ The goal of this chapter is to look at rational functions on the hyperelliptic c
 
 From now on we will use an ellipsis to denote any terms of ascending order everywhere where we are not interested in the specifics.
 
-If char$(K) \neq 2$ and $\tau$ is a series of the form $\tau = 1 + \sum_{i = 1}^{\infty} a_i t^i$ then it has a unique squareroot of the form $\sigma = 1+\sum_{i = 1}^{\infty} b_i t^i$ in $\bar K (\! (t)\! )$ meaning $\sigma^2 = \tau$. Write $\sigma = \sqrt \tau = 1 + \cdots$.
+If char$(K) \neq 2$ and $\tau$ is a series of the form $\tau = 1 + \sum_{i = 1}^{\infty} a_i t^i$ then it has a unique square root of the form $\sigma = 1+\sum_{i = 1}^{\infty} b_i t^i$ in $\bar K (\! (t)\! )$ meaning $\sigma^2 = \tau$. Write $\sigma = \sqrt \tau = 1 + \cdots$.
 
 \vspace{-3mm}
 \begin{center}
@@ -554,7 +586,9 @@ In order to define the order of a function $f$ in a point $\q$, $\ordq (f) \in \
 % with the intent of defining $\ordq(f) = \ord \lp (f)$.
 Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\lpx$ and deduce $\lpy$. For this, we distinguish between three cases for $\q \in \ekb$.
 
-\begin{defin}
+\newpage
+
+\begin{defin}\label{def-lambda}
   \begin{enumerate}[1.]
     \item Let $\q =(x_0,y_0) \in \enkb$ with $y_0 \neq 0$ and consequently $C(x_0)\neq 0$.
 
@@ -575,9 +609,9 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
               % &= \mu t^2 + \cdots\\
               &= \mu t^2 (1 + \cdots)
     \end{align*}
-    with $\mu \in \bar K$ being $\mu = \prod_{i=2}^5 (x_0 - \alpha_i) = C'(x_0)$ which is non-zero because our curve is non-singular. Write therefore $C(\lpx) = \mu t^2 \tau_2$ with $\tau_2 = 1 + \cdots$ and define $\lpy = \nu t \sqrt{\tau_2}$ with $\nu^2 = \mu$.
+    with $\mu \in \bar K$ being $\mu = \prod_{i=2}^5 (x_0 - \alpha_i) = C'(x_0)$ which is non-zero because our curve is non-singular. Write therefore $C(\lpx) = \mu t^2 \tau_2$ with $\tau_2$ of the form $1 + \cdots$ and define $\lpy = \nu t \sqrt{\tau_2}$ with $\nu^2 = \mu$, $\nu \in  \bar K$.
 
-    Note that we may choose one out of two squareroots for $\nu$ so whichever we take we naturally demand that we stay consistent in our choice. %$\nu = \sqrt{\mu}$ for a fixed $\sqrt{\phantom{j}}:K\rightarrow K$.
+    Note that we may choose one out of two square roots for $\nu$ so whichever we take we demand that we stay consistent in our choice for now. It will however turn out that this choice bears no effect on definition \ref{def-ord}. %$\nu = \sqrt{\mu}$ for a fixed $\sqrt{\phantom{j}}:K\rightarrow K$.
 
     \item Let $\q = \infty$. Define $\lpx = t^{-2}$. It follows that
     \begin{align*}
@@ -593,7 +627,7 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
 \vspace{-3mm}
 \fline
 \vspace{-3mm}
-\begin{defin}
+\begin{defin}\label{def-ord}
    For $\q \in \ekb$ and $f \in \F^*$ define $\ordq (f) = \ord \lp (f)$.
 \end{defin}
 \vspace{-5.5mm}
@@ -612,7 +646,7 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
   \end{enumerate}\parskip 3mm
   \begin{proof}\hfill
     \begin{enumerate}[(a)]\parskip 1mm
-      \item Because $\q \in \enkb$ we have $\lpx$, $\lpy \in \bar K[[t]]$ so with $f \in K[x,y]$ we have $\ordq (f) \in \mathds{N}$.
+      \item Because $\q \in \enkb$ we have $\lpx$, $\lpy \in \bar K[[t]]$ so with $f \in K[x,y]$ we have $\ordq (f) \in \mathds{N} \cup \{0\}$.
       \item Write $f = A(x,y)$, $A(X,Y) \in K[X,Y]$. First, let $y_0 \neq 0$.
       \begin{align*}
         \ordq f &= \ord A(\lpx, \lpy)\\
@@ -668,14 +702,18 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
   \end{proof}
 \end{lemma}
 
+\begin{remark}
+  We now see why the choice of the square root in definition \ref{def-lambda} has no effect on $\ordq f$. If $\lp'$ were to correspond to the other choice, we would have $\lp'(x) = \lp(x)$ and $\lp'(y) = -\lp(y)$, so $\lp'(f) = \lp (\bar f)$. As this was under item 2 where $y_0 = 0$, meaning $\bar \q = \q$, we have $\ord \lp (\bar f) = \ord \lp(f)$.
+\end{remark}
+
 \begin{lemma}\label{sform}
   %(Summenformel)
-  If $f \in \F^*$ then the set $\big \{ \q \in \ekb \ \big | \ \ordq f \neq 0 \big \}$ is finite and 
+  If $f \in \F^*$ then the set $\big \{ \q \in \ekb \ \big | \ \ordq f \neq 0 \big \}$ is finite and
   \begin{align*}
     \sum_{\q \in \ekb} \ordq f = 0.%\tag{Summenformel}
   \end{align*}
   \begin{proof}
-    First take $f \in K[x,y]$, $f \neq 0$ and let $\q = (x_0,y_0) \in \enkb$ with $\ordq f \neq 0$. By Lemma \ref{one} (a) we know that $\ordq f \geq 1$. It follows that $\ordq (f \bar f) = \ordq f + \ordq \bar f \geq 1$. Now since $f = g + h y$, $f \bar f = g^2 - h^2 C(x)$ which lies in $K[x]$, so by Lemma \ref{two} we have $\ordx (f \bar f) = \ordq (f \bar f) \geq 1$. But there are only finitely many such $x_0$ and so only finitely many $y_0 = \pm \sqrt{C(x_0)}$.
+    First take $f \in K[x,y]$, $f \neq 0$ and let $\q = (x_0,y_0) \in \enkb$, $y_0 \neq 0$, with $\ordq f \neq 0$. By Lemma \ref{one} (a) we know that $\ordq f \geq 1$. It follows that $\ordq (f \bar f) = \ordq f + \ordq \bar f \geq 1$. Now since $f = g + h y$, $f \bar f = g^2 - h^2 C(x)$ which lies in $K[x]$, so by Lemma \ref{two} we have $\ordx (f \bar f) = \ordq (f \bar f) \geq 1$. But there are only finitely many such $x_0$ and so only finitely many such $y_0 = \pm \sqrt{C(x_0)}$.
 
     If $f \in K(x,y)$, $f = \frac r q$, $r, q \in K[x,y]$ then $\ordx f = \ordx r - \ordx q$, and again only finitely many $x_0$ exist for which this differs from zero.
 
@@ -692,8 +730,9 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
     \begin{align*}
       2s(f) &= \sum_{\q \in \ekb} \ordq f \bar f\\
             &=2 \mathop{\sum_{x_0 \neq \infty}}_{C(x_0) \neq 0} \ordx f \bar f 
-            + 2 \sum_{C(x_0) = 0} \ordx f \bar f 
+            + 2 \mathop{\sum_{x_0 \neq \infty}}_{C(x_0) = 0} \ordx f \bar f 
             + 2 \sum_{x_0 = \infty} \ordx f \bar f\\
+            %
             &=2 \sum_{x_0 \in \bar K \cup \{ \infty \}} \ordx f \bar f.
             %&= \underbrace{2\sum_{\stackrel{x_0 \neq \infty}{x_0 \neq \alpha_i}} \ordx f \bar f}_{Test} + \underbrace{2\sum}_{\text{Lemma \ref{two} (b)}} + \underbrace{2\sum}_{\text{Lemma \ref{two} (c)}}
     \end{align*}
@@ -781,33 +820,26 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
   \begin{proof}
     Because $\li (f) = \beta t^{-2} + \cdots$ where $\beta \in \bar K$ we have $\li (f - \beta x)= \gamma t^{-1} + \cdots$ and thanks to Lemma \ref{onepol} we know this to imply $f - \beta x = \alpha$.
   \end{proof}
+  \textbf{Note} that it is easy to see that in this case $(f) = \a + \bar \a -2 \infty$ for $\a = ( - \frac \alpha \beta , * )$
 \end{lemma}
 
-\begin{lemma}
+\begin{lemma}\label{threepol}
   If $f \in \F^*$ has a pole of order at most three at $\infty$ and $\ordq f \geq 0$ for every $\q \in \enkb$ then $f$ is of the form $f = \alpha + \beta x$ with $\alpha, \beta \in K$.
   \begin{proof}
-    We can see that for instance for $\alpha_1$ one of the roots of $C(x)$ we have
-    \begin{align*}
-      \li \left(\frac{y}{x-\alpha_1}\right) &= (t^{-2} - \alpha_1)^{-1} t^{-5} \sqrt{\tau_3}\\
-      \vphantom{\frac x y}
-      &= t^2 (1 + \cdots)^{-1} t^{-5}(1 + \cdots)\\
-      \vphantom{\frac x y}
-      &= t^{-3} (1 + \cdots).
-    \end{align*}
-    So if $\li (f) = \gamma t^{-3} + \cdots$ then per Lemma \ref{twopol} we have
-    \begin{align*}
-      f - \gamma \frac{y}{x-\alpha_1} = \alpha + \beta x.
-    \end{align*}
-    But now for $\q = (\alpha_0, 0)$ we have
-    \begin{align*}
-      \lp (f) &= \alpha + \beta (\alpha_1 + t^2) + \gamma \frac{\nu t \sqrt \tau_2}{t^{2}}\\
-      &= \gamma \nu t^{-1} + \cdots
-    \end{align*}
-    so $\gamma \nu$ must be 0. Since $\nu = C'(x_0) \neq 0$ and $f$ does not have any poles in $\enkb$, $\gamma$ must be zero and so $f = \alpha + \beta x$.
-    %We have $\lp (f) = \gamma t^{-3} + \cdots$ and so $\lp (f - \bar f) = \delta t^{-2} + \cdots$ because the order at infinity of $f - \bar f \in K(x)$ must be even by Lemma \ref{two} (c).
+    From $\li (f) = \gamma t^{-3} + \cdots$ and $f + \bar f \in K(x)$ we get that the order of the latter must be even by Lemma \ref{two} (c), so $\ordi (f+ \bar f)  \geq -2$. Like $f$, $f + \bar f$, has no poles on $\enkb$ so Lemma \ref{twopol} implies $f + \bar f = \alpha + \beta x$. Writing $f = g + hy$ we therefore see that $g = \frac{\alpha + \beta x}{2}$ and $f - g = hy$. The latter also has a pole of order three at $\infty$ and none on $\enkb$ so we are effectively reduced to studying functions $f$ of the form $f = hy$ for $h \in K(x)$, $h \neq 0$.
 
+    With $f = h y$ we have $-3 = \ordi f = \ordi h + \ordi y = \ordi h - 5$ so $\ordi h = 2$. Writing $h = \frac r q$ for $r, q \in K[x]$ coprime, this means that $q$ cannot be constant. Use this to pick a $\xi \in \bar K$ with $q(\xi) = 0$, implying $r(\xi) \neq 0$ by coprimality.
+
+    Pick a point $\r = (\xi, \eta)$ in $\enkb$. If $\xi \neq \alpha_i$ then $\text{ord}_\r \hspace{0.5mm} y = 0$ and $\text{ord}_\r \hspace{0.5mm} q \geq 1$ from which we follow $\text{ord}_\r \hspace{0.4mm} f = \text{ord}_\r \hspace{0.4mm} \frac y q \leq -1$, a contradiction. In case $\xi$ is a Weierstrass Point, $\xi = \alpha_i$ then $\text{ord}_\r \hspace{0.5mm} y = 1$ and $\text{ord}_\r \hspace{0.5mm} q \geq 2$ and so we get the same contradiction. This finishes the proof.%, as it shows that there can be no functions $f \in \F^*$ with exactly three poles at $\infty$ and none otherwise.
   \end{proof}
 \end{lemma}
+
+
+
+
+
+
+
 
 \begin{lemma}\label{fourpoles}
   If $f \in \F^*$ has a pole of order at most four at $\infty$ then $f$ is of the form $f = \alpha + \beta x + \gamma x^2$ with $\alpha, \beta, \gamma \in K$.
@@ -815,7 +847,6 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
     With $\li (f) = \gamma t^{-4} + \cdots$ we know that $\li (f - \gamma x^2) = \delta t^{-3} + \cdots$ and we use the previous Lemma to see that $f - \gamma x^2 = \alpha + \beta x$.
   \end{proof}
 \end{lemma}
-
 
 %------------------------------------------------------------------------------
 \newpage
@@ -839,7 +870,7 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
   \end{align*}
   with $g(x_k) \neq 0$ and $e = e_i = e_k$. This is of course equivalent to stating $\text{ord}_{x=x_k}\hspace{0.4mm} D(x) = e_k$ and is nothing other than the order of the intersection of $p(x)$ and the curve at $\q_k$. The choice of $k$ obviously does not matter.
   \begin{proof} %The statement has already been proven true for $e, i, k \leq 4$ in each of the different cases.
-    By construction we have in all non-zero cases% for $D(x) = C(x) - p^2(x)$
+    In all non-zero cases we know the expression for the various $D(x)$ as derived at the various ($*_i$) and ($*_i'$) for cases 1--5, which all come down to
     \begin{align*}
       D(x) &= -p_3^2\prod_{i=1}^6(x-x_i)
     \end{align*}
@@ -856,24 +887,31 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
 
 
 \begin{theorem}
-  Let $\P_i \in \J$, $\P_i = \{ \q_1, \q_2 \}$, $\P_2 = \{ \q_3, \q_4 \}$ and $\P_3 = \{ \bar \q_5, \bar \q_6 \}$,
+  Let $\P_1 = \{ \q_1, \q_2 \}, \P_2 = \{ \q_3, \q_4 \}, \P_3 = \{ \bar \q_5, \bar \q_6 \}$ be in $\J$ with
   \begin{align*}
     \P_1 + \P_2 = \P_3.
   \end{align*}
   Then there exists an $f \in \F^*$ with divisor
-  \begin{align*}\label{f}\tag{$\star$} %xxx shitty tag
+  \begin{align*}%\label{f}\tag{$\earth$} %xxx shitty tag
     (f) = \q_1 + \q_2 + \q_3 + \q_4 - \bar \q_5 - \bar \q_6 - 2 \infty.
   \end{align*}
 \end{theorem}
 
-\begin{remark}\label{alldiff}
-  Looking back at the construction of $\P_1 + \P_2 = \P_3$ we used the equivalence $\q_i = \q_j \iff x_i = x_j$, $\q_i, \q_j \in \ekb$, $x_i, x_j \in \bar K \cup \{\infty\}$ for $i, j \leq 4$ whenever not in the zero case. We can now easily see that this extends to $i, j \in \{1,..,6\}$. First note that at most one of the six $\q_i$ may equal $\infty$. By construction, the polynomial $p(x)$ passes through all those $\q_i$ that are in $\enkb$. This implies that if $\q_i = \bar \q_j$ we must have $-y_i = y_j = p(x_j) = p(x_i) = y_i$ so $y_i = 0$ in char$(K) \neq 2$ i.e. $\bar \q_i =\q_j = \q_i$.
-\end{remark}
+
+% XXXXXXXXXXXXXXXXXXXXXX 
+
+%                                                                   remark?
+
+% \begin{remark}\label{alldiff}
+%   Looking back at Remark \ref{permut}
+
+%   Looking back at the construction of $\P_1 + \P_2 = \P_3$ we used the equivalence $\q_i = \q_j \iff x_i = x_j$, $\q_i, \q_j \in \ekb$, $x_i, x_j \in \bar K \cup \{\infty\}$ for $i, j \leq 4$ whenever not in the zero case. We can now easily see that this extends to $i, j \in \{1,..,6\}$. First note that at most one of the six $\q_i$ may equal $\infty$. By construction, the polynomial $p(x)$ passes through all those $\q_i$ that are in $\enkb$. This implies that if $\q_i = \bar \q_j$ we must have $-y_i = y_j = p(x_j) = p(x_i) = y_i$ so $y_i = 0$ in char$(K) \neq 2$ i.e. $\bar \q_i =\q_j = \q_i$.
+% \end{remark}
 
 \newpage
 \begin{proof}\textit{First part}
 
-  Begin with the observation that in case 0 we are looking for a function $f$ with divisor $(f) = \q_1 + \bar \q_1 - 2 \infty$. If $\q_1 \neq \infty$, we may take $f = x-x_1$, otherwise $f = 1$ fulfills the criterion \eqref{f}, so we are completely done there.
+  Begin with the observation that in case 0 we are looking for a function $f$ with divisor $(f) = \q_1 + \bar \q_1 - 2 \infty$. If $\q_1 \neq \infty$, we may take $f = x-x_1$, otherwise $f = 1$ fills the criterion, so we are completely done with case 0.
 
   %Note that if $\P_2 = 0$ then we want $(f) = \q_1 + \q_2 + 2 \infty - \q_1 - \q_2 - 2 \infty = 0$, a condition that is fulfilled by $f = 1$. xxx
   %Assume that we are not in 
@@ -904,9 +942,13 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
                     &= \text{ord}_{x=x_i}\hspace{0.4mm} D(x)\\
                     &= e_i.% here: since sum e_i = 6, ord = 0 for any other point <-------------
   \end{align*}
-  As in Lemma \ref{mult}, $e_i$ denotes the exact number of occurrences of $\q_i$.%, i.e. exactly $e_i$ of the $\q_i$ equal to some $\q_k$.
+  As in Lemma \ref{mult}, $e_i$ denotes the exact number of occurrences of $\q_i$. Since $\sum e_i = 6$ and $q \in K[x,y]$ implies the only negative order may be at $\infty$, we have $\ordq q = 0$ for all $\q \in \enkb$ that are not one of the $\q_i$.
 
-  But by Remark \ref{alldiff} we know that $\ordqi \bar q = 0$ as $q(\bar \q_i)$ can't be zero if $\bar \q_i \neq \q_i$, so $\ordqi q = e_i$. In the case where $y_i = 0$, the same lemmas imply
+  %Now $\ordqi \bar q = 0$, otherwise $q - \bar q = 2y$ would imply $y_i = 0$ which we excluded.%, i.e. exactly $e_i$ of the $\q_i$ equal to some $\q_k$.
+
+  % But by Remark \ref{alldiff} we know that $\ordqi \bar q = 0$ as $q(\bar \q_i)$ can't be zero if $\bar \q_i \neq \q_i$, so $\ordqi q = e_i$.
+
+  In the case where $y_i = 0$, the same lemmas imply
   \begin{align*}
     \ordqi q + \ordqi \bar q = 2e_i
   \end{align*}
@@ -930,12 +972,12 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
 
   %(Note: I haven't explicitly given divisor properties like $(f g) = (f)+(g)$. Is this obvious enough to omit stating?)
 
-  Without loss of generality let $\q_5 \neq \infty$ and distinguish between $\q_6 \neq \infty$ and $\q_6 = \infty$. In the first case it is easy to check that for $f = q (x - x_5)^{-1}(x - x_6)^{-1}$\hspace{-3.9mm},
+  Without loss of generality let $\q_5 \neq \infty$ and distinguish between $\q_6 \neq \infty$ and $\q_6 = \infty$. In the first case it is easy to check that for $f = q (x - x_5)^{-1}(x - x_6)^{-1}$%\hspace{-3.9mm},
   \begin{align*}
     (f) &= \sum_{i=1}^6 \q_i - 6 \infty - \q_5 - \bar \q_5 - \q_6 - \bar \q_6 + 4 \infty \\
         &= \sum_{i=1}^4 \q_i- \bar \q_5 - \bar \q_6 - 2 \infty
   \end{align*}
-  which corresponds precisely to the statement we aimed to prove. If $\q_6 = \infty$, we can define $f = q (x - x_5)^{-1}$ and check that
+  which corresponds precisely to the statement we aim to prove. If $\q_6 = \infty$, we can define $f = q (x - x_5)^{-1}$ and check that
   \begin{align*}
     (f) &= \sum_{i=1}^5 \q_i - 5 \infty - \q_5 - \bar \q_5 + 2 \infty \\
         &= \sum_{i=1}^4 \q_i - \bar \q_5 - \bar \infty - 2 \infty.
@@ -986,7 +1028,12 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
       %= & \ &&& \u   &+{}& \v   &-{}& \a   &-{}& \b.
       = &&&&&&&&&&&&& \hspace{-35mm} \u + \v - \a - \b.
     \end{alignat*}
-    This means that $\tilde f = (x-a)(x-b)f$ has divisor $(\tilde f) = \bar \a + \bar \b+ \u + \v - 4 \infty$. By Lemma \ref{fourpoles}, $\tilde f$ must be of the form $\kappa (x-\varrho)(x-\varsigma) \in \bar K [x]$ and so
+    % Of course we leave away the cases where any of the $\P \Q \R$ are zero %%nope, not necessary (?)
+    This leaves us with three cases: both $\a$ and $\b$ being $\infty$, only $\b$ being $\infty$ and neither being $\infty$. In the first case Lemma \ref{twopol} tells us $\u = \bar \v$ so $\S' = 0 = \S$.
+
+    In the second case, $a \neq \infty$ so we can look at $\tilde f = (x - a) f$which now has divisor $(\tilde f) = \u + \v + \bar \b - 3 \infty$ but only two real poles at $\infty$ according to Lemma \ref{threepol}. This means that either $\u = \infty$ or $\v = \infty$. Either way, the other one has to be equal to $\b$, again as can be seen in Lemma \ref{twopol}, and so $\S = \S'$
+
+    This leaves $\tilde f = (x-a)(x-b)f$ which has divisor $(\tilde f) = \bar \a + \bar \b+ \u + \v - 4 \infty$. By Lemma \ref{fourpoles}, $\tilde f$ must be of the form $\kappa (x-\varrho)(x-\varsigma) \in \bar K [x]$ and so
   \begin{align*}
     f=\frac{\kappa (x-\varrho)(x-\varsigma)}{(x-a)(x-b)}.
   \end{align*}
@@ -994,7 +1041,7 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
   \begin{align*}
     (f) = \m + \bar \m + \n + \bar \n - \a - \bar \a - \b - \bar \b.
   \end{align*}
-  So, without loss of generality, either $\a = \m$ and $\b = \bar \m$ or $\a = \m$ and $\b = \n$. First case implies $\S$ and $\S'$ equals 0, second case implies $(f)= \a + \b - \a - \b$ and in both cases we're done.
+  So, without loss of generality, either $\a = \m$ and $\b = \bar \m$ or $\a = \m$ and $\b = \n$. First case implies $\S$ and $\S'$ equals 0, second case implies that $(f)= \a + \b - \a - \b$ and in both cases we're done.
   \end{proof}
 
 \end{theorem}
