@@ -17,7 +17,7 @@
 Version 6 \scriptsize \hfill Juri; Hyperelliptic Curves --- Draft --- \today
 \normalsize
 
-\section{Addition Law}
+\section{Addition Law}\label{ch1}
 
 \subsection{Definitions and Notation}
 
@@ -517,9 +517,7 @@ In each given definition of ``$+$'', the result $\{ \q_5, \q_6 \}$ is invariant 
 
 \subsection{Summary and Conclusions}
 
-For the convenience of the reader we attempt to summarize our approach and give some preliminary implications.
-
-First, whenever we refer to $\q_i$ in $\ekb$, $\q_i = (x_i, y_i)$ for $i = 1,..,6$, from now on it is implicitly understood to be in the context of the sum
+For the convenience of the reader we attempt to summarize our approach and give some preliminary implications. First, whenever we refer to $\q_i$ in $\ekb$, $\q_i = (x_i, y_i)$ for $i = 1,..,6$, from now on it is implicitly understood to be in the context of the sum
 \begin{align*}
   \{\q_1, \q_2 \} +\{ \q_3 , \q_4 \} = \{\bar \q_5 , \bar \q_6\}
 \end{align*}
@@ -872,8 +870,7 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
 
 \section{Associativity}
 
-We now put ourselves 
-Before we name and prove the main helper
+We now return to the context of the sum defined in Chapter \ref{ch1}
 
 Suppose we already have our $\q_i = (x_i, y_i)$, $\q_i \in \ekb$, $i=1,..,6$ that fulfill
 \begin{align*}
@@ -888,7 +885,7 @@ with $\q_j = \infty$ for at most one $j \in \{1,..,6\}$. This means that we are 
   with $g_k(x_k) \neq 0$. This is of course equivalent to stating $\text{ord}_{x=x_k}\hspace{0.4mm} D(x) = e_k$ which is also the order of the intersection of $P(x)$ and the curve at $\q_k$.% The choice of $k$ does not matter.
   \begin{proof} Obvious with $D(x)$ written as in Remark \ref{remD}.
   \end{proof}
-  %Small remark: Any $\q$ can actually only accur four times in the expression of the sum as we would otherwise find ourself in the zero case.
+  %Small remark: Any $\q$ can actually only occur four times in the expression of the sum as we would otherwise find ourself in the zero case.
 \end{lemma}
 
 Now write $\P_1 = \{ \q_1, \q_2 \}, \P_2 = \{ \q_3, \q_4 \}, \P_3 = \{ \bar \q_5, \bar \q_6 \}$ and keep in mind that we will now allow for all six cases 0--5.
