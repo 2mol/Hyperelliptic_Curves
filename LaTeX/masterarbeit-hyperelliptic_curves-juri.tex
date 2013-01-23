@@ -521,25 +521,39 @@ For the convenience of the reader we attempt to summarize our approach and give 
 \begin{align*}
   \{\q_1, \q_2 \} +\{ \q_3 , \q_4 \} = \{\bar \q_5 , \bar \q_6\}
 \end{align*}
-where our goal was to define $\q_5$ and $\q_6$. We started with $x_1, x_2, x_3, x_4$ all finite and different and used the graph of a cubic polynomial $P(x)$ which may however degenerate into a quadratic, linear or even constant one. The two new intersections of the graph of the polynomial with the graph of the curve would then determine the result of our sum. For this, we used the polynomial $D(x)=C(x)-(P(x))^2$ (see Remark \ref{remD}). If there is only one new intersection, we call the other one $\infty$. There is at least one new intersection as $D(x)$ had degree five or six which can have no less than five roots in $\bar K$.
+where our goal was to define $\q_5$ and $\q_6$. We started with $x_1, x_2, x_3, x_4$ all finite and different and used the graph of a cubic polynomial $P(x)$ which may however degenerate into a quadratic, linear or even constant one. The two new intersections of the graph of the polynomial with the graph of the curve would then determine the result of our sum. For this, we used the polynomial $D(x)=C(x)-(P(x))^2$ (see Remark \ref{remD}). If there is only one new intersection, we call the other one $\infty$. There is at least one new intersection as $D(x)$ had degree six or five which can have no less than five roots in $\bar K$.
 
-As a first generalization, we allowed for $\q_4 = \infty$ . As in our list of cases, convenience dictates that we say that this has the $x$-coordinate ``$x_4 = \infty$''. Note that $D(x)$ now has degree five, so the two new points have to be finite.
+As a first generalization we allowed for $\q_4 = \infty$ with $x_1, x_2, x_3$ still all finite and different. In that case, $D(x)$ has degree five, so $x_5$, $x_6$ have to be finite.
 
-The step with the most implications was that we imposed symmetry on the sum in $\q_1, \q_2, \q_3, \q_4$. This was consistent with the rule so far and allowed us to say two things: If more than one of these four components equal $\infty$, then we are in the zero case. If $\q_i = \bar \q_j$ for $i \neq j$, then we are in the zero case. An astute reader will note that the first is actually included in the latter. We proceeded to use this write the complete list of cases in a compact form.
+This completed case 1 ``all $x_i$ different'' because \eqref{switch} allowed interchanging $\q_4$ with $\q_1, \q_2$ or $\q_3$. This symmetry was consistent with the addition rule so far and it furthermore allowed us to say that, if $\q_i = \bar \q_j$ for $i \neq j$, $\q_i \neq \q_j$, then we are in the zero case. We used this to write the complete list of cases, considering four cases of $x_1,..,x_4$ finite but not different. We completed each case with $x_1,..,x_3$ finite but $x_4 = \infty$ as we did for case 1.
 
-Consequently, we are now always able to exclude the above two properties whenever not in the zero case. This brings us to our first observation.
+We can extend the distinction ``$\q_i \neq \bar \q_j$'' between zero and non-zero cases.
 
-\begin{remark}
-  Provided we are not in case 0, then at most one of the six point-components $\q_1,..,\q_6$ may equal $\infty$. This is easy to check as either all $\q_1, \q_2, \q_3, \q_4$ are finite so only one of $\q_5, \q_6$ may be infinite or $\q_4 = \infty$ in which case both $\q_5$ and $\q_6$ are finite as mentioned above. Naturally the symmetric property means that the condition on $\q_4$ extends to any $\q_i$.
-\end{remark}
+\begin{lemma}\label{atmost1}
+  Provided we are not in case 0, then $\q_i \neq \bar \q_j$ for $i \neq j$, $\q_i \neq \q_j$ is not only true for $i,j = 1,..,4$ but for $i,j = 1,..,6$ as well.
 
-Now, the symmetry we imposed will actually turn out to be a provable property much later, but already has the following implication:
+  \begin{proof}
+    For every $\q_i = (x_i,y_i) \neq \infty$ we have $y_i = P(x_i)$, so if two points have the same $x$-coordinate and opposing $y$-coordinates, $y_i$ must equal 0. This means $\q_i = \q_j$, which contradicts the premise.
+  \end{proof}
 
-\begin{remark}\label{symall}
-  The symmetry imposed on the sum in $\q_1, .., \q_4$ now extends to symmetry in $\q_1, .., \q_6$, so for instance once we explicitely derive the sum $\{\q_1, \q_2 \} +\{ \q_3 , \q_4 \} = \{\bar \q_5 , \bar \q_6\}$ we know that $\{\q_5, \q_2 \} +\{ \q_3 , \q_4 \} = \{\bar \q_1 , \bar \q_6\}$.
-\end{remark}
+  %Provided we are not in case 0, then at most one of the six point-components $\q_1,..,\q_6$ may equal $\infty$. This is easy to check as in every case, either all $\q_1, \q_2, \q_3, \q_4$ are finite so only one of $\q_5, \q_6$ may be infinite, or $\q_4 = \infty$ in which case both $\q_5$ and $\q_6$ are finite as mentioned above.
 
-To see why this is obvious, we first summarize the various $D(x)$ we derived at ($*_1$) through ($*_5$) and ($*_1'$), ($*_2'$) and ($*_4'$) for cases 1--5 and give the simplest general expression possible:
+  A very useful special case of ``$\q_i \neq \bar \q_j$'' is that no more that one of the six components $\q_1,.., \q_6$ may equal $\infty$ in non-zero cases.
+\end{lemma}
+
+% \vspace{-3mm}
+% \begin{center}
+% $\sim$
+% \end{center}
+% \vspace{-2mm}
+
+The symmetry we defined at \eqref{switch} will turn out to be a provable property, but we can already broaden it in the next Lemma.
+
+\begin{lemma}\label{symall}
+  The symmetry imposed on the sum in $\q_1, .., \q_4$ now extends to symmetry in $\q_1, .., \q_6$. For instance, once we explicitely derive the sum $\{\q_1, \q_2 \} +\{ \q_3 , \q_4 \} = \{\bar \q_5 , \bar \q_6\}$, we know that $\{\q_5, \q_2 \} +\{ \q_3 , \q_4 \} = \{\bar \q_1 , \bar \q_6\}$.
+\end{lemma}
+
+To see why this is obvious, we first summarize the various $D(x)$ we derived at ($*_1$) through ($*_5$) and ($*_1'$), ($*_2'$) and ($*_4'$) for cases 1--5 and give the simplest general expression possible.
 
 \begin{remark}\label{remD}
   In every non-zero case we have a polynomial $P$ whose graph we let intersect the graph of the curve such that the new intersections give $\q_5$ and $\q_6$ where they are finite. This is done by finding $x_5$ and $x_6$ if they exist, which in turn was done by solving $D(x) = 0$ where we defined $D(x) = C(x) - (P(x))^2$.
@@ -552,9 +566,19 @@ To see why this is obvious, we first summarize the various $D(x)$ we derived at 
   \begin{align*}
     D(x) &=  \prod_{\substack{i=1\\i \neq j}}^6(x-x_i).
   \end{align*}
-  Remember that at most one of the $\q_i$ can be $\infty$, covering all non-zero cases. This finally allows us to see the underlying symmetry, as in both expressions all $x_i$ are freely interchangeable. 
+  Remember that at most one of the $\q_i$ can be $\infty$, covering all non-zero cases.
+
+  For later use we can even write the more compact product
+  \begin{align*}
+    D(x) &= \delta \prod_{\q} \big(x-x(\q)\big)^{e(\q)}
+  \end{align*}
+  taken over all $\q  \in \enkb$ where $e(\q)$ is the number among $\q_1,..,\q_6$ that equal $\q = (x(\q), y(\q))$. This works because by Lemma \ref{atmost1}, if $x_i = x_j$ for $i \neq j$, then $\q_i = \q_j$.
 \end{remark}
-Last but not least, Remark \ref{symall} remains universally valid, as the property can be checked for the zero case as well through a quick glance at \eqref{zero}.
+
+\emph{Proof of Lemma \ref{symall}.}
+  Both expressions above remain unchanged under permutation on the $x_i$. And since $\q_i = (x_i, y_i)$ with $y_i = P(x_i)$, we're done.
+
+  Last but not least, this Lemma remains universally valid, as the property can be checked for the zero case as well through a quick glance at \eqref{zero}.\hfill \qed
 
 
 
@@ -870,23 +894,25 @@ Because $C\big(\lpx\big)=\big(\lpy\big)^2$ has to be fulfilled, we decide on $\l
 
 \section{Associativity}
 
-We now return to the context of the sum defined in Chapter \ref{ch1}
-
-Suppose we already have our $\q_i = (x_i, y_i)$, $\q_i \in \ekb$, $i=1,..,6$ that fulfill
+We now return to the sum defined in Chapter \ref{ch1}. Suppose we have our $\q_i \in \ekb$, $i=1,..,6$ that fulfill
 \begin{align*}
   \{ \q_1 , \q_2\}+\{\q_3 , \q_4\} = \{\bar \q_5 , \bar \q_6 \}.
 \end{align*}
-with $\q_j = \infty$ for at most one $j \in \{1,..,6\}$. This means that we are in one of the non-zero cases of the addition law which involved passing a polynomial $P$ through all $\q_i \neq \infty$. Now remember that we defined $D(x) = C(x) - (P(x))^2$.
+Remember that by Lemma \ref{atmost1} xxx nee!! , if $\q_j = \infty$ for at most one $j \in \{1,..,6\}$, then we are in one of the non-zero cases of the addition law. In such a case, we had the graph of a polynomial $P$ passing through all $\q_i \neq \infty$. We defined $D(x) = C(x) - (P(x))^2$.
 \begin{lemma}\label{mult}
-  Pick any $\q_k \neq \infty$ in the sum above, so $\q_k = (x_k, y_k) \in \enkb$, $k = 1,..,6$. Now it can be said that $\q_k$ occurs exactly $e_k$ times in the expression of the sum, $e_k$ being between 1 and 6 (actually between 1 and 4 in non-zero cases, which fun to check taking \eqref{zero} as a hint). Then
+  If the sum falls into one of the cases 1--5, pick any $\q_k \neq \infty$ for $k = 1,..,6$, so $\q_k = (x_k, y_k) \in \enkb$. Now it can be said that $\q_k$ occurs exactly $e_k$ times in the expression of the sum, $e_k$ being between
+  1 and 6\footnotemark[1].
+  Then\vspace{-3mm}
   \begin{align*}
-    D(x) = (x-x_k)^{e_k} g_k(x)
+    \text{ord}_{x=x_k}\hspace{0.4mm} D(x) = e_k.
   \end{align*}
-  with $g_k(x_k) \neq 0$. This is of course equivalent to stating $\text{ord}_{x=x_k}\hspace{0.4mm} D(x) = e_k$ which is also the order of the intersection of $P(x)$ and the curve at $\q_k$.% The choice of $k$ does not matter.
-  \begin{proof} Obvious with $D(x)$ written as in Remark \ref{remD}.
+  % This is of course equivalent to stating $\text{ord}_{x=x_k}\hspace{0.4mm} D(x) = e_k$ which is also the order of the intersection of $P(x)$ and the curve at $\q_k$.% The choice of $k$ does not matter.
+  \begin{proof} With  Remark \ref{remD} we know $D(x) = (x - x_k)^{e_k} g(x)$ with $g_k(x_k) \neq 0$.
   \end{proof}
   %Small remark: Any $\q$ can actually only occur four times in the expression of the sum as we would otherwise find ourself in the zero case.
 \end{lemma}
+
+\footnotetext[1]{It can actually only be between 1 and 4, which is easily checked. If $e_k$ were 5 or more, we use \eqref{zero} to show that we must be in the zero case, which we excluded.}
 
 Now write $\P_1 = \{ \q_1, \q_2 \}, \P_2 = \{ \q_3, \q_4 \}, \P_3 = \{ \bar \q_5, \bar \q_6 \}$ and keep in mind that we will now allow for all six cases 0--5.
 
