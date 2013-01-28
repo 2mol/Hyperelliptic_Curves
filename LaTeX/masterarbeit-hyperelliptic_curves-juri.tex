@@ -10,12 +10,78 @@
 \begin{document} %------------   \(◕ ◡ ◕\)   -----------------------------%
 % (/◔ ◡ ◔)/   ◕‿◕
 
+% \newgeometry{top=1cm}
+
+\begin{textblock*}{360pt}(-2mm,-2cm)
+  Version 6 \scriptsize \hfill --- Juri --- Hyperelliptic Curves --- Draft --- \today
+  \normalsize
+\end{textblock*}
+\vspace{-1.5cm}
+
+% \layout
+
+\setcounter{section}{-1}
+\section{Introduction}
+
+Hyperelliptic curves of genus $g \geq 1$ over a field $K$ are equations of the form $y^2 = C(x)$ where $C(x) \in K[x]$ is monic of degree $2g \hspace{-1mm} + \hspace{-1.2mm} 1$, \mbox{char$(K) \neq 2$}. To include fields of characteristic 2, the equation would be $y^2 + y H(x) = C(x)$ where $H(x) \in K[x]$ has degree less or equal $g$. Elliptic curves have genus 1.
+
+This paper sets out to imitate the approach and techniques used on elliptic curves in a series of lectures given by Prof. David Masser between 2009 and 2010 at the University of Basel \cite{masser}. The aim is to define a group on curves of genus 2, where the bulk of the work will be going into proving associativity.
+
+We will derive the addition law in the most explicit way possible. Behind this lies the desire to not only construct a group over the curve, but to do so using elementary tools without the need to delve into algebraic geometry.
+
+% As it turns out our addition law - interesting properties...
+
+% xx more advantages?
+
+xx An additional advantage is that can work over any field of characteristic not 2 or 3 so we don't restrict ourselves to $\mathds{C}$ as done in earlier literature \cite{mumf}.
+
+The reason for choosing curves of genus $2$ is twofold. First, elliptc curves are vastly well-known, whereas many things about hyperelliptics are not. Second, it is our opinion that $2$ is the highest genus for whom it is still practical to derive the group law in such an explicit way. For any higher genus, the list of case-distinctions would simply be too high, although a priori it looks at least theoretically feasible. %clever permutation-notational way to write this down might be possible
+
+The are however a few caveats to our explicit ansatz. For one, the fickleness of distinguishing between six cases is certainly not desirable in the sense of mathematical elegance. But there is also the question of applicability. As it stands, we have to exclude fields of characteristic $2$ (and $3$) and we need to work within the closure $\bar K$, both of which are not optimal from a computational standpoint. In addition to that, the field extension sabotages the the original goal of finding rational solutions to diophantine equations.
+
+More broadly represented in literature is the construction of the Jacobian out of formal divisors on the function field of the curve \cite{cassels, zucc}. As a comparison, we first derive the addition law and will then prove the existence of a rational function with a divisor depending on a given sum. %This an is an approach that basically runs oppo
+
+Work has been done to make this \cite{cantor} and as it has a lot of uses and potential uses, it would be interesting to answer the question of equivalence between these two approaches.xxx
+
+% xxxThe more standard way to define the Jacobian is more geared towards  xxxOther ways to define the Jacobian are more geared towards applications in xxx and it would be interesting to study the equivalence of both constructs .
+
+The next logical step for our approach would be to study torsion points, and while there is no Lutz-Nagell for hyperelliptic curves, work has been done on an equivalent \cite{grantln}.
 
 
+% -------
+
+% A lot of work has been done on elliptic curves, some on hyperelliptics as well. xxx insofar different xxx special attraction genus two is twofold:
+
+
+% Many papers and a few books have been written about this subject 
+
+% The reason for restricting ourselves to curves of genus 2 lies in the explicit nature of our group law. Whereas other bblah, we do it the other way around and give the addition law first with the definition divisors following as a result.
+
+% The reason for examining degree 5 / genus 2 is...
+
+% -- The special attraction in genus 2 is ...
+
+% ------------
+
+% what this paper is (\& is not)
+
+% motivation for this paper...
+
+% special attraction genus 2
+
+% Our approach therefore diverges from what has become the standard approach for computational uses [cite zuccherato]
+
+% ----
+
+
+% application > crypto
+
+% the inspiration for this came from a two-part lecture on elliptic curves by Prof. David Masser in fall? of 2009. Set out to imitate the explicit approach and give an addition law with the main goal of proving associativity.
+
+% The novel (viewpoint)/thing is the construction over -any- field (excluding certain characteristics).
+
+% \restoregeometry
 \newpage
-
-Version 6 \scriptsize \hfill Juri; Hyperelliptic Curves --- Draft --- \today
-\normalsize
 
 \section{Addition Law}\label{ch1}
 
@@ -1059,6 +1125,98 @@ Now write $\P_1 = \{ \q_1, \q_2 \}, \P_2 = \{ \q_3, \q_4 \}, \P_3 = \{ \bar \q_5
   \end{align*}
   Use Theorem \ref{hhs} again to get two functions $f_1$ and $f_2$ corresponding to the two sums. Let's just look at the third case of the proof above. Defining the function $f = \frac{f_1}{f_2}$ we conclude that $(f)$ must equal to both $\q_5' + \q_6' - \q_5 - \q_6$ and $\m + \bar \m + \n + \bar \n - \q_5 -\bar \q_5 - \q_6 - \bar \q_6$ for some $\m$, $\n \in \ekb$. As above, this means either $\q_5' = \q_5$ and $\q_6' = \q_6$ or the other way around.
 \end{remark}
+
+
+\begin{thebibliography}{9}
+
+\bibitem{cassels}
+J.W.S. Cassels and E.V. Flynn, ``Prolegomena to a Middlebrow \mbox{Arithmetic} of Curves of Genus 2'',
+\emph{Cambridge University Press} (1996)
+
+\bibitem{zucc}
+A. Menezes, Y.-H. Wu, and R. Zuccherato,
+``An Elementary Introduction to Hyperelliptic Curves'',
+in ``Algebraic Aspects of Cryptography'',\\
+\emph{Springer-Verlag} (1998)\\
+\small{\url{http://math.uwaterloo.ca/~ajmeneze/publications/hyperelliptic.pdf}}\normalsize
+
+
+\bibitem{mumf}
+David Mumford,
+``Tata Lectures on Theta II: Jacobian theta functions and differential equations'',
+\emph{Birkhäuser} (1984)
+
+
+\bibitem{masser}
+David Masser,
+``Elliptische Kurven I'',
+\emph{University of Basel},
+\emph{unpublished}.
+
+\bibitem{grantln}
+David Grant,
+``On an Analogue of the Lutz-Nagell Theorem for \mbox{Hyperelliptic} Curves'',
+\emph{Journal of Number Theory}
+\textbf{133} 963--969 (2013)\\
+\small{\url{http://euclid.colorado.edu/~grant/publications/lutznagell.pdf}}\normalsize
+
+\bibitem{cantor}
+David G. Cantor, ``Computing  in the Jacobian  of a Hyperelliptic  Curve'',
+\emph{Mathematics of Computation},
+\textbf{48}, 95--101 (1987)\\
+%\small{\url{}}
+
+\end{thebibliography}
+
+\newpage
+
+\section*{Appendix}
+
+\setcounter{theorem}{0}
+
+\begin{theorem}
+  Let $x$, $y \in K(t)$ be rational functions that fulfill $y^2 = C(x)$. Then $x$ and $y$ are actually constants, i.e. $x$, $y \in K$.
+  \begin{proof}
+    For a rational function $f= \frac g h \in K(t)$ with $f, g \in K[t]$ coprime we define $\deg f = \max \{ \deg g , \deg h \}$. Suppose we have a counterexample $(x,y)$ with $\deg x > 0$ but with minimal degree. Out of $y^2 = C(x)$ we conclude that $2y y' = x' C'(x)$ and we look at $f = \frac{x'}{y} = \frac{2y'}{C'(x)} \in K(t)$. We first want to show that $f = 0$ and conclude from that that $x$ must be constant.
+
+    \textit{First part}
+
+    In case $f \neq 0$, we would like to show that $\ord_{\tau} f \geq 0$ for all $\tau \in \bar K$. Have a look at $\ord_{\tau} x$ first. There are two possibilities for a given $\tau$.
+
+    (i) Let $\ord_{\tau} x \geq 0$. Now we have an $x_0 = x(\tau)$ and $x'(\tau)$, $y'(\tau)$.
+
+    If $C(x_0) \neq 0$ then $f^2=\frac{x'^2}{y'^2} = \frac{x'^2}{C(x)}$ so $f^2$ and $f$ don't have a pole at $t-\tau$.
+
+    If $C(x_0) = 0$ then $C'(x_0) \neq 0$ and so $f= \frac{2y'}{C'(x)}$ gives $\ord_\tau f \geq 0$.
+
+    (ii) Let $\ord_{\tau} x = -m$ with $m \in \mathds{N}$. Then $\ord_\tau (x^5+\ldots+e) = -5m$. But this is equal to $\ord_\tau y^2$ so $2 \ord_\tau y = -5m$. So $m = 2n$ is even, $n \in \mathds{N}$. Therefore $\ord_{\tau} x = -2n$, $\ord_{\tau} y = -5n$ and $\ord_{\tau} x' \geq -2n-1$.
+
+    Since $f = \frac{x'}{y}$ we have $\ord_\tau f = \ord_\tau x' - \ord_\tau y \geq -2n -1 +5n = 3n -1 \geq 0$. This concludes $\ord_{\tau} f \geq 0$ for all $\tau \in \bar K$, so $f(t) \in K[t]$.
+
+    Now look at $x_1(t) = x(\frac 1 t )$, $y_1(t) = y(\frac 1 t )$. Of course $y_1^2 = C(x_1)$ and so we have $f_1(t) \in K[t]$ with $f_1 = \frac{x_1'}{y_1}$.
+
+    But
+    \begin{align*}
+      f_1(t) = \frac{-\frac{1}{t^2} x'(\frac 1 t)}{y(\frac 1 t )} = - \frac{1}{t^2} \in \frac{1}{t^2} K[\frac{1}{t}]
+    \end{align*}
+    so $f_1 \in K[t] \cap \frac{1}{t^2} K[\frac{1}{t}] = \{0 \}$ and so $f= 0$ as well.
+
+    \textit{Second part}
+
+    With $f = 0$ we can immediately follow $x' = 0$ and thus $x \in K$ if we are in characteristic 0. However, if char$(K) = p > 0$ we need to show that from $x' = 0$ follows $x(t) = x_p(t^p)$ with $x_p(s) \in K(s)$. See Lemma \ref{xp} for that.
+
+    Similarly, we follow $y' = 0$ from $f = 0$ for $p \neq 2$. Again, $y(t) = y_p(t^p)$ with $y_p(s) \in K(s)$. Now for $y_p^2 -C(x_p) = z$ follows $z(t^p) = y^2 - C(x) = 0$ and so $z(t) = 0$. This means $(x_p, y_p)$ is a counterexample to the theorem as well ($(x,y)$ being the original one) but we also have $\deg x = p \deg x_p > \deg x_p$ which strictly contradicts the minimality of the degree of $x$.
+  \end{proof}
+\end{theorem}
+
+\begin{lemma}\label{xp}
+  Let $x(t) \in K(t)$ with $x'(t) = 0$ for char$(K) = p$. Then we have $x(t) = x_p(t^p)$ with $x_p(s) \in K(s)$.
+  \begin{proof}
+    First let $x(t) \in K[t]$ with $x(t)= \sum_{i=0}^n a_i t^i$ so that $x'(t)= \sum_{i=1}^n i a_i t^{i-1}$. Since $x'(t) = 0$, wherever $a_i \neq 0$ we have $i \mid p$ so $x \in K[t^p]$.
+
+    If $x = \frac g h \in K(t)$, $g, h \in K[t]$, we simply apply the above to $g$ and $h$, so $g, h \in K[t^p]$ and thus $x \in K(t^p)$.
+  \end{proof}
+\end{lemma}
 
 % -----------------------------------------------------------------------------
 % THIS IS THE END. MY ONLY FRIEND, THE END. OF EVERYTHING THAT STANDS, THE END.
