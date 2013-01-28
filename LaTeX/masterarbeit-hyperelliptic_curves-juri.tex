@@ -119,7 +119,7 @@ Let's start with $\P_1 = \{\q_1,\q_2\}$, $\P_2 = \{\q_3,\q_4\}$ with $\q_i = (x_
 \begin{case} {\scshape Four Distinct Point-Components:}
   Let $\q_i \in \enk$ and $\P_i$ be defined as above with $x_i \neq x_j$ whenever $i \neq j$.
 
-  The overarching idea is to obtain a fifth and sixth $x$-coordinate and the corresponding $y$-coordinates by passing a polynomial of degree three through the four points $\q_i$. Ideally this should give us two additional intersections with the curve which we then use as the components of our point $\P_1 + \P_2$.
+  The overarching idea is to obtain a fifth and sixth $x$-coordinate and the corresponding $y$-coordinates by passing the graph of a degree three polynomial through the four points $\q_i$. Ideally, this gives us two additional intersections with the curve, which we then use as the components of our point $\P_1 + \P_2$.
 
   {\scshape Step 1:} It is known that the Vandermonde matrix
   \begin{align*}V=
@@ -198,7 +198,11 @@ Let's start with $\P_1 = \{\q_1,\q_2\}$, $\P_2 = \{\q_3,\q_4\}$ with $\q_i = (x_
 
   Compute $y_5 \hspace{-0.8mm} = \hspace{-0.8mm} P(x_5)$ and define $\P_1 + \P_2$ to be the point $\P_3 = \{ (x_5, -y_5), \infty \}$.
 
-  {\scshape Step $1'$:} To extend our construction from $\enk$ to $\ek$ we now consider $\q_4 = \infty$ with the other $\q_i = (x_i,y_i)$ as before. This can be seen as the $x_i$ still being pairwise distinct, only that one of them is allowed to be $\infty$ here.
+  {\scshape Step $1'$:} To, extend our construction from $\enk$ to $\ek$ we allow for $\q_4 = \infty$. We see later at \eqref{switch} why considering this only for $\q_4$ is not merely a partial extension but does indeed complete the general case ``all $x_i$ different''.
+  
+  % This can be seen as the $x_i$ still being pairwise distinct, only that one of them can now be $\infty$.
+
+  % We will see later why this extension is not partial but complete.
 
   There is no coordinate $x_4$ this time, so we pass a quadratic polynomial $P(x)$ through the remaining three points $(x_i,y_i)$. This means that we solve the linear system $\tilde V \cdot \mathbf{p} = \tilde \mathbf{y}$ where $\tilde V$ is the Vandermonde matrix for $x_i$, $i=1,..,3$,
   \begin{align*}\tilde V=
@@ -256,7 +260,7 @@ Let's start with $\P_1 = \{\q_1,\q_2\}$, $\P_2 = \{\q_3,\q_4\}$ with $\q_i = (x_
 
 
 \begin{remark}
-  Up to this point, we have given the general-case rule only for elements in $\ek \times \ek$. Extending to $\j = \ekb \times \ekb$ is trivial as we can simply choose $\bar K$ as the new $K$. The final step is to note that everything until now is well-defined on $\J$. The equivalence relation from Definition \ref{defj} corresponds to interchanging $\q_1$ and $\q_2$ or $\q_3$ and $\q_4$ or both.
+  Up to this point, we have given the general-case rule only for elements in $\ek \times \ek$. Extending to $\j = \ekb \times \ekb$ is trivial as we can simply choose $\bar K$ as the new $K$. The final step is to note that everything up to here is well-defined on $\J$. The equivalence in Definition \ref{defj} corresponds to interchanging $\q_1$ and $\q_2$ or $\q_3$ and $\q_4$.
   To this end we can check that interchanging $(x_i,y_i)$ and $(x_j,y_j)$ does nothing to the resulting $\q_5$ and $\q_6$. This is the case because $P(x)$ depends only on the solution of the linear system $V \cdot \mathbf{p} = \mathbf{y}$ on which the aforementioned permutation has no effect. With $p$ invariant, the subsequent steps remain unchanged as well.
 
   Finally, the restriction to $K$ instead of $\bar K$ was to showcase the degree of the required field extension, a feat we will now leave aside by always using $\bar K$.
@@ -294,7 +298,7 @@ Let $\{ i,j,k,l \}=\{ 1,2,3,4 \}$. Whenever $\q_i = \bar \q_j$ for $i \neq j$ we
   \label{zero}\tag{0}
   &&        &= \{ \q_k , \q_l \} + \{ \infty, \infty \} = \{ \q_k , \q_l \}
 \end{flalign*}
-The justification for this follows directly from Remark \ref{permut} and Definition \ref{defj}. It is easily checked that this sum remains well defined if the choice of $i$ and $j$ is not unique. This allows us to treat the above as a separate case in order to characterize the other cases solely through the $x$-coordinates of the $\q_i$, so we may assume
+The justification for this follows directly from Remark \ref{permut} and Definition \ref{defj}. It is easily checked that this sum remains well defined if the choice of $i$ and $j$ is not unique. This allows us to treat the above as a separate case in order to characterize the other cases solely through the $x$-coordinates of the $\q_i$, so we may assume --- for $i, j$ only up to 4 for now, see Lemma \ref{atmost1} later --- that
 \begin{align*}
   x_i = x_j \iff \q_i = \q_j
 \end{align*}
@@ -385,7 +389,11 @@ We will now use this property on $D(x)= C(x) - (P(x))^2$ when factoring \eqref{s
 
     \includegraphics[width=0.9\textwidth]{addition_zero.pdf}
 
-    {\scshape Figure 0b} The addition with zero and justifying $\{ \q , \bar \q \} \sim 0$.
+    {\scshape Figure 0b} Illustrating the addition with zero.
+
+    %\footnote{so $\{ \q , \bar \q \} \sim 0$ and why in $\mathds{R}^2$ it can be seen as the limit-case of $(x_3, y_3)$ approaching $(x_4, -y_4)$. The steeper segment between $\q_3$ and $\q_4$, the steeper the tangent at $\q_1$ and $\q_2$}
+
+    % The addition with zero and illustrating $\{ \q , \bar \q \} \sim 0$ as a limit-case if $x_3$ and $x_4$.
   \end{center}
   \vspace{-1.5mm}
   \fline
@@ -422,7 +430,7 @@ We will now use this property on $D(x)= C(x) - (P(x))^2$ when factoring \eqref{s
   \fline
 \end{figure}
 
-  Once the polynomial is determined, we note that the $p^2(x)$ shares a tangent with $C(x)$ at $x_1$ on purpose, specifically
+  Once the polynomial is determined, we note that the $P(x)$ shares a tangent with $C(x)$ at $x_1$ on purpose, specifically
   \begin{align*}
     D'(x_1) &= C'(x_1) - 2 P(x_1)p'(x_1)\\
             &= C'(x_1) - 2 y_1 y_2' = 0
@@ -599,7 +607,7 @@ We can extend the distinction ``$\q_i \neq \bar \q_j$'' between zero and non-zer
   Provided we are not in case 0, then $\q_i \neq \bar \q_j$ for $i \neq j$, $\q_i \neq \q_j$ is not only true for $i,j = 1,..,4$ but for $i,j = 1,..,6$ as well.
 
   \begin{proof}
-    All points $\q_i = (x_i,y_i) \neq \infty$ lie on the graph of $P$, so no two points can have the same $x$-coordinate but different $y$-coordinates.
+    All points $\q_i = (x_i,y_i) \neq \infty$ lie on the graph of $P$ which cannot pass through points with the same $x$-coordinate but different $y$-coordinates.
     %$y_i = P(x_i)$, so if two points have the same $x$-coordinate and opposing $y$-coordinates, $y_i$ must equal 0. This means $\q_i = \q_j$, which contradicts the premise.
   \end{proof}
 
@@ -968,7 +976,7 @@ We return to the context of the sum defined in Chapter \ref{ch1}. Suppose we hav
 If we are in a non-zero case, then we had the graph of a polynomial $P$ passing through all $\q_i \neq \infty$, $i = 1,..,6$. Remember that then, by Lemma \ref{atmost1}, at most one of the $\q_i$ can be $\infty$. We defined $D(x) = C(x) - (P(x))^2$.
 %Remember that by Lemma \ref{atmost1} xxx nee!! , if $\q_j = \infty$ for at most one $j \in \{1,..,6\}$, then we are in one of the non-zero cases of the addition law. In such a case, we had the graph of a polynomial $P$ passing through all $\q_i \neq \infty$. We defined $D(x) = C(x) - (P(x))^2$.
 \begin{lemma}\label{mult}
-  If the sum falls into one of the cases 1--5, pick any $\q_k \neq \infty$ for $k = 1,..,6$, so $\q_k = (x_k, y_k) \in \enkb$. Now it can be said that $\q_k$ occurs exactly $e_k$ times in the expression of the sum, $e_k$ being between
+  If the sum falls into one of the cases 1--5, pick any $\q_k \neq \infty$ for $k = 1,..,6$, so $\q_k = (x_k, y_k) \in \enkb$. Now it can be said that $\q_k$ occurs exactly $e_k$ times in the sum expression above, $e_k$ being between
   1 and 6. %\footnotemark[1]
   Then\vspace{-3mm}
   \begin{align*}
@@ -980,16 +988,24 @@ If we are in a non-zero case, then we had the graph of a polynomial $P$ passing 
   %Small remark: Any $\q$ can actually only occur four times in the expression of the sum as we would otherwise find ourself in the zero case.
 \end{lemma}
 
+We will write $Q = \{ \q_i \}$ to denote the set of (unique) point-components. With this, the sum of the above $e_i$ over all distinct $\q_i$ is well-defined and is $\sum_Q e_i = 6$ which is incidentally the same as writing 
+\begin{align*}
+  \sum_{\q \in \enkb} e(\q) = 6
+\end{align*}
+under the notation of Remark \ref{remD}. We use the first as it makes it clearer that this makes no sense without the context of the given sum and thus the $\q_i$.
+
 %\footnotetext[1]{It can actually be only between 1 and 4, which is easily checked. If $e_k$ were 5 or more, we can use Lemma \ref{symall} or \eqref{zero} to show that we must be in the zero case, which we excluded.}
 
-Now write $\P_1 = \{ \q_1, \q_2 \}, \P_2 = \{ \q_3, \q_4 \}, \P_3 = \{ \bar \q_5, \bar \q_6 \}$ and keep in mind that we will now allow for all six cases 0--5.
+%Now write $\P_1 = \{ \q_1, \q_2 \}, \P_2 = \{ \q_3, \q_4 \}, \P_3 = \{ \bar \q_5, \bar \q_6 \}$ and keep in mind that we will now allow for all six cases 0--5.
 
 \begin{theorem}\label{hhs}
-  If we have $\P_1, \P_2, \P_3 \in \J$ with
+  Let $\q_1,..,\q_6$ be in $\ekb$ with %$\q_1,\q_2,\q_3,\q_4,\q_5,\q_6$
+  % If we have $\P_1, \P_2, \P_3 \in \J$ with
   \begin{align*}
-    \P_1 + \P_2 = \P_3,
+    % \P_1 + \P_2 = \P_3,
+    \{ \q_1 , \q_2\}+\{\q_3 , \q_4\} = \{\bar \q_5 , \bar \q_6 \}.
   \end{align*}
-  then there exists an $f \in \F^*$ with divisor
+  Then there exists an $f \in \F^*$ with divisor
   \begin{align*}
     (f) = \q_1 + \q_2 + \q_3 + \q_4 - \bar \q_5 - \bar \q_6 - 2 \infty.
   \end{align*}
@@ -999,122 +1015,150 @@ Now write $\P_1 = \{ \q_1, \q_2 \}, \P_2 = \{ \q_3, \q_4 \}, \P_3 = \{ \bar \q_5
 \newpage
 %---------------------------
 
-\begin{proof}\textit{First part}
+\emph{Proof.} \textit{First part}
 
-  Begin with the observation that in case 0 we are looking for a function $f$ with divisor $(f) = \q_1 + \bar \q_1 - 2 \infty$. If $\q_1 \neq \infty$, we may take $f = x-x_1$, otherwise $f = 1$ fills the criterion, so we are completely done with case 0.
+Begin with the observation that in case 0 we are looking for a function $f$ with divisor $(f) = \q_1 + \bar \q_1 - 2 \infty$. If $\q_1 \neq \infty$, we may take $f = x-x_1$, otherwise $f = 1$ fills the criterion, so we are completely done with case 0.
 
-  Exclude the zero case from now on, so for the remaining cases we have the polynomial $P(x)$ at our disposal. As $y_i = P(x_i)$ whenever $\q_i \neq \infty$, we define
-  \begin{align*}
-    q = y -P(x) \in K[x,y] \subset \F^*
-  \end{align*}
-  with the intention of showing that $(q) = \q_1 + \q_2 + \q_3 + \q_4 + \q_5 + \q_6 - 6 \infty$.
+Exclude the zero case from now on, so we are now in the ``graph case'' where we have $P(x)$ at our disposal. As $y_i = P(x_i)$ whenever $\q_i \neq \infty$, we define
+\begin{align*}
+  q = y -P(x) \in K[x,y] \subset \F^*
+\end{align*}
+with the intention of showing that $(q) = \q_1 + \q_2 + \q_3 + \q_4 + \q_5 + \q_6 - 6 \infty$. The key here is that $q \bar q = y^2 -(P(x))^2 = C(x) -(P(x))^2 = D(x)$.
 
-  By Lemma \ref{one} (b) we know that $\ordqi q \geq 1$ for those $\q_i$ that are not $\infty$.
+By Lemma \ref{one} (b) we know that $\ordqi q \geq 1$ for those $\q_i$ that are not $\infty$.
 
-  Let's first assume that all $\q_i \in \enkb$. This means that we are in the case where $P(x)$ is of degree 3, so as $\li (x) = t^{-2}$ we see that $\ordi q = -6$.
+Let's first assume that all $\q_i \in \enkb$. This means that we are in the case where $P(x)$ is of degree 3, so as $\li (x) = t^{-2}$ we see that $\ordi q = -6$.
 
-  Use Lemma \ref{mult} in conjunction with Lemma \ref{two} to see that for each of the $\q_i$
-  \begin{align*}
-    \ordqi q + \ordqi \bar q &= \ordqi q \bar q\\
-                    &= \text{ord}_{x=x_i}\hspace{0.4mm} D(x)\\
-                    &= e_i.
-  \end{align*}
-  As in Lemma \ref{mult}, $e_i$ denotes the exact number of occurrences of $\q_i$. Also note $\ordqi \bar q = 0$, otherwise $q - \bar q = 2y$ would imply $y_i = 0$ which we excluded.
+Suppost $y_i \neq 0$. Use Lemma \ref{mult} and Lemma \ref{two} (a) to see that for each $\q_i$
+\begin{align*}
+  \ordqi q + \ordqi \bar q &= \ordqi q \bar q\\
+                  &= \text{ord}_{x=x_i}\hspace{0.4mm} D(x)\\
+                  &= e_i.
+\end{align*}
+As in Lemma \ref{mult}, $e_i \hspace{-1mm}\geq\hspace{-1mm} 1$ denotes the exact number of occurrences of $\q_i$. Also note $\ordqi \bar q = 0$, otherwise $q - \bar q = 2y$ would imply $y_i = 0$ which we excluded.
 
-  Since $q \in K[x,y]$ implies the only negative order may be at $\infty$ and $\sum e_i = 6$, $\ordi q = -6$, we have $\ordq q = 0$ for all $\q \in \enkb$ that are not some $\q_i$.
+Since $q \in K[x,y]$, the only negative order may be at $\infty$. With $\sum_Q e_i = 6$ and $\ordi q = -6$, this implies $\ordq q = 0$ for all $\q \not \in Q$.% that don't belong to the set $\{ \q_i \}$. %are not some $\q_i$.
 
-  In the case where $y_i = 0$, the same lemmas imply
-  \begin{align*}
-    \ordqi q + \ordqi \bar q = 2e_i
-  \end{align*}
-  and since $\bar \q_i = \q_i$, Lemma \ref{three} gives $\ordqi \bar q = \ordqi q$ so again $\ordqi q = e_i$.
+%\footnotetext[1]{We have to take this sum over all \emph{distinct} $\q_i$ as to avoid counting xx}
 
-  So in both cases, if $\q_i$ appears $e_i$ times in the sum $\P_1 + \P_2 = \P_3$ then it appears the same number of times in $(q)$ and all in all
-  \begin{align*}
-    (q) = \sum_{\{\q_i\}} e_i \q_i - 6 \infty = \sum_{i=1}^6 \q_i - 6 \infty.
-  \end{align*}
-  Now consider the case where $\q_k = \infty$ for some $k$. Because $P(x)$ is now of degree two or less and $\li(y) = t^{-5}\sqrt \tau$ we have $\ordi q = -5$. This leads to
-  \begin{align*}
-    (q) = \sum_{\substack{i=1 \\ i \neq k}}^6 \q_i - 5 \infty = \sum_{i=1}^6 \q_i - 6 \infty
-  \end{align*}
-  completing the first part of our proof, as no more than one $\q_k$ may be $\infty$.
+In the case where $y_i = 0$, the same Lemma \ref{mult} and Lemma \ref{two} (b) imply
+\begin{align*}
+  \ordqi q + \ordqi \bar q = 2e_i
+\end{align*}
+and since $\bar \q_i = \q_i$, Lemma \ref{three} gives $\ordqi \bar q = \ordqi q$ so again $\ordqi q = e_i$.
+
+So in both cases, if $\q_i$ appears $e_i$ times in the sum $\{ \q_1 ,\hspace{-1mm} \q_2\}\hspace{-1mm}+\hspace{-1mm}\{\q_3 ,\hspace{-1mm} \q_4\} \hspace{-1mm}=\hspace{-1mm} \{\bar \q_5 ,\hspace{-1mm} \bar \q_6 \}$ then it appears the same number of times in $(q)$ and all in all
+\begin{align*}
+  (q) = \sum_Q e_i \q_i - 6 \infty = \sum_{i=1}^6 \q_i - 6 \infty.
+\end{align*}
+Now consider the case where $\q_k = \infty$ for some $k$. Because $P(x)$ is now of degree two or less and $\li(y) = t^{-5}\sqrt \tau$ we have $\ordi q = -5$. This leads to
+\begin{align*}
+  (q) = \sum_{\substack{i=1 \\ i \neq k}}^6 \q_i - 5 \infty = \sum_{i=1}^6 \q_i - 6 \infty
+\end{align*}
+completing the first part of our proof, as no more than one $\q_k$ may be $\infty$.
 
 \newpage
-  \textit{Second Part}
+\textit{Second Part}
 
-  The divisor of $x - x_i$ is $(x - x_i) = \q_i + \bar \q_i -2 \infty$ both for $\q_i = \bar \q_i$ and $\q_i \neq \bar \q_i$.
+The divisor of $x - x_i$ is $(x - x_i) = \q_i + \bar \q_i -2 \infty$ both for $\q_i = \bar \q_i$ and $\q_i \neq \bar \q_i$.
 
-  Without loss of generality let $\q_5 \neq \infty$ and distinguish between $\q_6 \neq \infty$ and $\q_6 = \infty$. In the first case it is easy to check that for $f = q (x - x_5)^{-1}(x - x_6)^{-1}$%\hspace{-3.9mm},
-  \begin{align*}
-    (f) &= \sum_{i=1}^6 \q_i - 6 \infty - \q_5 - \bar \q_5 - \q_6 - \bar \q_6 + 4 \infty \\
-        &= \sum_{i=1}^4 \q_i- \bar \q_5 - \bar \q_6 - 2 \infty
-  \end{align*}
-  which corresponds precisely to the statement we aim to prove. If $\q_6 = \infty$, we can define $f = q (x - x_5)^{-1}$ and check that
-  \begin{align*}
-    (f) &= \sum_{i=1}^5 \q_i - 5 \infty - \q_5 - \bar \q_5 + 2 \infty \\
-        &= \sum_{i=1}^4 \q_i - \bar \q_5 - \bar \infty - 2 \infty.
-  \end{align*}
-  So the function $f$ that we were looking for is
-  \begin{align*}
-    f = \frac{y-P(x)}{(x-x_5)(x-x_6)}
-  \end{align*}
-  if $\q_5$ and $\q_6$ are both different from $\infty$ and otherwise if $\q_6 = \infty$ then
-  \begin{align*}
-    f = \frac{y-P(x)}{x-x_5}.
-  \end{align*}
-\end{proof}
+Without loss of generality let $\q_5 \neq \infty$ and distinguish between $\q_6 \neq \infty$ and $\q_6 = \infty$. In the first case it is easy to check that for $f = q (x - x_5)^{-1}(x - x_6)^{-1}$%\hspace{-3.9mm},
+\begin{align*}
+  (f) &= \sum_{i=1}^6 \q_i - 6 \infty - \q_5 - \bar \q_5 - \q_6 - \bar \q_6 + 4 \infty \\
+      &= \sum_{i=1}^4 \q_i- \bar \q_5 - \bar \q_6 - 2 \infty
+\end{align*}
+which corresponds precisely to the statement we aim to prove. If $\q_6 = \infty$, we can define $f = q (x - x_5)^{-1}$ and check that
+\begin{align*}
+  (f) &= \sum_{i=1}^5 \q_i - 5 \infty - \q_5 - \bar \q_5 + 2 \infty \\
+      &= \sum_{i=1}^4 \q_i - \bar \q_5 - \bar \infty - 2 \infty.
+\end{align*}
+So the function $f$ that we were looking for is
+\begin{align*}
+  f = \frac{y-P(x)}{(x-x_5)(x-x_6)}
+\end{align*}
+if $\q_5$ and $\q_6$ are both different from $\infty$ and otherwise if $\q_6 = \infty$ then
+\begin{align*}
+  f = \frac{y-P(x)}{x-x_5}.\rlap{\hspace{4.4cm} \qed} 
+\end{align*}
 
 \begin{theorem}
-  \textit{Associativity.} The sums
+  \textit{Associativity.} Let $\P, \Q, \R$ be in $\J$. Then
   \begin{align*}
-  \underbrace{(\P + \Q)}_{= \T} + \R &= \S \\
-  \text{and\hspace{3mm}}\P + \underbrace{(\Q + \R)}_{=\W} &= \S'
+    (\P + \Q) + \R = \P + (\Q + \R).
   \end{align*}
-  give the same result, namely $\S = \S'$.
-
-  \begin{proof}
-    We will use the following notation:
-    \begin{gather*}
-    \P=\{\p_1,\p_2\}, 
-    \Q=\{\q_1,\q_2\}, 
-    \R=\{\r_1,\r_2\}, 
-    \T=\{\t_1,\t_2\}, 
-    \W=\{\w_1,\w_2\},
-    \\
-    \S = \{\a, \b \}, 
-    \S' = \{\u, \v \},
-    \\
-    \a = (a,*), \b = (b,*).
-    \end{gather*}
-    Thanks to the previous theorem we have functions $f_{\P \Q}$, $f_{\T \R}$, $f_{\P \W}$ and $f_{\Q \R}$ in $\F^*$ such that the divisor of
-    \begin{align*}
-      f = \frac{f_{\P \Q} f_{\T \R}}{f_{\P \W} f_{\Q \R}} 
-    \end{align*}
-    is\vspace{-8mm}
-    \begin{alignat*}{7}
-      (f)
-      = & \ \p_1 &+{}& \p_2 &+{}& \q_1 &+{}& \q_2 &-{}& \t_1 &-{}& \t_2 &-{}& 2 \infty \\
-      + & \ \t_1 &+{}& \t_2 &+{}& \r_1 &+{}& \r_2 &-{}& \a   &-{}& \b   &-{}& 2 \infty \\
-      - & \ \p_1 &-{}& \p_2 &-{}& \w_1 &-{}& \w_2 &+{}& \u   &+{}& \v   &+{}& 2 \infty \\
-      - & \ \q_1 &-{}& \q_2 &-{}& \r_1 &-{}& \r_2 &+{}& \w_1 &+{}& \w_2 &+{}& 2 \infty \\
-      = &&&&&&&&&&&&& \hspace{-35mm} \u + \v - \a - \b.
-    \end{alignat*}
-    This leaves us with three cases: both $\a$ and $\b$ being $\infty$, only $\b$ being $\infty$ and neither being $\infty$. In the first case Lemma \ref{twopol} tells us $\u = \bar \v$ so $\S' = 0 = \S$.
-
-    In the second case, $a \neq \infty$ so we can look at $\tilde f = (x - a) f$which now has divisor $(\tilde f) = \u + \v + \bar \b - 3 \infty$ but only two real poles at $\infty$ according to Lemma \ref{threepol}. This means that either $\u = \infty$ or $\v = \infty$. Either way, the other one has to be equal to $\b$, again as can be seen in Lemma \ref{twopol}, and so $\S = \S'$
-
-    This leaves $\tilde f = (x-a)(x-b)f$ which has divisor $(\tilde f) = \bar \a + \bar \b+ \u + \v - 4 \infty$. By Lemma \ref{fourpoles}, $\tilde f$ must be of the form $\kappa (x-\varrho)(x-\varsigma) \in \bar K [x]$, $\kappa \neq 0$ and so
-  \begin{align*}
-    f=\frac{\kappa (x-\varrho)(x-\varsigma)}{(x-a)(x-b)}.
-  \end{align*}
-  But this has divisor of the form
-  \begin{align*}
-    (f) = \m + \bar \m + \n + \bar \n - \a - \bar \a - \b - \bar \b.
-  \end{align*}
-  So, without loss of generality, either $\a = \m$ and $\b = \bar \m$ or $\a = \m$ and $\b = \n$. First case implies $\S$ and $\S'$ equals 0, second case implies that $(f)= \a + \b - \a - \b$ and in both cases we're done.
-  \end{proof}
-
 \end{theorem}
+
+We will use the following notation to keep things organized. Define
+% \begin{gather*}
+%   \P= \{\p_1,\p_2\},
+%   \Q= \{\q_1,\q_2\},
+%   \R= \{\r_1,\r_2\},
+%   \\
+%   \rlap{\hspace{-1cm} and} \T = \P + \Q \text{ \hspace{4mm}with\hspace{3.5mm} } \T=\{\t_1,\t_2\},
+%   \\
+%   \text{\hspace{1.5mm}}\W = \Q + \R \text{ \hspace{4mm}with\hspace{1.7mm} } \W=\{\w_1,\w_2\},
+%   \\
+%   \S = \{\a, \b \} = \T + \R \text{, }
+%   \S' = \{\u, \v \} = \P + \W \text{, }
+%   \\
+%   \a = (a,*), \b = (b,*).
+% \end{gather*}
+\begin{align*}
+  \begin{array}{cclcccc}
+    % \rlap{\hspace{-1cm} and}
+    \T &=& \P + \Q &\text{with}& \T &=& \{\t_1,\t_2\},\\
+    \W &=& \text{\hspace{-0.3mm}}\Q + \R &\text{with}& \W &=& \{\w_1,\w_2\},\\
+    \phantom{'}\S\phantom{'} &=& \T + \R &\text{with}& \phantom{'}\S\phantom{'} &=& \{\a, \b \},\\
+    \phantom{'}\S'&=& \P + \W &\text{with}& \phantom{'}\S'&=& \{\u, \v \}.\\
+  \end{array}
+\end{align*}\vspace{-7mm}
+\begin{gather*}\rlap{\hspace{-26mm}And finally}
+  \P = \{\p_1,\p_2\}\text{, }
+  \Q = \{\q_1,\q_2\}\text{, }
+  \R = \{\r_1,\r_2\}\text{, } \\
+  \a = (a,*) \text{, } \b = (b,*).
+\end{gather*}
+It is understood that in case $\a$ is infinite, the above is meant to read $a = \infty$. The same goes for $\b$. Before we give the final proof, we give one last Lemma.
+
+\begin{lemma}
+  If $f \in \F^*$ has divisor
+  \begin{align*}
+    (f) = \u + \v -\a -\b
+  \end{align*}
+  then $\{ \a, \b \} = \{\u, \v \}$.
+  \begin{proof}
+    We have three cases: both $\a$ and $\b$ being $\infty$, only $\b$ being $\infty$ and neither being $\infty$. In the first case Lemma \ref{twopol} tells us $\u = \bar \v$ so $\S' = 0 = \S$.
+  \end{proof}
+\end{lemma}
+
+\emph{Proof of Associativity.}
+Thanks to the previous theorem we have functions $f_{\P \Q}$, $f_{\T \R}$, $f_{\P \W}$ and $f_{\Q \R}$ in $\F^*$ such that the divisor of
+\begin{align*}
+  f = \frac{f_{\P \Q} f_{\T \R}}{f_{\P \W} f_{\Q \R}} 
+\end{align*}
+is\vspace{-8mm}
+\begin{alignat*}{7}
+  (f)
+  = & \ \p_1 &+{}& \p_2 &+{}& \q_1 &+{}& \q_2 &-{}& \t_1 &-{}& \t_2 &-{}& 2 \infty \\
+  + & \ \t_1 &+{}& \t_2 &+{}& \r_1 &+{}& \r_2 &-{}& \a   &-{}& \b   &-{}& 2 \infty \\
+  - & \ \p_1 &-{}& \p_2 &-{}& \w_1 &-{}& \w_2 &+{}& \u   &+{}& \v   &+{}& 2 \infty \\
+  - & \ \q_1 &-{}& \q_2 &-{}& \r_1 &-{}& \r_2 &+{}& \w_1 &+{}& \w_2 &+{}& 2 \infty \\
+  = &&&&&&&&&&&&& \hspace{-35mm} \u + \v - \a - \b.\rlap{\hspace{3.845cm} \qed}
+\end{alignat*}
+
+This leaves us with three cases: both $\a$ and $\b$ being $\infty$, only $\b$ being $\infty$ and neither being $\infty$. In the first case Lemma \ref{twopol} tells us $\u = \bar \v$ so $\S' = 0 = \S$.
+
+In the second case, $a \neq \infty$ so we can look at $\tilde f = (x - a) f$which now has divisor $(\tilde f) = \u + \v + \bar \b - 3 \infty$ but only two real poles at $\infty$ according to Lemma \ref{threepol}. This means that either $\u = \infty$ or $\v = \infty$. Either way, the other one has to be equal to $\b$, again as can be seen in Lemma \ref{twopol}, and so $\S = \S'$
+
+This leaves $\tilde f = (x-a)(x-b)f$ which has divisor $(\tilde f) = \bar \a + \bar \b+ \u + \v - 4 \infty$. By Lemma \ref{fourpoles}, $\tilde f$ must be of the form $\kappa (x-\varrho)(x-\varsigma) \in \bar K [x]$, $\kappa \neq 0$ and so
+\begin{align*}
+  f=\frac{\kappa (x-\varrho)(x-\varsigma)}{(x-a)(x-b)}.
+\end{align*}
+But this has divisor of the form
+\begin{align*}
+  (f) = \m + \bar \m + \n + \bar \n - \a - \bar \a - \b - \bar \b.
+\end{align*}
+So, without loss of generality, either $\a = \m$ and $\b = \bar \m$ or $\a = \m$ and $\b = \n$. First case implies $\S$ and $\S'$ equals 0, second case implies that $(f)= \a + \b - \a - \b$ and in both cases we're done.\hfill\qed
 
 \begin{remark}
   We can finally prove property \eqref{switch} we imposed on page \pageref{switch} with the exact same technique of the theorem above. Let's have the two sums
@@ -1214,7 +1258,10 @@ David G. Cantor, ``Computing  in the Jacobian  of a Hyperelliptic  Curve'',
   \begin{proof}
     First let $x(t) \in K[t]$ with $x(t)= \sum_{i=0}^n a_i t^i$ so that $x'(t)= \sum_{i=1}^n i a_i t^{i-1}$. Since $x'(t) = 0$, wherever $a_i \neq 0$ we have $i \mid p$ so $x \in K[t^p]$.
 
-    If $x = \frac g h \in K(t)$, $g, h \in K[t]$, we simply apply the above to $g$ and $h$, so $g, h \in K[t^p]$ and thus $x \in K(t^p)$.
+    If $x = \frac g h \in K(t)$, $g, h \in K[t]$ coprime, we have $x' = \frac{g' h - g h'}{h^2}$. Now $x' = 0$, so $g'h = gh'$. This means that $\deg g = \deg h$. If $g' = h' = 0$ then we're done.% as per the above. 
+
+    Assume $g', h'$ both non-zero, so $\frac{h}{h'} = \frac{g}{g'}$. In case $h$ or $g$ are not squarefree, cancel out all necessary factors to obtain $\frac{h_1}{h_1'} = \frac{g_1}{g_1'}$ with $h_1, g_1$ squarefree. However, we follow that $h_1, g_1$ share the same zeroes, so $h$ and $g$ do as well, which contradicts their coprimality.
+    %we simply apply the above to $g$ and $h$, so $g, h \in K[t^p]$ and thus $x \in K(t^p)$.
   \end{proof}
 \end{lemma}
 
