@@ -1,28 +1,32 @@
+-- Questions to Masser & myself:
+-----------------
+- Fazit/kleng Zusammenfassung?
+  -> split up the introduction for this?
+
+
+
+old:
+<OK-Lemma under 1.5, replace all \rightleftharpoons by "and"?
+<OK-Is the question of "assuming K algebraically closed or not" resolved?
+<OK- Yes - do this! <-prove thm 1?
+<?-(F) write as a comment/note?
+<OK- Resolved I think -> little problem with 'first part' comment on top/exclusion of the zero case: is it a problem that f is not unique (better expressed: that f depends on how we write the sum?)? Could be no problem...
+<Egal- Weierstrass points <- clarification? I don't know how to formulate. And do I include \infty or not? Pretty sure the way I put it isn't really right.
+<Egal-remark that thm2 kind of depends how the sum is written? so divisor not unique.
+
 Big TODO List:
 
 <OK-plusminus- Add remarks in regard to the illustrations: only a slight geometrical-visual aid, nothing more...
 <OK- Illustrations -> all special cases for p3 not 0 ?
 <OK- Prove "switching". Or "prove" switching.
-- Write Chapter 0 - Wait for Masser's input
+<OK- Write Chapter 0 - Wait for Masser's input
 <OK--- Consistent eqn numbering
-- References/bibliography
+<OK- References/bibliography
 <OK- changes in CH1 as announced in the note before CH3
 <OK- as above, but in graphics! fuck...
 <OK (check)- take out char K = 5
 
-
 -- Bonus stage:
 On hold -- halving of points
 On hold -- Provide Examples (Half Bonus & discuss with Masser first)
-switching for larger sums
-
-
--- Questions to Masser & myself:
------------------
--Lemma under 1.5, replace all \rightleftharpoons by "and"?
--Is the question of "assuming K algebraically closed or not" resolved?
-- Yes - do this! <-prove thm 1?
--(F) write as a comment/note?
-- Resolved I think -> little problem with 'first part' comment on top/exclusion of the zero case: is it a problem that f is not unique (better expressed: that f depends on how we write the sum?)? Could be no problem...
-- Weierstrass points <- clarification? I don't know how to formulate. And do I include \infty or not? Pretty sure the way I put it isn't really right.
--remark that thm2 kind of depends how the sum is written? so divisor not unique.
+<obvious, no? - switching for larger sums
