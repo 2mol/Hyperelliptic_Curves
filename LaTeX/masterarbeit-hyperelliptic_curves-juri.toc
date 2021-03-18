@@ -1,0 +1,13 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}
+\contentsline {section}{\numberline {2}Addition Law}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}Definitions and Notation}{3}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}The General Case}{4}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Complete List of Cases}{8}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Addition Law for the Special Cases}{9}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Well-Definedness of the Addition Law}{15}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}Summary and Conclusions}{16}{subsection.2.6}
+\contentsline {section}{\numberline {3}Rational Functions on Hyperelliptic Curves}{18}{section.3}
+\contentsline {subsection}{\numberline {3.1}Function Field and Order of Rational Functions}{18}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Divisors and Lemmas}{22}{subsection.3.2}
+\contentsline {section}{\numberline {4}Associativity}{25}{section.4}

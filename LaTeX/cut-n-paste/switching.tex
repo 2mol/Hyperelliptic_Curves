@@ -1,0 +1,235 @@
+\documentclass[english,11pt,a4paper]{article}
+\usepackage{preamble}
+
+\begin{document}
+
+Starting with the old assumption that al $x_i$ are pairwise distinct, we rewrite the Vandermonde matrix with $h = x_2 -x_1$ as
+\begin{align*}
+  V_h =
+  \begin{pmatrix}
+  & \dots \\
+  1 & x_1 + h & (x_1 + h)^2 & (x_1 + h)^3\\
+  & \dots
+  \end{pmatrix}
+\end{align*}
+
+ugh, another time...
+
+
+
+\newpage
+--- old stuff below ---
+
+General case: all $x_i$ are pairwise distinct. Define $h = x_2 - x_1$ which is non-zero for the moment. Now write
+\begin{align*}
+  \begin{pmatrix}
+  1 & x_1 & x_1^2 & x_1^3\\
+  1 & x_2 & x_2^2 & x_2^3\\
+  1 & x_3 & x_3^2 & x_3^3\\
+  1 & x_4 & x_4^2 & x_4^3\\
+  \end{pmatrix}
+  \begin{pmatrix}
+  p_0 \\
+  p_1 \\
+  p_2 \\
+  p_3 \\
+  \end{pmatrix}
+  &=
+  \begin{pmatrix}
+  y_1 \\
+  y_2 \\
+  y_3 \\
+  y_4 \\
+  \end{pmatrix}
+  \\
+  \leadsto
+  \begin{pmatrix}
+  1 & x_1 & x_1^2 & x_1^3\\
+  1 & x_1+h & (x_1+h)^2 & (x_1+h)^3\\
+  1 & x_3 & x_3^2 & x_3^3\\
+  1 & x_4 & x_4^2 & x_4^3\\
+  \end{pmatrix}
+  \begin{pmatrix}
+  p_0 \\
+  p_1 \\
+  p_2 \\
+  p_3 \\
+  \end{pmatrix}
+  &=
+  \begin{pmatrix}
+  y_1 \\
+  y_2 \\
+  y_3 \\
+  y_4 \\
+  \end{pmatrix}
+  \\
+  \leadsto
+  \begin{pmatrix}
+  1 & x_1 & x_1^2 & x_1^3\\
+  1 & x_1+h & x_1^2 + 2hx_1 + h^2 & x_1^3+3x_1^2h+3x_1h^2+h^3\\
+  1 & x_3 & x_3^2 & x_3^3\\
+  1 & x_4 & x_4^2 & x_4^3\\
+  \end{pmatrix}
+  \begin{pmatrix}
+  p_0 \\
+  p_1 \\
+  p_2 \\
+  p_3 \\
+  \end{pmatrix}
+  &=
+  \begin{pmatrix}
+  y_1 \\
+  y_2 \\
+  y_3 \\
+  y_4 \\
+  \end{pmatrix}
+  \\
+  \leadsto
+  \begin{pmatrix}
+  1 & x_1 & x_1^2 & x_1^3\\
+  0 & h & h(2x_1 + h) & h(3x_1^2+3x_1h+h^2)\\
+  1 & x_3 & x_3^2 & x_3^3\\
+  1 & x_4 & x_4^2 & x_4^3\\
+  \end{pmatrix}
+  \begin{pmatrix}
+  p_0 \\
+  p_1 \\
+  p_2 \\
+  p_3 \\
+  \end{pmatrix}
+  &=
+  \begin{pmatrix}
+  y_1 \\
+  y_2-y_1 \\
+  y_3 \\
+  y_4 \\
+  \end{pmatrix}
+  \\
+  \leadsto
+  \begin{pmatrix}
+  1\\ 
+  & h\\
+  & & 1\\
+  & & & 1\\
+  \end{pmatrix}
+  \begin{pmatrix}
+  1 & x_1 & x_1^2 & x_1^3\\
+  0 & 1 & 2x_1 + h & 3x_1^2+3x_1h+h^2\\
+  1 & x_3 & x_3^2 & x_3^3\\
+  1 & x_4 & x_4^2 & x_4^3\\
+  \end{pmatrix}
+  \begin{pmatrix}
+  p_0 \\
+  p_1 \\
+  p_2 \\
+  p_3 \\
+  \end{pmatrix}
+  &=
+  \begin{pmatrix}
+  1\\ 
+  & h\\
+  & & 1\\
+  & & & 1\\
+  \end{pmatrix}
+  \begin{pmatrix}
+  y_1 \\
+  \frac{y_2-y_1}{h} \\
+  y_3 \\
+  y_4 \\
+  \end{pmatrix}
+  \\
+  \leadsto
+  \begin{pmatrix}
+  1 & x_1 & x_1^2 & x_1^3\\
+  0 & 1 & 2x_1 + h & 3x_1^2+3x_1h+h^2\\
+  1 & x_3 & x_3^2 & x_3^3\\
+  1 & x_4 & x_4^2 & x_4^3\\
+  \end{pmatrix}
+  \begin{pmatrix}
+  p_0 \\
+  p_1 \\
+  p_2 \\
+  p_3 \\
+  \end{pmatrix}
+  &=
+  \begin{pmatrix}
+  y_1 \\
+  \frac{y_2-y_1}{h} \\
+  y_3 \\
+  y_4 \\
+  \end{pmatrix}
+\end{align*}
+As $\lim_{h \to 0} \frac{y_2-y_1}{h} = \frac{dy}{dx} = \frac{C'(x_1)}{2y_1}$ we get the exact same system as in case 2.
+
+-- xxx -- Blah, and so on, this leads to all tangential cases.
+
+For the remaining case $\{ \q_1, \q_2\} + \{\bar \q_1, \q_4 \}$ take a more direct approach. Define $M_h = \{ (x,y) \mid y - p_h(x) = 0 \}$ for a $p_h$ given above. Specifically, under the right conditions of pairwise-distinctness and $p^*(x) = \det V \cdot p(x)$,
+\begin{align*}
+  p^*(x)=
+  \begin{vmatrix}
+  1 & x_1 & x_1^2 & y_1\\
+  1 & x_2 & x_2^2 & y_2\\
+  1 & x_3 & x_3^2 & y_3\\
+  1 & x_4 & x_4^2 & y_4\\
+  \end{vmatrix}
+  x^3 +
+  \begin{vmatrix}
+  1 & x_1 & y_1 & x_1^3\\
+  1 & x_2 & y_2 & x_2^3\\
+  1 & x_3 & y_3 & x_3^3\\
+  1 & x_4 & y_4 & x_4^3\\
+  \end{vmatrix}
+  x^2 +
+  \begin{vmatrix}
+  1 & y_1 & x_1^2 & x_1^3\\
+  1 & y_2 & x_2^2 & x_2^3\\
+  1 & y_3 & x_3^2 & x_3^3\\
+  1 & y_4 & x_4^2 & x_4^3\\
+  \end{vmatrix}
+  x +
+  \begin{vmatrix}
+  y_1 & x_1 & x_1^2 & x_1^3\\
+  y_2 & x_2 & x_2^2 & x_2^3\\
+  y_3 & x_3 & x_3^2 & x_3^3\\
+  y_4 & x_4 & x_4^2 & x_4^3\\
+  \end{vmatrix}
+\end{align*}
+so we look at
+\begin{align*}
+  p_h(x) &=
+  \begin{vmatrix}
+  1 & x_1 & x_1^2 & y_1\\
+  1 & x_1+h & (x_1 + h)^2 & y_2\\
+  1 & x_3 & x_3^2 & y_3\\
+  1 & x_4 & x_4^2 & y_4\\
+  \end{vmatrix}
+  x^3 +
+  \begin{vmatrix}
+  1 & x_1 & y_1 & x_1^3\\
+  1 & x_1+h & y_2 & (x_1 + h)^3\\
+  1 & x_3 & y_3 & x_3^3\\
+  1 & x_4 & y_4 & x_4^3\\
+  \end{vmatrix}
+  x^2 \\&+
+  \begin{vmatrix}
+  1 & y_1 & x_1^2 & x_1^3\\
+  1 & y_2 & (x_1 + h)^2 & (x_1 + h)^3\\
+  1 & y_3 & x_3^2 & x_3^3\\
+  1 & y_4 & x_4^2 & x_4^3\\
+  \end{vmatrix}
+  x +
+  \begin{vmatrix}
+  y_1 & x_1 & x_1^2 & x_1^3\\
+  y_2 & x_1+h & (x_1 + h)^2 & (x_1 + h)^3\\
+  y_3 & x_3 & x_3^2 & x_3^3\\
+  y_4 & x_4 & x_4^2 & x_4^3\\
+  \end{vmatrix}
+  \\&=
+  % \begin{vmatrix}
+  % 1 & x_1 & x_1^2 & y_1\\
+  % 1 & x_1+h & (x_1 + h)^2 & y_2\\
+  % 1 & x_3 & x_3^2 & y_3\\
+  % 1 & x_4 & x_4^2 & y_4\\
+  % \end{vmatrix}
+\end{align*}
+\end{document}
